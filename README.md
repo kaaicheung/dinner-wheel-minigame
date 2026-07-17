@@ -16,9 +16,14 @@ canvas and interaction is manual touch hit-testing.
   each spin** — over repeated spins you see the whole pool while each wheel
   stays legible. Tabs: 全部 / 中国 / 亚太 / 中东 / 非洲 / 拉美 / 北美 / 欧洲 / 大洋洲.
   Each dish carries `{ name, cuisine (place) }` plus optional `native` (原文名,
-  searched in the dish's own language), `iconic` (标杆/必吃 flag — 638 dishes),
-  and `note` (一句简介 — 1058 dishes, incl. origin-divergence notes like 越南法棍
-  vs 法式法棍). The result card shows 原文名 + ⭐必吃 badge + 简介 when present.
+  searched in the dish's own language), `iconic` (标杆/必吃 flag), `note` (一句简介,
+  incl. origin-divergence notes like 越南法棍 vs 法式法棍), and the Tier-1 tags
+  `type` / `flavor` / `spice` / `diet` / `protein`. The result card shows 原文名 +
+  ⭐必吃 badge + 简介 when present.
+- **Two selection axes** — the wheel filters by **region** (tabs: 全部/中国/亚太/中东/
+  非洲/拉美/北美/欧洲/大洋洲) AND by **taste/type** (chips: 全部/辣/清淡/素/面/米饭/
+  火锅/汤/烧烤/甜点/海鲜). The wheel = region pool ∩ filter, re-sampled each spin; an
+  empty combination (e.g. 非洲 × 火锅) shows a "换一个" hint instead of spinning.
 - `project.config.json` — **`compileType: "game"`** so DevTools treats it as a
   Mini Game. AppID `wxd7d745a7cc14f6c0` (Rico's registered 小游戏 account).
 

@@ -41,35 +41,64 @@ var rAF = (typeof requestAnimationFrame === 'function')
   ? requestAnimationFrame
   : function (cb) { return canvas.requestAnimationFrame(cb); };
 
+// ---- Filters (second selection axis: taste / type, on top of region) -------
+// Each filter narrows the current region pool via a predicate over the tag
+// fields (type / flavor / spice / diet). 'all' passes everything.
+var FILTERS = [
+  { key: 'all',     label: '全部' },
+  { key: 'la',      label: '辣' },
+  { key: 'light',   label: '清淡' },
+  { key: 'veg',     label: '素' },
+  { key: 'noodle',  label: '面' },
+  { key: 'rice',    label: '米饭' },
+  { key: 'hotpot',  label: '火锅' },
+  { key: 'soup',    label: '汤' },
+  { key: 'bbq',     label: '烧烤' },
+  { key: 'sweet',   label: '甜点' },
+  { key: 'seafood', label: '海鲜' }
+];
+function hasTag(arr, v) { return arr && arr.indexOf(v) >= 0; }
+function matchFilter(d, key) {
+  switch (key) {
+    case 'all':     return true;
+    case 'la':      return (d.spice || 0) >= 2 || hasTag(d.flavor, '辣') || hasTag(d.flavor, '麻');
+    case 'light':   return hasTag(d.flavor, '清淡') || ((d.spice || 0) === 0 && d.type === '汤');
+    case 'veg':     return d.diet === '素' || d.diet === '纯素';
+    case 'noodle':  return d.type === '面';
+    case 'rice':    return d.type === '米饭';
+    case 'hotpot':  return d.type === '火锅';
+    case 'soup':    return d.type === '汤';
+    case 'bbq':     return d.type === '烧烤';
+    case 'sweet':   return d.type === '甜点';
+    case 'seafood': return d.diet === '海鲜' || d.type === '海鲜';
+    default:        return true;
+  }
+}
+
 // ---- Layout (all CSS px) ---------------------------------------------------
 // Scale reference: design around a 375-wide viewport, clamp for larger screens.
 var PAD = 20;
 var titleY = Math.max(48, H * 0.09);
-var tabsY = titleY + 44;
-var tabH = 32;
-var tabRowGap = 8;
+var tabsY = titleY + 42;
+var tabH = 30;
+var tabRowGap = 7;
 
-// Tab layout is static (labels don't change), so pack the 9 tabs into as many
-// centered rows as needed to fit the screen width — computed ONCE at boot.
-var TAB_FONT = '600 13px ' + '-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
-function layoutTabs() {
-  var cats = dishes.CATEGORIES;
-  ctx.font = TAB_FONT;
+// Generic chip-row packer: greedily wrap items into centered rows starting at
+// startY, each row tabH tall. Returns rects (with x/y/w/h/key/label) + rowCount.
+function packChips(items, startY, font) {
+  ctx.font = font;
   var gap = 6, padX = 12;
   var maxRowW = W - PAD * 2;
-  // Greedily pack into rows.
-  var rows = [[]];
-  var rowW = 0;
-  for (var i = 0; i < cats.length; i++) {
-    var w = ctx.measureText(cats[i].label).width + padX * 2;
+  var rows = [[]], rowW = 0;
+  for (var i = 0; i < items.length; i++) {
+    var w = ctx.measureText(items[i].label).width + padX * 2;
     var add = (rows[rows.length - 1].length ? gap : 0) + w;
     if (rowW + add > maxRowW && rows[rows.length - 1].length) {
       rows.push([]); rowW = 0; add = w;
     }
-    rows[rows.length - 1].push({ key: cats[i].key, label: cats[i].label, w: w });
+    rows[rows.length - 1].push({ key: items[i].key, label: items[i].label, w: w });
     rowW += add;
   }
-  // Assign x/y, centering each row.
   var rects = [];
   for (var r = 0; r < rows.length; r++) {
     var total = 0;
@@ -77,7 +106,7 @@ function layoutTabs() {
     total += gap * (rows[r].length - 1);
     var x = (W - total) / 2;
     if (x < PAD) x = PAD;
-    var y = tabsY + r * (tabH + tabRowGap);
+    var y = startY + r * (tabH + tabRowGap);
     for (var k = 0; k < rows[r].length; k++) {
       var t = rows[r][k];
       rects.push({ key: t.key, label: t.label, x: x, y: y, w: t.w, h: tabH });
@@ -86,21 +115,30 @@ function layoutTabs() {
   }
   return { rects: rects, rowCount: rows.length };
 }
-var tabLayout = layoutTabs();
+var TAB_FONT = '600 13px ' + '-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+var FILTER_FONT = '500 12px ' + '-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+
+var tabLayout = packChips(dishes.CATEGORIES, tabsY, TAB_FONT);
 var tabsBlockH = tabLayout.rowCount * tabH + (tabLayout.rowCount - 1) * tabRowGap;
 
+var filtersY = tabsY + tabsBlockH + 10;
+var filterLayout = packChips(FILTERS, filtersY, FILTER_FONT);
+var filtersBlockH = filterLayout.rowCount * tabH + (filterLayout.rowCount - 1) * tabRowGap;
+
 // Wheel geometry: centered, sized to fit width and leave room for result.
-var wheelDiameter = Math.min(W - PAD * 2, H * 0.44);
+var wheelDiameter = Math.min(W - PAD * 2, H * 0.36);
 var wheelR = wheelDiameter / 2;
 var wheelCX = W / 2;
-var wheelCY = tabsY + tabsBlockH + 24 + wheelR;
+var wheelCY = filtersY + filtersBlockH + 20 + wheelR;
 var hubR = Math.max(38, wheelR * 0.24);   // center spin button radius
 var pointerH = Math.max(22, wheelR * 0.13);
 
 // ---- Runtime state ---------------------------------------------------------
 var state = {
   activeCat: 'all',
-  pool: [],          // full dish list for the active tab
+  activeFilter: 'all',
+  regionPool: [],    // full dish list for the active region tab
+  pool: [],          // regionPool after the active taste/type filter
   items: [],         // the ~40 sampled onto the wheel this spin
   rotation: 0,       // radians
   spinning: false,
@@ -110,6 +148,7 @@ var state = {
 
 // Cached hit regions, recomputed on each draw.
 var tabRects = [];         // [{ key, x, y, w, h }]
+var filterRects = [];      // [{ key, x, y, w, h }] taste/type filter chips
 var againRect = null;      // { x, y, w, h } when a result is shown
 
 // Confetti particles.
@@ -119,7 +158,21 @@ var confettiActive = false;
 // ---- Category loading ------------------------------------------------------
 function loadCategory(key) {
   state.activeCat = key;
-  state.pool = dishes.getPool(key);
+  state.regionPool = dishes.getPool(key);
+  applyFilter();
+}
+
+function setFilter(key) {
+  state.activeFilter = key;
+  applyFilter();
+}
+
+// Recompute the wheel pool = region pool narrowed by the active taste/type filter.
+function applyFilter() {
+  var rp = state.regionPool || [];
+  state.pool = (state.activeFilter === 'all')
+    ? rp.slice()
+    : rp.filter(function (d) { return matchFilter(d, state.activeFilter); });
   state.items = dishes.sampleWheel(state.pool);
   state.rotation = 0;
   state.result = null;
@@ -141,11 +194,31 @@ function draw() {
 
   drawTitle();
   drawTabs();
+  drawFilters();
+  if (state.items.length === 0) {
+    drawEmptyHint();
+    return;
+  }
   drawWheel();
   drawPointer();
   drawHub();
   drawResult();
   if (confettiActive) drawConfetti();
+}
+
+function drawEmptyHint() {
+  var fl = '';
+  for (var i = 0; i < FILTERS.length; i++) {
+    if (FILTERS[i].key === state.activeFilter) fl = FILTERS[i].label;
+  }
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = COL_MUTED;
+  ctx.font = '400 15px ' + FONT;
+  ctx.fillText('这个分区暂时没有「' + fl + '」的菜', W / 2, wheelCY - 8);
+  ctx.fillStyle = 'rgba(250,243,230,0.42)';
+  ctx.font = '400 13px ' + FONT;
+  ctx.fillText('换个分区或筛选试试 🍽️', W / 2, wheelCY + 18);
 }
 
 function drawTitle() {
@@ -180,6 +253,32 @@ function drawTabs() {
     ctx.textBaseline = 'middle';
     ctx.fillStyle = active ? COL_BG : 'rgba(250,243,230,0.75)';
     ctx.font = (active ? '700 ' : '600 ') + '13px ' + FONT;
+    ctx.fillText(t.label, t.x + t.w / 2, t.y + t.h / 2 + 0.5);
+  }
+}
+
+// Taste/type filter chips — chili accent when active, to read as a distinct
+// axis from the marigold region tabs above.
+function drawFilters() {
+  filterRects = filterLayout.rects;
+  for (var j = 0; j < filterRects.length; j++) {
+    var t = filterRects[j];
+    var active = t.key === state.activeFilter;
+    roundRect(t.x, t.y, t.w, t.h, t.h / 2);
+    if (active) {
+      ctx.fillStyle = COL_CHILI;
+      ctx.fill();
+    } else {
+      ctx.fillStyle = 'rgba(255,255,255,0.05)';
+      ctx.fill();
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(255,255,255,0.09)';
+      ctx.stroke();
+    }
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = active ? '#fff' : 'rgba(250,243,230,0.6)';
+    ctx.font = (active ? '700 ' : '500 ') + '12px ' + FONT;
     ctx.fillText(t.label, t.x + t.w / 2, t.y + t.h / 2 + 0.5);
   }
 }
@@ -324,18 +423,20 @@ function wrapLines(text, maxWidth, maxLines) {
 
 function drawResult() {
   againRect = null;
-  var topY = wheelCY + wheelR + 22;
+  var maxW = W - PAD * 2;
+  var bh = 44;
+  var by = H - bh - 16;                    // 再转 button anchored near the bottom
+  var topY = wheelCY + wheelR + 14;
+
+  ctx.textAlign = 'center';
   if (!state.result) {
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
+    ctx.textBaseline = 'middle';
     ctx.fillStyle = COL_MUTED;
     ctx.font = '400 15px ' + FONT;
-    ctx.fillText('点中间「转!」开始', W / 2, topY + 8);
+    ctx.fillText('点中间「转!」开始', W / 2, (topY + by) / 2);
     return;
   }
   var r = state.result;
-  var maxW = W - PAD * 2;
-  ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
   var y = topY;
 
@@ -343,11 +444,11 @@ function drawResult() {
   ctx.font = '600 13px ' + FONT;
   ctx.fillStyle = r.iconic ? COL_MARIGOLD : COL_MUTED;
   ctx.fillText(r.iconic ? '⭐ 今晚就吃 · 当地必吃' : '今晚就吃', W / 2, y);
-  y += 20;
+  y += 19;
 
   // Dish name — shrink font if it would overflow the width.
   var nameStr = r.emoji + ' ' + r.name;
-  var nameSize = 34;
+  var nameSize = 32;
   ctx.font = '800 ' + nameSize + 'px ' + FONT;
   while (nameSize > 20 && ctx.measureText(nameStr).width > maxW) {
     nameSize -= 3;
@@ -355,40 +456,44 @@ function drawResult() {
   }
   ctx.fillStyle = COL_MARIGOLD;
   ctx.fillText(nameStr, W / 2, y);
-  y += nameSize + 8;
+  y += nameSize + 6;
 
   // Subtitle — native name (if any) · place.
   var sub = r.native ? (r.native + ' · ' + r.cuisine) : r.cuisine;
   ctx.font = '500 14px ' + FONT;
   ctx.fillStyle = COL_CHILI;
   ctx.fillText(sub, W / 2, y);
-  y += 22;
+  y += 21;
 
-  // Note (简介) — wrapped to at most 2 lines.
-  if (r.note) {
+  // Note (简介) — fit as many lines as the space above the button allows (0–2),
+  // reserving room for the fun one-liner when there's space. Keeps everything on
+  // screen from iPhone SE up to the tall phones.
+  var remain = by - y - 6;
+  if (r.note && remain >= 18) {
+    var allow = Math.min(2, Math.floor((remain - 22) / 18));
+    if (allow < 1) allow = 1;
     ctx.font = '400 13px ' + FONT;
     ctx.fillStyle = 'rgba(250,243,230,0.78)';
-    var noteLines = wrapLines(r.note, maxW, 2);
+    var noteLines = wrapLines(r.note, maxW, allow);
     for (var i = 0; i < noteLines.length; i++) {
       ctx.fillText(noteLines[i], W / 2, y);
       y += 18;
     }
-    y += 4;
+    y += 3;
   }
 
-  // Fun one-liner.
-  ctx.font = '500 15px ' + FONT;
-  ctx.fillStyle = COL_CREAM;
-  ctx.fillText(r.line, W / 2, y);
-  y += 26;
+  // Fun one-liner — only if there's still vertical room before the button.
+  if (by - y >= 20) {
+    ctx.font = '500 14px ' + FONT;
+    ctx.fillStyle = COL_CREAM;
+    ctx.fillText(r.line, W / 2, y);
+  }
 
-  // 再转一次 button.
+  // 再转一次 button (anchored at by).
   var label = '再转一次';
   ctx.font = '700 16px ' + FONT;
   var bw = ctx.measureText(label).width + 56;
-  var bh = 44;
   var bx = (W - bw) / 2;
-  var by = y;
   roundRect(bx, by, bw, bh, bh / 2);
   ctx.fillStyle = COL_MARIGOLD;
   ctx.fill();
@@ -551,10 +656,18 @@ wx.onTouchStart(function (e) {
 
   if (state.spinning) return; // ignore taps mid-spin
 
-  // 1) Tabs
+  // 1) Region tabs
   for (var i = 0; i < tabRects.length; i++) {
     if (inRect(x, y, tabRects[i])) {
       if (tabRects[i].key !== state.activeCat) loadCategory(tabRects[i].key);
+      return;
+    }
+  }
+
+  // 1b) Taste/type filter chips
+  for (var f = 0; f < filterRects.length; f++) {
+    if (inRect(x, y, filterRects[f])) {
+      if (filterRects[f].key !== state.activeFilter) setFilter(filterRects[f].key);
       return;
     }
   }
