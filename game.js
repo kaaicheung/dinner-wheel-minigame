@@ -46,20 +46,62 @@ var rAF = (typeof requestAnimationFrame === 'function')
 var PAD = 20;
 var titleY = Math.max(48, H * 0.09);
 var tabsY = titleY + 44;
-var tabH = 34;
+var tabH = 32;
+var tabRowGap = 8;
+
+// Tab layout is static (labels don't change), so pack the 9 tabs into as many
+// centered rows as needed to fit the screen width — computed ONCE at boot.
+var TAB_FONT = '600 13px ' + '-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+function layoutTabs() {
+  var cats = dishes.CATEGORIES;
+  ctx.font = TAB_FONT;
+  var gap = 6, padX = 12;
+  var maxRowW = W - PAD * 2;
+  // Greedily pack into rows.
+  var rows = [[]];
+  var rowW = 0;
+  for (var i = 0; i < cats.length; i++) {
+    var w = ctx.measureText(cats[i].label).width + padX * 2;
+    var add = (rows[rows.length - 1].length ? gap : 0) + w;
+    if (rowW + add > maxRowW && rows[rows.length - 1].length) {
+      rows.push([]); rowW = 0; add = w;
+    }
+    rows[rows.length - 1].push({ key: cats[i].key, label: cats[i].label, w: w });
+    rowW += add;
+  }
+  // Assign x/y, centering each row.
+  var rects = [];
+  for (var r = 0; r < rows.length; r++) {
+    var total = 0;
+    for (var j = 0; j < rows[r].length; j++) total += rows[r][j].w;
+    total += gap * (rows[r].length - 1);
+    var x = (W - total) / 2;
+    if (x < PAD) x = PAD;
+    var y = tabsY + r * (tabH + tabRowGap);
+    for (var k = 0; k < rows[r].length; k++) {
+      var t = rows[r][k];
+      rects.push({ key: t.key, label: t.label, x: x, y: y, w: t.w, h: tabH });
+      x += t.w + gap;
+    }
+  }
+  return { rects: rects, rowCount: rows.length };
+}
+var tabLayout = layoutTabs();
+var tabsBlockH = tabLayout.rowCount * tabH + (tabLayout.rowCount - 1) * tabRowGap;
 
 // Wheel geometry: centered, sized to fit width and leave room for result.
-var wheelDiameter = Math.min(W - PAD * 2, H * 0.46);
+var wheelDiameter = Math.min(W - PAD * 2, H * 0.44);
 var wheelR = wheelDiameter / 2;
 var wheelCX = W / 2;
-var wheelCY = tabsY + tabH + 24 + wheelR;
+var wheelCY = tabsY + tabsBlockH + 24 + wheelR;
 var hubR = Math.max(38, wheelR * 0.24);   // center spin button radius
 var pointerH = Math.max(22, wheelR * 0.13);
 
 // ---- Runtime state ---------------------------------------------------------
 var state = {
   activeCat: 'all',
-  items: [],
+  pool: [],          // full dish list for the active tab
+  items: [],         // the ~40 sampled onto the wheel this spin
   rotation: 0,       // radians
   spinning: false,
   result: null,      // { name, cuisine, emoji, line }
@@ -76,8 +118,9 @@ var confettiActive = false;
 
 // ---- Category loading ------------------------------------------------------
 function loadCategory(key) {
-  state.items = dishes.getWheelItems(key);
   state.activeCat = key;
+  state.pool = dishes.getPool(key);
+  state.items = dishes.sampleWheel(state.pool);
   state.rotation = 0;
   state.result = null;
   confetti = [];
@@ -117,26 +160,12 @@ function drawTitle() {
 }
 
 function drawTabs() {
-  var cats = dishes.CATEGORIES;
-  tabRects = [];
-  ctx.font = '600 14px ' + FONT;
-  var gap = 8;
-  var padX = 14;
-  // Measure widths.
-  var widths = [];
-  var total = 0;
-  for (var i = 0; i < cats.length; i++) {
-    var w = ctx.measureText(cats[i].label).width + padX * 2;
-    widths.push(w);
-    total += w;
-  }
-  total += gap * (cats.length - 1);
-  var x = (W - total) / 2;
-  if (x < PAD) x = PAD; // if it overflows, left-align with padding
-  for (var j = 0; j < cats.length; j++) {
-    var cw = widths[j];
-    var active = cats[j].key === state.activeCat;
-    roundRect(x, tabsY, cw, tabH, tabH / 2);
+  // tabLayout is precomputed once at boot; just render + expose hit rects.
+  tabRects = tabLayout.rects;
+  for (var j = 0; j < tabRects.length; j++) {
+    var t = tabRects[j];
+    var active = t.key === state.activeCat;
+    roundRect(t.x, t.y, t.w, t.h, t.h / 2);
     if (active) {
       ctx.fillStyle = COL_MARIGOLD;
       ctx.fill();
@@ -150,10 +179,8 @@ function drawTabs() {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = active ? COL_BG : 'rgba(250,243,230,0.75)';
-    ctx.font = (active ? '700 ' : '600 ') + '14px ' + FONT;
-    ctx.fillText(cats[j].label, x + cw / 2, tabsY + tabH / 2 + 0.5);
-    tabRects.push({ key: cats[j].key, x: x, y: tabsY, w: cw, h: tabH });
-    x += cw + gap;
+    ctx.font = (active ? '700 ' : '600 ') + '13px ' + FONT;
+    ctx.fillText(t.label, t.x + t.w / 2, t.y + t.h / 2 + 0.5);
   }
 }
 
@@ -330,6 +357,9 @@ function roundRect(x, y, w, h, r) {
 // ---- Spin (reused eased landing math from index.js) ------------------------
 function spin() {
   if (state.spinning) return;
+  if (!state.pool || state.pool.length === 0) return;
+  // Fresh sample each spin: over repeated spins the whole region pool is seen.
+  state.items = dishes.sampleWheel(state.pool);
   var items = state.items;
   var n = items.length;
   if (n === 0) return;
