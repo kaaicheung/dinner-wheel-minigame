@@ -1,0 +1,25 @@
+{
+  "description": "今晚吃啥转盘 — WeChat Mini Game (canvas-only).",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "ignoreDevUnusedFiles": false,
+    "ignoreUploadUnusedFiles": false
+  },
+  "compileType": "game",
+  "libVersion": "3.5.0",
+  "appid": "wxd7d745a7cc14f6c0",
+  "projectname": "dinner-wheel-minigame",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}
