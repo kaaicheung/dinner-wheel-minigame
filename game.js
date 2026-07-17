@@ -296,6 +296,32 @@ function drawHub() {
   ctx.fillText(state.spinning ? '…' : '转!', wheelCX, wheelCY + 1);
 }
 
+// Greedy char-wrap by measured width; caps at maxLines with an ellipsis.
+// Caller must set ctx.font first.
+function wrapLines(text, maxWidth, maxLines) {
+  var lines = [];
+  var cur = '';
+  for (var i = 0; i < text.length; i++) {
+    var ch = text[i];
+    if (cur && ctx.measureText(cur + ch).width > maxWidth) {
+      lines.push(cur);
+      cur = ch;
+    } else {
+      cur += ch;
+    }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) {
+    lines = lines.slice(0, maxLines);
+    var last = lines[maxLines - 1];
+    while (last.length && ctx.measureText(last + '…').width > maxWidth) {
+      last = last.slice(0, -1);
+    }
+    lines[maxLines - 1] = last + '…';
+  }
+  return lines;
+}
+
 function drawResult() {
   againRect = null;
   var topY = wheelCY + wheelR + 22;
@@ -308,32 +334,61 @@ function drawResult() {
     return;
   }
   var r = state.result;
+  var maxW = W - PAD * 2;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'top';
+  var y = topY;
 
-  ctx.fillStyle = COL_MUTED;
-  ctx.font = '400 13px ' + FONT;
-  ctx.fillText('今晚就吃', W / 2, topY);
+  // Eyebrow — "今晚就吃", plus a ⭐必吃 tag when the dish is a regional icon.
+  ctx.font = '600 13px ' + FONT;
+  ctx.fillStyle = r.iconic ? COL_MARIGOLD : COL_MUTED;
+  ctx.fillText(r.iconic ? '⭐ 今晚就吃 · 当地必吃' : '今晚就吃', W / 2, y);
+  y += 20;
 
+  // Dish name — shrink font if it would overflow the width.
+  var nameStr = r.emoji + ' ' + r.name;
+  var nameSize = 34;
+  ctx.font = '800 ' + nameSize + 'px ' + FONT;
+  while (nameSize > 20 && ctx.measureText(nameStr).width > maxW) {
+    nameSize -= 3;
+    ctx.font = '800 ' + nameSize + 'px ' + FONT;
+  }
   ctx.fillStyle = COL_MARIGOLD;
-  ctx.font = '800 34px ' + FONT;
-  ctx.fillText(r.emoji + ' ' + r.name, W / 2, topY + 22);
+  ctx.fillText(nameStr, W / 2, y);
+  y += nameSize + 8;
 
-  ctx.fillStyle = COL_CHILI;
+  // Subtitle — native name (if any) · place.
+  var sub = r.native ? (r.native + ' · ' + r.cuisine) : r.cuisine;
   ctx.font = '500 14px ' + FONT;
-  ctx.fillText(r.cuisine, W / 2, topY + 66);
+  ctx.fillStyle = COL_CHILI;
+  ctx.fillText(sub, W / 2, y);
+  y += 22;
 
+  // Note (简介) — wrapped to at most 2 lines.
+  if (r.note) {
+    ctx.font = '400 13px ' + FONT;
+    ctx.fillStyle = 'rgba(250,243,230,0.78)';
+    var noteLines = wrapLines(r.note, maxW, 2);
+    for (var i = 0; i < noteLines.length; i++) {
+      ctx.fillText(noteLines[i], W / 2, y);
+      y += 18;
+    }
+    y += 4;
+  }
+
+  // Fun one-liner.
+  ctx.font = '500 15px ' + FONT;
   ctx.fillStyle = COL_CREAM;
-  ctx.font = '500 16px ' + FONT;
-  ctx.fillText(r.line, W / 2, topY + 90);
+  ctx.fillText(r.line, W / 2, y);
+  y += 26;
 
-  // 再转一次 button
+  // 再转一次 button.
   var label = '再转一次';
   ctx.font = '700 16px ' + FONT;
   var bw = ctx.measureText(label).width + 56;
   var bh = 44;
   var bx = (W - bw) / 2;
-  var by = topY + 122;
+  var by = y;
   roundRect(bx, by, bw, bh, bh / 2);
   ctx.fillStyle = COL_MARIGOLD;
   ctx.fill();
@@ -412,6 +467,9 @@ function onLanded(winIndex) {
   state.result = {
     name: item.name,
     cuisine: item.cuisine,
+    native: item.native || '',
+    iconic: item.iconic === true,
+    note: item.note || '',
     emoji: emojis[Math.floor(Math.random() * emojis.length)],
     line: dishes.pickFunLine()
   };
