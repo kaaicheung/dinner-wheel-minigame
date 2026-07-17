@@ -118,25 +118,36 @@ var FUN_LINES = [
   '不许反悔哦～'
 ];
 
-// Cap segments so labels stay readable. If a category has more than the cap,
-// take a shuffled subset (fresh each render = a bit of variety).
+// SEGMENT_CAP kept for reference/back-compat, but no longer used to truncate —
+// Rico wants EVERY dish shown ("要全部列出来"). Adaptive font/label rendering in
+// game.js keeps large wheels (28–64 segments) legible.
 var SEGMENT_CAP = 12;
 
-function shuffle(arr) {
-  var a = arr.slice();
-  for (var i = a.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var t = a[i]; a[i] = a[j]; a[j] = t;
+// Build the "全部" list = ALL dishes across every category, interleaved so
+// cuisines/colors vary around the wheel (round-robin across categories rather
+// than one long same-cuisine block). ALL_MIX above is kept for reference.
+function buildAllDishes() {
+  var order = ['cn', 'west', 'sea', 'jk'];
+  var lists = order.map(function (k) { return (DISHES[k] || []).slice(); });
+  var out = [];
+  var maxLen = 0;
+  for (var i = 0; i < lists.length; i++) {
+    if (lists[i].length > maxLen) maxLen = lists[i].length;
   }
-  return a;
+  for (var row = 0; row < maxLen; row++) {
+    for (var c = 0; c < lists.length; c++) {
+      if (row < lists[c].length) out.push(lists[c][row]);
+    }
+  }
+  return out;
 }
 
-// Return the list of dishes to render for a given category key.
+// Return the FULL list of dishes to render for a given category key.
+// No cap, no shuffle-slice — every dish appears on the wheel.
 function getWheelItems(catKey) {
-  if (catKey === 'all') return ALL_MIX.slice();
+  if (catKey === 'all') return buildAllDishes();
   var list = DISHES[catKey] || [];
-  if (list.length <= SEGMENT_CAP) return list.slice();
-  return shuffle(list).slice(0, SEGMENT_CAP);
+  return list.slice();
 }
 
 function pickFunLine() {

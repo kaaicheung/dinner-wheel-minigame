@@ -158,12 +158,42 @@ function drawTabs() {
 }
 
 // Reused wheel-draw from index.js (translate/rotate + wedges + labels + rim).
+// Adaptive rendering knobs that scale with segment count n, so the wheel stays
+// legible from 8 up to ~64 dishes.
+function wheelStyleFor(n) {
+  // Font size: fewer segments -> bigger text.
+  var fontSize;
+  if (n <= 12) fontSize = 15;
+  else if (n <= 20) fontSize = 12;
+  else if (n <= 32) fontSize = 10;
+  else if (n <= 48) fontSize = 9;
+  else fontSize = 8;
+
+  // Max label chars (Chinese chars are wide): tighter when dense.
+  var maxChars;
+  if (n <= 12) maxChars = 7;
+  else if (n <= 20) maxChars = 6;
+  else if (n <= 32) maxChars = 5;
+  else maxChars = 4;
+
+  // Thinner dividers + inset when dense.
+  var divider = n > 32 ? 0.6 : (n > 20 ? 1 : 2);
+  var inset = n > 32 ? 8 : (n > 20 ? 10 : 14);
+  return { fontSize: fontSize, maxChars: maxChars, divider: divider, inset: inset };
+}
+
+function fitLabel(name, maxChars) {
+  if (name.length <= maxChars) return name;
+  return name.slice(0, maxChars - 1) + '…';
+}
+
 function drawWheel() {
   var items = state.items;
   var n = items.length;
   if (n === 0) return;
   var radius = wheelR;
   var seg = TWO_PI / n;
+  var style = wheelStyleFor(n);
 
   ctx.save();
   ctx.translate(wheelCX, wheelCY);
@@ -180,7 +210,7 @@ function drawWheel() {
     ctx.fillStyle = SEG_COLORS[i % SEG_COLORS.length];
     ctx.fill();
     ctx.strokeStyle = 'rgba(26,20,36,0.55)';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = style.divider;
     ctx.stroke();
 
     // label
@@ -189,11 +219,9 @@ function drawWheel() {
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = COL_BG;
-    var fontSize = n > 10 ? 12 : (n > 7 ? 14 : 16);
-    ctx.font = '600 ' + fontSize + 'px ' + FONT;
-    var label = items[i].name;
-    if (label.length > 7) label = label.slice(0, 6) + '…';
-    ctx.fillText(label, radius - 14, 0);
+    ctx.font = '600 ' + style.fontSize + 'px ' + FONT;
+    var label = fitLabel(items[i].name, style.maxChars);
+    ctx.fillText(label, radius - style.inset, 0);
     ctx.restore();
   }
 
