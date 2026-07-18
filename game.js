@@ -55,8 +55,22 @@ var FILTERS = [
   { key: 'soup',    label: '汤' },
   { key: 'bbq',     label: '烧烤' },
   { key: 'sweet',   label: '甜点' },
-  { key: 'seafood', label: '海鲜' }
+  { key: 'seafood', label: '海鲜' },
+  // 主料 (protein) — fine-grained meats + seafood, per Rico ("海鲜太笼统").
+  { key: 'chicken', label: '鸡' },
+  { key: 'duck',    label: '鸭' },
+  { key: 'goose',   label: '鹅' },
+  { key: 'pork',    label: '猪' },
+  { key: 'beef',    label: '牛' },
+  { key: 'lamb',    label: '羊' },
+  { key: 'fish',    label: '鱼' },
+  { key: 'shrimp',  label: '虾' },
+  { key: 'crab',    label: '蟹' }
 ];
+var PROTEIN_OF = {
+  chicken: '鸡', duck: '鸭', goose: '鹅', pork: '猪',
+  beef: '牛', lamb: '羊', fish: '鱼', shrimp: '虾', crab: '蟹'
+};
 function hasTag(arr, v) { return arr && arr.indexOf(v) >= 0; }
 function matchFilter(d, key) {
   switch (key) {
@@ -71,7 +85,7 @@ function matchFilter(d, key) {
     case 'bbq':     return d.type === '烧烤';
     case 'sweet':   return d.type === '甜点';
     case 'seafood': return d.diet === '海鲜' || d.type === '海鲜';
-    default:        return true;
+    default:        return PROTEIN_OF[key] ? hasTag(d.protein, PROTEIN_OF[key]) : true;
   }
 }
 // Which dimension each filter belongs to. Multi-select semantics: OR within a
@@ -80,7 +94,9 @@ function matchFilter(d, key) {
 var FILTER_DIM = {
   la: 'flavor', light: 'flavor',
   veg: 'diet', seafood: 'diet',
-  noodle: 'type', rice: 'type', hotpot: 'type', soup: 'type', bbq: 'type', sweet: 'type'
+  noodle: 'type', rice: 'type', hotpot: 'type', soup: 'type', bbq: 'type', sweet: 'type',
+  chicken: 'protein', duck: 'protein', goose: 'protein', pork: 'protein', beef: 'protein',
+  lamb: 'protein', fish: 'protein', shrimp: 'protein', crab: 'protein'
 };
 function matchFilters(d, keys) {
   if (!keys || keys.length === 0) return true;

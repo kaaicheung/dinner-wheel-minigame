@@ -104,6 +104,22 @@ S.activeFilters = ['素'];
 sandbox.applyFilter();
 ok(S.pool.length <= beforeF, 'taste filter narrows pool (' + S.pool.length + ' ≤ ' + beforeF + ')');
 
+// ---- protein (主料) fine-grained filter ------------------------------------
+sandbox.clearAllLoc();
+S.activeFilters = [];
+sandbox.toggleFilter('beef');            // 牛
+const beefOnly = S.pool.length;
+ok(beefOnly > 0 && S.pool.every(d => (d.protein || []).indexOf('牛') >= 0), '牛 chip → only 牛 dishes (' + beefOnly + ')');
+sandbox.toggleFilter('chicken');         // 牛 OR 鸡 (same dimension → union)
+const beefOrChicken = S.pool.length;
+ok(beefOrChicken >= beefOnly && S.pool.every(d => { const p = d.protein || []; return p.indexOf('牛') >= 0 || p.indexOf('鸡') >= 0; }), '牛+鸡 → OR within 主料 (' + beefOrChicken + ' ≥ ' + beefOnly + ')');
+sandbox.toggleFilter('la');              // (牛 OR 鸡) AND 辣  → across dimensions = AND
+const spicyMeat = S.pool.length;
+ok(spicyMeat <= beefOrChicken, '主料 AND 辣 across dims narrows (' + spicyMeat + ' ≤ ' + beefOrChicken + ')');
+sandbox.toggleFilter('all');             // reset
+ok(S.activeFilters.length === 0, '全部 clears filters');
+sandbox.clearAllLoc();
+
 // done button rect gets drawn — call drawPanel path indirectly via openPanel+draw
 sandbox.openPanel();
 sandbox.draw();
