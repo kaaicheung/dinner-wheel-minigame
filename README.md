@@ -20,10 +20,14 @@ canvas and interaction is manual touch hit-testing.
   incl. origin-divergence notes like 越南法棍 vs 法式法棍), and the Tier-1 tags
   `type` / `flavor` / `spice` / `diet` / `protein`. The result card shows 原文名 +
   ⭐必吃 badge + 简介 when present.
-- **Two selection axes** — the wheel filters by **region** (tabs: 全部/中国/亚太/中东/
-  非洲/拉美/北美/欧洲/大洋洲) AND by **taste/type** (chips: 全部/辣/清淡/素/面/米饭/
-  火锅/汤/烧烤/甜点/海鲜). The wheel = region pool ∩ filter, re-sampled each spin; an
-  empty combination (e.g. 非洲 × 火锅) shows a "换一个" hint instead of spinning.
+- **Two selection axes, both multi-select** — **region** tabs (全部/中国/亚太/中东/
+  非洲/拉美/北美/欧洲/大洋洲) AND **taste/type** chips (全部/辣/清淡/素/面/米饭/火锅/
+  汤/烧烤/甜点/海鲜). Regions combine as a **union** (中国 + 大洋洲 = either); filters
+  are **OR within a dimension, AND across** (辣+素 = spicy AND vegetarian, but 面+米饭
+  = 面 OR 米饭). Wheel = (union of regions) ∩ filters, re-sampled each spin; an empty
+  combination shows a "少选一个条件" hint instead of spinning.
+- **Country coverage** — every country in each world region has ≥1 grounded dish
+  (Africa all 54, Europe all 45, plus Central Asia / Pacific micro-states / Caribbean).
 - `project.config.json` — **`compileType: "game"`** so DevTools treats it as a
   Mini Game. AppID `wxd7d745a7cc14f6c0` (Rico's registered 小游戏 account).
 

@@ -74,6 +74,30 @@ function matchFilter(d, key) {
     default:        return true;
   }
 }
+// Which dimension each filter belongs to. Multi-select semantics: OR within a
+// dimension, AND across dimensions — so 辣+素 = spicy AND vegetarian, but
+// 面+米饭 = 面 OR 米饭 (a dish can't be two types at once).
+var FILTER_DIM = {
+  la: 'flavor', light: 'flavor',
+  veg: 'diet', seafood: 'diet',
+  noodle: 'type', rice: 'type', hotpot: 'type', soup: 'type', bbq: 'type', sweet: 'type'
+};
+function matchFilters(d, keys) {
+  if (!keys || keys.length === 0) return true;
+  var byDim = {};
+  for (var i = 0; i < keys.length; i++) {
+    var dim = FILTER_DIM[keys[i]] || keys[i];
+    (byDim[dim] = byDim[dim] || []).push(keys[i]);
+  }
+  for (var dim in byDim) {
+    var ks = byDim[dim], ok = false;
+    for (var j = 0; j < ks.length; j++) {
+      if (matchFilter(d, ks[j])) { ok = true; break; }
+    }
+    if (!ok) return false;   // AND across dimensions
+  }
+  return true;
+}
 
 // ---- Layout (all CSS px) ---------------------------------------------------
 // Scale reference: design around a 375-wide viewport, clamp for larger screens.
@@ -135,12 +159,12 @@ var pointerH = Math.max(22, wheelR * 0.13);
 
 // ---- Runtime state ---------------------------------------------------------
 var state = {
-  activeCat: 'all',
-  activeFilter: 'all',
-  regionPool: [],    // full dish list for the active region tab
-  pool: [],          // regionPool after the active taste/type filter
-  items: [],         // the ~40 sampled onto the wheel this spin
-  rotation: 0,       // radians
+  activeCats: ['all'],     // selected region tabs (multi-select; 'all' = every region)
+  activeFilters: [],       // selected taste/type chips (multi-select; [] = 全部)
+  regionPool: [],          // union of the selected region pools (deduped by name)
+  pool: [],                // regionPool after the active taste/type filters
+  items: [],               // the ~40 sampled onto the wheel this spin
+  rotation: 0,             // radians
   spinning: false,
   result: null,      // { name, cuisine, emoji, line }
   raf: null
@@ -155,24 +179,57 @@ var againRect = null;      // { x, y, w, h } when a result is shown
 var confetti = [];         // [{ x, y, vx, vy, color, size, rot, vr, life }]
 var confettiActive = false;
 
-// ---- Category loading ------------------------------------------------------
-function loadCategory(key) {
-  state.activeCat = key;
-  state.regionPool = dishes.getPool(key);
+// ---- Region / filter selection (both multi-select) -------------------------
+// Region tap: 'all' resets to every region; a specific region toggles in/out of
+// the selection (and clears 'all'); emptying the selection reverts to 'all'.
+function toggleRegion(key) {
+  if (key === 'all') {
+    state.activeCats = ['all'];
+  } else {
+    var arr = state.activeCats.filter(function (k) { return k !== 'all'; });
+    var i = arr.indexOf(key);
+    if (i >= 0) arr.splice(i, 1); else arr.push(key);
+    state.activeCats = arr.length ? arr : ['all'];
+  }
+  rebuildRegionPool();
+}
+
+// Filter tap: 全部 clears all filters; a specific chip toggles in/out.
+function toggleFilter(key) {
+  if (key === 'all') {
+    state.activeFilters = [];
+  } else {
+    var arr = state.activeFilters.slice();
+    var i = arr.indexOf(key);
+    if (i >= 0) arr.splice(i, 1); else arr.push(key);
+    state.activeFilters = arr;
+  }
   applyFilter();
 }
 
-function setFilter(key) {
-  state.activeFilter = key;
+// Region pool = union of selected regions, deduped by name.
+function rebuildRegionPool() {
+  if (state.activeCats.indexOf('all') >= 0) {
+    state.regionPool = dishes.getPool('all');
+  } else {
+    var seen = {}, out = [];
+    for (var i = 0; i < state.activeCats.length; i++) {
+      var p = dishes.getPool(state.activeCats[i]);
+      for (var j = 0; j < p.length; j++) {
+        if (!seen[p[j].name]) { seen[p[j].name] = 1; out.push(p[j]); }
+      }
+    }
+    state.regionPool = out;
+  }
   applyFilter();
 }
 
-// Recompute the wheel pool = region pool narrowed by the active taste/type filter.
+// Wheel pool = region pool narrowed by the active taste/type filters.
 function applyFilter() {
   var rp = state.regionPool || [];
-  state.pool = (state.activeFilter === 'all')
+  state.pool = (state.activeFilters.length === 0)
     ? rp.slice()
-    : rp.filter(function (d) { return matchFilter(d, state.activeFilter); });
+    : rp.filter(function (d) { return matchFilters(d, state.activeFilters); });
   state.items = dishes.sampleWheel(state.pool);
   state.rotation = 0;
   state.result = null;
@@ -207,18 +264,20 @@ function draw() {
 }
 
 function drawEmptyHint() {
-  var fl = '';
+  // Name the active filter chips so the user knows which constraint emptied it.
+  var labels = [];
   for (var i = 0; i < FILTERS.length; i++) {
-    if (FILTERS[i].key === state.activeFilter) fl = FILTERS[i].label;
+    if (state.activeFilters.indexOf(FILTERS[i].key) >= 0) labels.push(FILTERS[i].label);
   }
+  var what = labels.length ? '「' + labels.join('+') + '」' : '';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillStyle = COL_MUTED;
   ctx.font = '400 15px ' + FONT;
-  ctx.fillText('这个分区暂时没有「' + fl + '」的菜', W / 2, wheelCY - 8);
+  ctx.fillText('这个组合下' + what + '暂时没有菜', W / 2, wheelCY - 8);
   ctx.fillStyle = 'rgba(250,243,230,0.42)';
   ctx.font = '400 13px ' + FONT;
-  ctx.fillText('换个分区或筛选试试 🍽️', W / 2, wheelCY + 18);
+  ctx.fillText('少选一个条件试试 🍽️', W / 2, wheelCY + 18);
 }
 
 function drawTitle() {
@@ -237,7 +296,7 @@ function drawTabs() {
   tabRects = tabLayout.rects;
   for (var j = 0; j < tabRects.length; j++) {
     var t = tabRects[j];
-    var active = t.key === state.activeCat;
+    var active = state.activeCats.indexOf(t.key) >= 0;
     roundRect(t.x, t.y, t.w, t.h, t.h / 2);
     if (active) {
       ctx.fillStyle = COL_MARIGOLD;
@@ -263,7 +322,9 @@ function drawFilters() {
   filterRects = filterLayout.rects;
   for (var j = 0; j < filterRects.length; j++) {
     var t = filterRects[j];
-    var active = t.key === state.activeFilter;
+    var active = (t.key === 'all')
+      ? state.activeFilters.length === 0
+      : state.activeFilters.indexOf(t.key) >= 0;
     roundRect(t.x, t.y, t.w, t.h, t.h / 2);
     if (active) {
       ctx.fillStyle = COL_CHILI;
@@ -656,18 +717,18 @@ wx.onTouchStart(function (e) {
 
   if (state.spinning) return; // ignore taps mid-spin
 
-  // 1) Region tabs
+  // 1) Region tabs (multi-select toggle)
   for (var i = 0; i < tabRects.length; i++) {
     if (inRect(x, y, tabRects[i])) {
-      if (tabRects[i].key !== state.activeCat) loadCategory(tabRects[i].key);
+      toggleRegion(tabRects[i].key);
       return;
     }
   }
 
-  // 1b) Taste/type filter chips
+  // 1b) Taste/type filter chips (multi-select toggle)
   for (var f = 0; f < filterRects.length; f++) {
     if (inRect(x, y, filterRects[f])) {
-      if (filterRects[f].key !== state.activeFilter) setFilter(filterRects[f].key);
+      toggleFilter(filterRects[f].key);
       return;
     }
   }
@@ -686,4 +747,4 @@ wx.onTouchStart(function (e) {
 });
 
 // ---- Boot ------------------------------------------------------------------
-loadCategory('all');
+rebuildRegionPool();
