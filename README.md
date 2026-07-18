@@ -28,6 +28,13 @@ canvas and interaction is manual touch hit-testing.
   combination shows a "少选一个条件" hint instead of spinning.
 - **Country coverage** — every country in each world region has ≥1 grounded dish
   (Africa all 54, Europe all 45, plus Central Asia / Pacific micro-states / Caribbean).
+- **Location picker (city-level)** — a tappable location bar (below the title) opens a
+  full-screen picker with **search** (type a city/country → autocomplete) AND **drill-down**
+  (region → country → city). Picking a place sets a `scope` (e.g. 日本·大阪) that overrides
+  the region tabs and scopes the wheel to that place's dishes; the ✕ clears it. Each dish
+  carries `country` + `city` (via `dinner-wheel-content/geo.py`); `dishes.LOCATIONS` is the
+  region→country→city index. Travel use: "在大阪 → 转出大阪特色菜". Long lists scroll; the
+  taste/type filters still apply on top.
 - `project.config.json` — **`compileType: "game"`** so DevTools treats it as a
   Mini Game. AppID `wxd7d745a7cc14f6c0` (Rico's registered 小游戏 account).
 

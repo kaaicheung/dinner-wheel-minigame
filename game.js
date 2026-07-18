@@ -161,19 +161,29 @@ var pointerH = Math.max(22, wheelR * 0.13);
 var state = {
   activeCats: ['all'],     // selected region tabs (multi-select; 'all' = every region)
   activeFilters: [],       // selected taste/type chips (multi-select; [] = 全部)
+  scope: null,             // a specific location: { region, country, city, label } — overrides tabs
   regionPool: [],          // union of the selected region pools (deduped by name)
-  pool: [],                // regionPool after the active taste/type filters
+  pool: [],                // base pool after the active taste/type filters
   items: [],               // the ~40 sampled onto the wheel this spin
   rotation: 0,             // radians
   spinning: false,
   result: null,      // { name, cuisine, emoji, line }
-  raf: null
+  raf: null,
+  // location picker panel
+  panel: null,             // null (closed) or { level:'root'|'region'|'country', region, country }
+  searchText: '',
+  searchResults: [],
+  panelScroll: 0           // list scroll offset within the panel
 };
 
 // Cached hit regions, recomputed on each draw.
 var tabRects = [];         // [{ key, x, y, w, h }]
 var filterRects = [];      // [{ key, x, y, w, h }] taste/type filter chips
 var againRect = null;      // { x, y, w, h } when a result is shown
+var locBarRect = null;     // location bar (opens the picker)
+var locClearRect = null;   // ✕ on the location bar (when a scope is active)
+var panelSearchRect = null, panelCloseRect = null, panelBackRect = null;
+var panelRows = [];        // [{ x, y, w, h, action }] visible list rows in the panel
 
 // Confetti particles.
 var confetti = [];         // [{ x, y, vx, vy, color, size, rot, vr, life }]
@@ -183,6 +193,7 @@ var confettiActive = false;
 // Region tap: 'all' resets to every region; a specific region toggles in/out of
 // the selection (and clears 'all'); emptying the selection reverts to 'all'.
 function toggleRegion(key) {
+  state.scope = null;   // tapping a region tab returns to region-tab mode
   if (key === 'all') {
     state.activeCats = ['all'];
   } else {
@@ -224,18 +235,161 @@ function rebuildRegionPool() {
   applyFilter();
 }
 
-// Wheel pool = region pool narrowed by the active taste/type filters.
+// Dishes for a specific location scope (city / country within a region).
+function dishesForScope(s) {
+  var pool = dishes.getPool(s.region);
+  if (s.city) {
+    return pool.filter(function (d) { return d.city === s.city && d.country === s.country; });
+  }
+  if (s.country) {
+    return pool.filter(function (d) { return d.country === s.country; });
+  }
+  return pool;
+}
+
+// Wheel pool = base pool (a location scope, or the region-tab union) narrowed by
+// the active taste/type filters.
 function applyFilter() {
-  var rp = state.regionPool || [];
+  var base = state.scope ? dishesForScope(state.scope) : (state.regionPool || []);
   state.pool = (state.activeFilters.length === 0)
-    ? rp.slice()
-    : rp.filter(function (d) { return matchFilters(d, state.activeFilters); });
+    ? base.slice()
+    : base.filter(function (d) { return matchFilters(d, state.activeFilters); });
   state.items = dishes.sampleWheel(state.pool);
   state.rotation = 0;
   state.result = null;
   confetti = [];
   confettiActive = false;
   draw();
+}
+
+// Set / clear a specific location scope.
+function setScope(s) { state.scope = s; closePanel(); applyFilter(); }
+function clearScope() { state.scope = null; applyFilter(); }
+
+// ---- Location picker: search index + drill navigation ----------------------
+var REGION_LABEL = {};
+dishes.CATEGORIES.forEach(function (c) { REGION_LABEL[c.key] = c.label; });
+function regionLabelOf(rk) { return REGION_LABEL[rk] || rk; }
+
+// Flat searchable index of every country + city across all regions.
+var LOC_SEARCH = [];
+(function buildSearchIndex() {
+  var L = dishes.LOCATIONS || {};
+  for (var rk in L) {
+    for (var country in L[rk]) {
+      LOC_SEARCH.push({ label: country, kind: 'country', region: rk, country: country });
+      var cities = L[rk][country];
+      for (var i = 0; i < cities.length; i++) {
+        LOC_SEARCH.push({ label: cities[i], kind: 'city', region: rk, country: country, city: cities[i] });
+      }
+    }
+  }
+})();
+function searchLoc(q) {
+  if (!q) return [];
+  var out = [];
+  for (var i = 0; i < LOC_SEARCH.length && out.length < 60; i++) {
+    if (LOC_SEARCH[i].label.indexOf(q) >= 0) out.push(LOC_SEARCH[i]);
+  }
+  return out;
+}
+function scopeFromEntry(r) {
+  return r.kind === 'city'
+    ? { region: r.region, country: r.country, city: r.city, label: r.country + ' · ' + r.city }
+    : { region: r.region, country: r.country, label: r.country };
+}
+
+function openPanel() {
+  state.panel = { level: 'root' };
+  state.searchText = ''; state.searchResults = []; state.panelScroll = 0;
+  draw();
+}
+function closePanel() {
+  state.panel = null;
+  if (typeof wx.hideKeyboard === 'function') { try { wx.hideKeyboard({}); } catch (e) {} }
+  draw();
+}
+function panelToRegion(rk) { state.panel = { level: 'region', region: rk }; state.panelScroll = 0; draw(); }
+function panelToCountry(rk, co) { state.panel = { level: 'country', region: rk, country: co }; state.panelScroll = 0; draw(); }
+function panelBack() {
+  if (!state.panel) return;
+  if (state.panel.level === 'country') state.panel = { level: 'region', region: state.panel.region };
+  else if (state.panel.level === 'region') state.panel = { level: 'root' };
+  state.panelScroll = 0; draw();
+}
+
+// Build the list rows for the current panel level (or search results).
+function buildPanelRows() {
+  var rows = [];
+  var L = dishes.LOCATIONS || {};
+  if (state.searchText) {
+    var res = state.searchResults;
+    for (var i = 0; i < res.length; i++) {
+      (function (r) {
+        rows.push({
+          label: r.label,
+          sub: (r.kind === 'city' ? r.country + ' · 城市' : regionLabelOf(r.region) + ' · 国家/地区'),
+          drill: false,
+          action: function () { setScope(scopeFromEntry(r)); }
+        });
+      })(res[i]);
+    }
+    if (!res.length) rows.push({ label: '没找到「' + state.searchText + '」', sub: '换个词试试', drill: false, action: null });
+    return rows;
+  }
+  if (state.panel.level === 'root') {
+    dishes.CATEGORIES.forEach(function (c) {
+      if (c.key === 'all') return;
+      var nc = Object.keys(L[c.key] || {}).length;
+      rows.push({ label: c.label, sub: nc + ' 个国家/地区', drill: true,
+        action: (function (k) { return function () { panelToRegion(k); }; })(c.key) });
+    });
+    return rows;
+  }
+  if (state.panel.level === 'region') {
+    var rk = state.panel.region, cs = Object.keys(L[rk] || {});
+    rows.push({ label: '🎯 整个' + regionLabelOf(rk), sub: '不限国家', drill: false,
+      action: (function (k) { return function () { setScope({ region: k, label: regionLabelOf(k) }); }; })(rk) });
+    cs.forEach(function (country) {
+      var cities = L[rk][country] || [];
+      rows.push({ label: country, sub: cities.length ? cities.length + ' 城 ›' : '', drill: cities.length > 0,
+        action: (function (k, co, has) { return function () { has ? panelToCountry(k, co) : setScope({ region: k, country: co, label: co }); }; })(rk, country, cities.length > 0) });
+    });
+    return rows;
+  }
+  if (state.panel.level === 'country') {
+    var rk2 = state.panel.region, co2 = state.panel.country, cities2 = (L[rk2] && L[rk2][co2]) || [];
+    rows.push({ label: '🎯 整个' + co2, sub: '不限城市', drill: false,
+      action: (function (k, c) { return function () { setScope({ region: k, country: c, label: c }); }; })(rk2, co2) });
+    cities2.forEach(function (city) {
+      rows.push({ label: city, sub: co2, drill: false,
+        action: (function (k, c, ci) { return function () { setScope({ region: k, country: c, city: ci, label: c + ' · ' + ci }); }; })(rk2, co2, city) });
+    });
+    return rows;
+  }
+  return rows;
+}
+
+// wx keyboard for the search box (registered once; updates on input).
+var _kbBound = false;
+function openKeyboard() {
+  if (typeof wx.showKeyboard !== 'function') return;
+  if (!_kbBound) {
+    _kbBound = true;
+    wx.onKeyboardInput(function (res) {
+      if (!state.panel) return;
+      state.searchText = (res && res.value) || '';
+      state.searchResults = searchLoc(state.searchText.trim());
+      state.panelScroll = 0;
+      draw();
+    });
+    if (typeof wx.onKeyboardConfirm === 'function') {
+      wx.onKeyboardConfirm(function () { if (typeof wx.hideKeyboard === 'function') { try { wx.hideKeyboard({}); } catch (e) {} } });
+    }
+  }
+  try {
+    wx.showKeyboard({ defaultValue: state.searchText, maxLength: 20, multiple: false, confirmType: 'search' });
+  } catch (e) {}
 }
 
 // ---- Drawing ---------------------------------------------------------------
@@ -249,7 +403,10 @@ function draw() {
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, W, H);
 
+  if (state.panel) { drawPanel(); return; }
+
   drawTitle();
+  drawLocBar();
   drawTabs();
   drawFilters();
   if (state.items.length === 0) {
@@ -286,9 +443,138 @@ function drawTitle() {
   ctx.fillStyle = COL_MARIGOLD;
   ctx.font = '800 26px ' + FONT;
   ctx.fillText('今晚吃啥 🎡', W / 2, titleY);
-  ctx.fillStyle = COL_MUTED;
-  ctx.font = '400 13px ' + FONT;
-  ctx.fillText('转一转，别再纠结了', W / 2, titleY + 24);
+}
+
+// Tappable location bar (sits where the subtitle was). Shows the active place, or
+// prompts to pick one. Opens the location picker; the ✕ clears the scope.
+function drawLocBar() {
+  var by = titleY + 23, h = 26, padX = 14;
+  var txt = state.scope ? ('📍 ' + state.scope.label) : '📍 选地点：城市 / 国家';
+  ctx.font = '600 13px ' + FONT;
+  var tw = ctx.measureText(txt).width;
+  var clearW = state.scope ? 24 : 0;
+  var w = Math.min(tw + padX * 2 + clearW, W - PAD * 2);
+  var x = (W - w) / 2;
+  roundRect(x, by - h / 2, w, h, h / 2);
+  ctx.fillStyle = state.scope ? 'rgba(255,210,63,0.16)' : 'rgba(255,255,255,0.07)';
+  ctx.fill();
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = state.scope ? 'rgba(255,210,63,0.42)' : 'rgba(255,255,255,0.12)';
+  ctx.stroke();
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = state.scope ? COL_MARIGOLD : 'rgba(250,243,230,0.82)';
+  ctx.fillText(txt, x + padX, by + 0.5);
+  locBarRect = { x: x, y: by - h / 2, w: w, h: h };
+  if (state.scope) {
+    ctx.textAlign = 'center';
+    ctx.fillStyle = COL_CHILI;
+    ctx.font = '700 15px ' + FONT;
+    ctx.fillText('✕', x + w - clearW / 2 - 4, by + 0.5);
+    locClearRect = { x: x + w - clearW - 6, y: by - h / 2, w: clearW + 10, h: h };
+  } else {
+    locClearRect = null;
+  }
+}
+
+// Full-screen location picker: search box + region → country → city drill.
+function drawPanel() {
+  ctx.fillStyle = COL_BG;
+  ctx.fillRect(0, 0, W, H);
+  var hy = Math.max(40, H * 0.06) + 6;
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = COL_MARIGOLD;
+  ctx.font = '800 20px ' + FONT;
+  ctx.fillText('选地点', PAD, hy);
+  ctx.textAlign = 'right';
+  ctx.fillStyle = COL_CREAM;
+  ctx.font = '600 16px ' + FONT;
+  ctx.fillText('✕ 关闭', W - PAD, hy);
+  panelCloseRect = { x: W - PAD - 76, y: hy - 20, w: 76 + PAD, h: 40 };
+
+  var sy = hy + 22, sh = 40;
+  roundRect(PAD, sy, W - PAD * 2, sh, 10);
+  ctx.fillStyle = 'rgba(255,255,255,0.08)';
+  ctx.fill();
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.font = '400 15px ' + FONT;
+  if (state.searchText) {
+    ctx.fillStyle = COL_CREAM;
+    ctx.fillText('🔍 ' + state.searchText, PAD + 12, sy + sh / 2);
+  } else {
+    ctx.fillStyle = COL_MUTED;
+    ctx.fillText('🔍 搜城市 / 国家（大阪 · 成都 · 里斯本）', PAD + 12, sy + sh / 2);
+  }
+  panelSearchRect = { x: PAD, y: sy, w: W - PAD * 2, h: sh };
+
+  var listTop = sy + sh + 10;
+  panelBackRect = null;
+  if (!state.searchText && state.panel.level !== 'root') {
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = COL_CHILI;
+    ctx.font = '600 14px ' + FONT;
+    ctx.fillText('‹ 返回', PAD, listTop + 14);
+    panelBackRect = { x: PAD - 6, y: listTop, w: 130, h: 32 };
+    ctx.textAlign = 'right';
+    ctx.fillStyle = COL_MUTED;
+    ctx.font = '400 12px ' + FONT;
+    var bc = state.panel.level === 'region'
+      ? regionLabelOf(state.panel.region)
+      : regionLabelOf(state.panel.region) + ' › ' + state.panel.country;
+    ctx.fillText(bc, W - PAD, listTop + 14);
+    listTop += 34;
+  }
+  var listBottom = H - 16;
+
+  var rows = buildPanelRows();
+  var rowH = 46;
+  var maxScroll = Math.max(0, rows.length * rowH - (listBottom - listTop));
+  if (state.panelScroll > maxScroll) state.panelScroll = maxScroll;
+  if (state.panelScroll < 0) state.panelScroll = 0;
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0, listTop, W, listBottom - listTop);
+  ctx.clip();
+  panelRows = [];
+  for (var i = 0; i < rows.length; i++) {
+    var ry = listTop + i * rowH - state.panelScroll;
+    if (ry + rowH < listTop || ry > listBottom) continue;
+    ctx.strokeStyle = 'rgba(255,255,255,0.07)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(PAD, ry + rowH);
+    ctx.lineTo(W - PAD, ry + rowH);
+    ctx.stroke();
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = COL_CREAM;
+    ctx.font = '500 16px ' + FONT;
+    ctx.fillText(rows[i].label, PAD + 2, ry + rowH / 2 - (rows[i].sub ? 8 : 0));
+    if (rows[i].sub) {
+      ctx.fillStyle = COL_MUTED;
+      ctx.font = '400 12px ' + FONT;
+      ctx.fillText(rows[i].sub, PAD + 2, ry + rowH / 2 + 11);
+    }
+    if (rows[i].drill) {
+      ctx.textAlign = 'right';
+      ctx.fillStyle = COL_MUTED;
+      ctx.font = '500 18px ' + FONT;
+      ctx.fillText('›', W - PAD, ry + rowH / 2);
+    }
+    if (rows[i].action) panelRows.push({ x: 0, y: ry, w: W, h: rowH, action: rows[i].action });
+  }
+  ctx.restore();
+  if (maxScroll > 0) {
+    ctx.fillStyle = 'rgba(250,243,230,0.32)';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    ctx.font = '400 11px ' + FONT;
+    ctx.fillText('上下滑动查看更多', W / 2, H - 4);
+  }
 }
 
 function drawTabs() {
@@ -709,42 +995,65 @@ function inCircle(x, y, cx, cy, radius) {
   return dx * dx + dy * dy <= radius * radius;
 }
 
-wx.onTouchStart(function (e) {
-  var t = e.touches && e.touches[0];
-  if (!t) return;
-  var x = t.clientX;   // CSS px — matches our draw space
-  var y = t.clientY;
+function pointFromEvent(e) {
+  var t = (e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]);
+  return t ? { x: t.clientX, y: t.clientY } : null;
+}
 
-  if (state.spinning) return; // ignore taps mid-spin
-
-  // 1) Region tabs (multi-select toggle)
+// Main-screen tap (panel closed): location bar, region tabs, filters, hub.
+function handleMainTap(x, y) {
+  if (inRect(x, y, locClearRect)) { clearScope(); return; }
+  if (inRect(x, y, locBarRect)) { openPanel(); return; }
   for (var i = 0; i < tabRects.length; i++) {
-    if (inRect(x, y, tabRects[i])) {
-      toggleRegion(tabRects[i].key);
-      return;
-    }
+    if (inRect(x, y, tabRects[i])) { toggleRegion(tabRects[i].key); return; }
   }
-
-  // 1b) Taste/type filter chips (multi-select toggle)
   for (var f = 0; f < filterRects.length; f++) {
-    if (inRect(x, y, filterRects[f])) {
-      toggleFilter(filterRects[f].key);
-      return;
-    }
+    if (inRect(x, y, filterRects[f])) { toggleFilter(filterRects[f].key); return; }
   }
+  if (inRect(x, y, againRect)) { spin(); return; }
+  if (inCircle(x, y, wheelCX, wheelCY, hubR)) { spin(); return; }
+}
 
-  // 2) 再转一次 button (only present when a result is shown)
-  if (inRect(x, y, againRect)) {
-    spin();
-    return;
+// Panel tap (resolved on touch-end when it wasn't a scroll drag).
+function handlePanelTap(x, y) {
+  if (inRect(x, y, panelCloseRect)) { closePanel(); return; }
+  if (inRect(x, y, panelSearchRect)) { openKeyboard(); return; }
+  if (inRect(x, y, panelBackRect)) { panelBack(); return; }
+  for (var i = 0; i < panelRows.length; i++) {
+    if (inRect(x, y, panelRows[i]) && panelRows[i].action) { panelRows[i].action(); return; }
   }
+}
 
-  // 3) Center 转! hub
-  if (inCircle(x, y, wheelCX, wheelCY, hubR)) {
-    spin();
-    return;
-  }
+var _t = { startY: 0, scroll0: 0, moved: false, panelAtStart: false };
+
+wx.onTouchStart(function (e) {
+  var p = pointFromEvent(e);
+  if (!p) return;
+  if (state.spinning) return;
+  _t.startY = p.y; _t.scroll0 = state.panelScroll; _t.moved = false; _t.panelAtStart = !!state.panel;
+  if (!state.panel) handleMainTap(p.x, p.y);   // main taps act immediately; panel taps on touch-end
 });
+
+if (typeof wx.onTouchMove === 'function') {
+  wx.onTouchMove(function (e) {
+    if (!_t.panelAtStart || !state.panel) return;
+    var p = pointFromEvent(e);
+    if (!p) return;
+    var dy = p.y - _t.startY;
+    if (Math.abs(dy) > 6) _t.moved = true;
+    state.panelScroll = _t.scroll0 - dy;
+    draw();
+  });
+}
+
+if (typeof wx.onTouchEnd === 'function') {
+  wx.onTouchEnd(function (e) {
+    if (!_t.panelAtStart || !state.panel) return;
+    if (_t.moved) return;   // it was a scroll, not a tap
+    var p = pointFromEvent(e);
+    if (p) handlePanelTap(p.x, p.y);
+  });
+}
 
 // ---- Boot ------------------------------------------------------------------
 rebuildRegionPool();
