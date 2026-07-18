@@ -159,11 +159,10 @@ var pointerH = Math.max(22, wheelR * 0.13);
 
 // ---- Runtime state ---------------------------------------------------------
 var state = {
-  activeCats: ['all'],     // selected region tabs (multi-select; 'all' = every region)
+  locSel: [],              // selected location nodes (multi-select; [] = 全部)
+                           //   node = { kind:'region'|'country'|'city', region, country, city, label }
   activeFilters: [],       // selected taste/type chips (multi-select; [] = 全部)
-  scope: null,             // a specific location: { region, country, city, label } — overrides tabs
-  regionPool: [],          // union of the selected region pools (deduped by name)
-  pool: [],                // base pool after the active taste/type filters
+  pool: [],                // base pool (union of locSel) after the active taste/type filters
   items: [],               // the ~40 sampled onto the wheel this spin
   rotation: 0,             // radians
   spinning: false,
@@ -182,28 +181,38 @@ var filterRects = [];      // [{ key, x, y, w, h }] taste/type filter chips
 var againRect = null;      // { x, y, w, h } when a result is shown
 var locBarRect = null;     // location bar (opens the picker)
 var locClearRect = null;   // ✕ on the location bar (when a scope is active)
-var panelSearchRect = null, panelCloseRect = null, panelBackRect = null;
+var panelSearchRect = null, panelCloseRect = null, panelBackRect = null, panelDoneRect = null;
 var panelRows = [];        // [{ x, y, w, h, action }] visible list rows in the panel
 
 // Confetti particles.
 var confetti = [];         // [{ x, y, vx, vy, color, size, rot, vr, life }]
 var confettiActive = false;
 
-// ---- Region / filter selection (both multi-select) -------------------------
-// Region tap: 'all' resets to every region; a specific region toggles in/out of
-// the selection (and clears 'all'); emptying the selection reverts to 'all'.
-function toggleRegion(key) {
-  state.scope = null;   // tapping a region tab returns to region-tab mode
-  if (key === 'all') {
-    state.activeCats = ['all'];
-  } else {
-    var arr = state.activeCats.filter(function (k) { return k !== 'all'; });
-    var i = arr.indexOf(key);
-    if (i >= 0) arr.splice(i, 1); else arr.push(key);
-    state.activeCats = arr.length ? arr : ['all'];
-  }
-  rebuildRegionPool();
+// ---- Location selection (one multi-select SET) + taste filters -------------
+// Region tabs AND the picker panel both add/remove location nodes to state.locSel.
+// [] = 全部 (all). Nodes combine as UNION (中国 + 熊本 + 福冈 → all their dishes).
+function nodeKey(n) { return n.kind + '|' + (n.region || '') + '|' + (n.country || '') + '|' + (n.city || ''); }
+function isSelected(n) {
+  var k = nodeKey(n);
+  for (var i = 0; i < state.locSel.length; i++) if (nodeKey(state.locSel[i]) === k) return true;
+  return false;
 }
+// Toggle a node in/out of the selection. rebuild=true recomputes the wheel now
+// (region-tab taps); false just redraws the panel (picker taps apply on close).
+function toggleLocNode(n, rebuild) {
+  var k = nodeKey(n), out = [], found = false;
+  for (var i = 0; i < state.locSel.length; i++) {
+    if (nodeKey(state.locSel[i]) === k) found = true; else out.push(state.locSel[i]);
+  }
+  if (!found) out.push(n);
+  state.locSel = out;
+  if (rebuild) applyFilter(); else draw();
+}
+function toggleRegion(key) {
+  if (key === 'all') { state.locSel = []; applyFilter(); }
+  else toggleLocNode({ kind: 'region', region: key, label: regionLabelOf(key) }, true);
+}
+function clearAllLoc() { state.locSel = []; applyFilter(); }
 
 // Filter tap: 全部 clears all filters; a specific chip toggles in/out.
 function toggleFilter(key) {
@@ -218,39 +227,28 @@ function toggleFilter(key) {
   applyFilter();
 }
 
-// Region pool = union of selected regions, deduped by name.
-function rebuildRegionPool() {
-  if (state.activeCats.indexOf('all') >= 0) {
-    state.regionPool = dishes.getPool('all');
-  } else {
-    var seen = {}, out = [];
-    for (var i = 0; i < state.activeCats.length; i++) {
-      var p = dishes.getPool(state.activeCats[i]);
-      for (var j = 0; j < p.length; j++) {
-        if (!seen[p[j].name]) { seen[p[j].name] = 1; out.push(p[j]); }
-      }
-    }
-    state.regionPool = out;
-  }
-  applyFilter();
-}
-
-// Dishes for a specific location scope (city / country within a region).
-function dishesForScope(s) {
-  var pool = dishes.getPool(s.region);
-  if (s.city) {
-    return pool.filter(function (d) { return d.city === s.city && d.country === s.country; });
-  }
-  if (s.country) {
-    return pool.filter(function (d) { return d.country === s.country; });
-  }
+// Dishes for a single location node (region / country / city).
+function dishesForNode(n) {
+  var pool = dishes.getPool(n.region);
+  if (n.city) return pool.filter(function (d) { return d.city === n.city && d.country === n.country; });
+  if (n.country) return pool.filter(function (d) { return d.country === n.country; });
   return pool;
 }
-
-// Wheel pool = base pool (a location scope, or the region-tab union) narrowed by
-// the active taste/type filters.
+// Base pool = union of all selected nodes (deduped by name), or every dish if none.
+function basePool() {
+  if (!state.locSel.length) return dishes.getPool('all');
+  var seen = {}, out = [];
+  for (var i = 0; i < state.locSel.length; i++) {
+    var ds = dishesForNode(state.locSel[i]);
+    for (var j = 0; j < ds.length; j++) {
+      if (!seen[ds[j].name]) { seen[ds[j].name] = 1; out.push(ds[j]); }
+    }
+  }
+  return out;
+}
+// Wheel pool = base pool narrowed by the active taste/type filters.
 function applyFilter() {
-  var base = state.scope ? dishesForScope(state.scope) : (state.regionPool || []);
+  var base = basePool();
   state.pool = (state.activeFilters.length === 0)
     ? base.slice()
     : base.filter(function (d) { return matchFilters(d, state.activeFilters); });
@@ -261,10 +259,6 @@ function applyFilter() {
   confettiActive = false;
   draw();
 }
-
-// Set / clear a specific location scope.
-function setScope(s) { state.scope = s; closePanel(); applyFilter(); }
-function clearScope() { state.scope = null; applyFilter(); }
 
 // ---- Location picker: search index + drill navigation ----------------------
 var REGION_LABEL = {};
@@ -307,7 +301,7 @@ function openPanel() {
 function closePanel() {
   state.panel = null;
   if (typeof wx.hideKeyboard === 'function') { try { wx.hideKeyboard({}); } catch (e) {} }
-  draw();
+  applyFilter();   // apply the multi-select made in the panel
 }
 function panelToRegion(rk) { state.panel = { level: 'region', region: rk }; state.panelScroll = 0; draw(); }
 function panelToCountry(rk, co) { state.panel = { level: 'country', region: rk, country: co }; state.panelScroll = 0; draw(); }
@@ -318,6 +312,12 @@ function panelBack() {
   state.panelScroll = 0; draw();
 }
 
+// A selectable (toggle) row for a location node — carries `sel` (checkmark) and
+// toggles the node in/out of the multi-select set (applies on panel close).
+function selRow(node, label, sub) {
+  return { label: label, sub: sub, drill: false, sel: isSelected(node),
+    action: (function (n) { return function () { toggleLocNode(n, false); }; })(node) };
+}
 // Build the list rows for the current panel level (or search results).
 function buildPanelRows() {
   var rows = [];
@@ -325,14 +325,11 @@ function buildPanelRows() {
   if (state.searchText) {
     var res = state.searchResults;
     for (var i = 0; i < res.length; i++) {
-      (function (r) {
-        rows.push({
-          label: r.label,
-          sub: (r.kind === 'city' ? r.country + ' · 城市' : regionLabelOf(r.region) + ' · 国家/地区'),
-          drill: false,
-          action: function () { setScope(scopeFromEntry(r)); }
-        });
-      })(res[i]);
+      var r = res[i];
+      var node = (r.kind === 'city')
+        ? { kind: 'city', region: r.region, country: r.country, city: r.city, label: r.country + ' · ' + r.city }
+        : { kind: 'country', region: r.region, country: r.country, label: r.country };
+      rows.push(selRow(node, r.label, r.kind === 'city' ? r.country + ' · 城市' : regionLabelOf(r.region) + ' · 国家/地区'));
     }
     if (!res.length) rows.push({ label: '没找到「' + state.searchText + '」', sub: '换个词试试', drill: false, action: null });
     return rows;
@@ -341,29 +338,30 @@ function buildPanelRows() {
     dishes.CATEGORIES.forEach(function (c) {
       if (c.key === 'all') return;
       var nc = Object.keys(L[c.key] || {}).length;
-      rows.push({ label: c.label, sub: nc + ' 个国家/地区', drill: true,
+      rows.push({ label: c.label, sub: nc + ' 个国家/地区 ›', drill: true,
         action: (function (k) { return function () { panelToRegion(k); }; })(c.key) });
     });
     return rows;
   }
   if (state.panel.level === 'region') {
     var rk = state.panel.region, cs = Object.keys(L[rk] || {});
-    rows.push({ label: '🎯 整个' + regionLabelOf(rk), sub: '不限国家', drill: false,
-      action: (function (k) { return function () { setScope({ region: k, label: regionLabelOf(k) }); }; })(rk) });
+    rows.push(selRow({ kind: 'region', region: rk, label: regionLabelOf(rk) }, '🎯 整个' + regionLabelOf(rk), '不限国家'));
     cs.forEach(function (country) {
       var cities = L[rk][country] || [];
-      rows.push({ label: country, sub: cities.length ? cities.length + ' 城 ›' : '', drill: cities.length > 0,
-        action: (function (k, co, has) { return function () { has ? panelToCountry(k, co) : setScope({ region: k, country: co, label: co }); }; })(rk, country, cities.length > 0) });
+      if (cities.length) {
+        rows.push({ label: country, sub: cities.length + ' 城 ›', drill: true,
+          action: (function (k, co) { return function () { panelToCountry(k, co); }; })(rk, country) });
+      } else {
+        rows.push(selRow({ kind: 'country', region: rk, country: country, label: country }, country, ''));
+      }
     });
     return rows;
   }
   if (state.panel.level === 'country') {
     var rk2 = state.panel.region, co2 = state.panel.country, cities2 = (L[rk2] && L[rk2][co2]) || [];
-    rows.push({ label: '🎯 整个' + co2, sub: '不限城市', drill: false,
-      action: (function (k, c) { return function () { setScope({ region: k, country: c, label: c }); }; })(rk2, co2) });
+    rows.push(selRow({ kind: 'country', region: rk2, country: co2, label: co2 }, '🎯 整个' + co2, '不限城市'));
     cities2.forEach(function (city) {
-      rows.push({ label: city, sub: co2, drill: false,
-        action: (function (k, c, ci) { return function () { setScope({ region: k, country: c, city: ci, label: c + ' · ' + ci }); }; })(rk2, co2, city) });
+      rows.push(selRow({ kind: 'city', region: rk2, country: co2, city: city, label: co2 + ' · ' + city }, city, co2));
     });
     return rows;
   }
@@ -449,24 +447,34 @@ function drawTitle() {
 // prompts to pick one. Opens the location picker; the ✕ clears the scope.
 function drawLocBar() {
   var by = titleY + 23, h = 26, padX = 14;
-  var txt = state.scope ? ('📍 ' + state.scope.label) : '📍 选地点：城市 / 国家';
+  var has = state.locSel.length > 0;
+  var txt;
+  if (!has) {
+    txt = '📍 选地点：城市 / 国家（可多选）';
+  } else {
+    var labels = [];
+    for (var i = 0; i < state.locSel.length; i++) labels.push(state.locSel[i].label);
+    txt = (labels.length <= 2)
+      ? '📍 ' + labels.join(' · ')
+      : '📍 ' + labels.slice(0, 2).join(' · ') + ' +' + (labels.length - 2);
+  }
   ctx.font = '600 13px ' + FONT;
   var tw = ctx.measureText(txt).width;
-  var clearW = state.scope ? 24 : 0;
+  var clearW = has ? 24 : 0;
   var w = Math.min(tw + padX * 2 + clearW, W - PAD * 2);
   var x = (W - w) / 2;
   roundRect(x, by - h / 2, w, h, h / 2);
-  ctx.fillStyle = state.scope ? 'rgba(255,210,63,0.16)' : 'rgba(255,255,255,0.07)';
+  ctx.fillStyle = has ? 'rgba(255,210,63,0.16)' : 'rgba(255,255,255,0.07)';
   ctx.fill();
   ctx.lineWidth = 1;
-  ctx.strokeStyle = state.scope ? 'rgba(255,210,63,0.42)' : 'rgba(255,255,255,0.12)';
+  ctx.strokeStyle = has ? 'rgba(255,210,63,0.42)' : 'rgba(255,255,255,0.12)';
   ctx.stroke();
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
-  ctx.fillStyle = state.scope ? COL_MARIGOLD : 'rgba(250,243,230,0.82)';
+  ctx.fillStyle = has ? COL_MARIGOLD : 'rgba(250,243,230,0.82)';
   ctx.fillText(txt, x + padX, by + 0.5);
   locBarRect = { x: x, y: by - h / 2, w: w, h: h };
-  if (state.scope) {
+  if (has) {
     ctx.textAlign = 'center';
     ctx.fillStyle = COL_CHILI;
     ctx.font = '700 15px ' + FONT;
@@ -527,7 +535,7 @@ function drawPanel() {
     ctx.fillText(bc, W - PAD, listTop + 14);
     listTop += 34;
   }
-  var listBottom = H - 16;
+  var listBottom = H - 60;   // reserve the bottom strip for the 完成 button
 
   var rows = buildPanelRows();
   var rowH = 46;
@@ -549,9 +557,10 @@ function drawPanel() {
     ctx.moveTo(PAD, ry + rowH);
     ctx.lineTo(W - PAD, ry + rowH);
     ctx.stroke();
+    var selectable = (rows[i].sel !== undefined);
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = COL_CREAM;
+    ctx.fillStyle = (selectable && rows[i].sel) ? COL_MARIGOLD : COL_CREAM;
     ctx.font = '500 16px ' + FONT;
     ctx.fillText(rows[i].label, PAD + 2, ry + rowH / 2 - (rows[i].sub ? 8 : 0));
     if (rows[i].sub) {
@@ -559,22 +568,37 @@ function drawPanel() {
       ctx.font = '400 12px ' + FONT;
       ctx.fillText(rows[i].sub, PAD + 2, ry + rowH / 2 + 11);
     }
+    ctx.textAlign = 'right';
     if (rows[i].drill) {
-      ctx.textAlign = 'right';
       ctx.fillStyle = COL_MUTED;
       ctx.font = '500 18px ' + FONT;
       ctx.fillText('›', W - PAD, ry + rowH / 2);
+    } else if (selectable) {
+      ctx.fillStyle = rows[i].sel ? COL_MARIGOLD : 'rgba(250,243,230,0.3)';
+      ctx.font = '600 17px ' + FONT;
+      ctx.fillText(rows[i].sel ? '✓' : '○', W - PAD, ry + rowH / 2);
     }
     if (rows[i].action) panelRows.push({ x: 0, y: ry, w: W, h: rowH, action: rows[i].action });
   }
   ctx.restore();
   if (maxScroll > 0) {
-    ctx.fillStyle = 'rgba(250,243,230,0.32)';
+    ctx.fillStyle = 'rgba(250,243,230,0.3)';
     ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
+    ctx.textBaseline = 'middle';
     ctx.font = '400 11px ' + FONT;
-    ctx.fillText('上下滑动查看更多', W / 2, H - 4);
+    ctx.fillText('↕ 上下滑动', W / 2, listBottom - 7);
   }
+  // 完成 button — applies the multi-select and closes the panel.
+  var bh = 42, by = H - bh - 10, bw = W - PAD * 2, bx = PAD;
+  roundRect(bx, by, bw, bh, 10);
+  ctx.fillStyle = COL_MARIGOLD;
+  ctx.fill();
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = COL_BG;
+  ctx.font = '700 16px ' + FONT;
+  ctx.fillText(state.locSel.length ? ('完成 · 选了 ' + state.locSel.length + ' 个地点') : '完成（全部）', W / 2, by + bh / 2 + 0.5);
+  panelDoneRect = { x: bx, y: by, w: bw, h: bh };
 }
 
 function drawTabs() {
@@ -582,7 +606,7 @@ function drawTabs() {
   tabRects = tabLayout.rects;
   for (var j = 0; j < tabRects.length; j++) {
     var t = tabRects[j];
-    var active = state.activeCats.indexOf(t.key) >= 0;
+    var active = (t.key === 'all') ? (state.locSel.length === 0) : isSelected({ kind: 'region', region: t.key });
     roundRect(t.x, t.y, t.w, t.h, t.h / 2);
     if (active) {
       ctx.fillStyle = COL_MARIGOLD;
@@ -1002,7 +1026,7 @@ function pointFromEvent(e) {
 
 // Main-screen tap (panel closed): location bar, region tabs, filters, hub.
 function handleMainTap(x, y) {
-  if (inRect(x, y, locClearRect)) { clearScope(); return; }
+  if (inRect(x, y, locClearRect)) { clearAllLoc(); return; }
   if (inRect(x, y, locBarRect)) { openPanel(); return; }
   for (var i = 0; i < tabRects.length; i++) {
     if (inRect(x, y, tabRects[i])) { toggleRegion(tabRects[i].key); return; }
@@ -1016,6 +1040,7 @@ function handleMainTap(x, y) {
 
 // Panel tap (resolved on touch-end when it wasn't a scroll drag).
 function handlePanelTap(x, y) {
+  if (inRect(x, y, panelDoneRect)) { closePanel(); return; }
   if (inRect(x, y, panelCloseRect)) { closePanel(); return; }
   if (inRect(x, y, panelSearchRect)) { openKeyboard(); return; }
   if (inRect(x, y, panelBackRect)) { panelBack(); return; }
@@ -1056,4 +1081,4 @@ if (typeof wx.onTouchEnd === 'function') {
 }
 
 // ---- Boot ------------------------------------------------------------------
-rebuildRegionPool();
+applyFilter();
