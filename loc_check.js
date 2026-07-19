@@ -157,6 +157,26 @@ sandbox.panelToProvince('cn', '中国', '广东');
 const gdRows = sandbox.buildPanelRows();
 ok(gdRows.some(r => r.label.indexOf('整个广东') >= 0) && gdRows.some(r => r.label === '广州'), '广东 province panel shows 整个广东 + cities');
 
+// ---- hybrid rows: a country/province WITH sub-locations is selectable AND drillable
+// (the 斐济 bug: could only be drilled into, never directly selected) ----------
+sandbox.clearAllLoc();
+sandbox.openPanel();
+sandbox.panelToRegion('oceania');
+const fjRow = sandbox.buildPanelRows().find(r => r.label === '斐济');
+ok(fjRow && fjRow.sel !== undefined && !!fjRow.drillAction, '斐济 (has 苏瓦) row is BOTH selectable + drillable');
+fjRow.action();   // tap the row (not the chevron) → selects whole country
+ok(S.locSel.length === 1 && S.locSel[0].kind === 'country' && S.locSel[0].country === '斐济', 'tapping 斐济 row selects 整个斐济 (not just drills)');
+sandbox.clearAllLoc();
+// a province-bearing country (中国) is also hybrid at region level
+sandbox.panelToRegion('cn');
+const cnRow = sandbox.buildPanelRows().find(r => r.label === '中国');
+ok(cnRow && cnRow.sel !== undefined && !!cnRow.drillAction, '中国 row selectable + drillable');
+// a province row (广东) inside 中国 is hybrid too
+sandbox.panelToCountry('cn', '中国');
+const gdRow = sandbox.buildPanelRows().find(r => r.label === '广东');
+ok(gdRow && gdRow.sel !== undefined && !!gdRow.drillAction, '广东 province row selectable + drillable');
+sandbox.clearAllLoc();
+
 // done button rect gets drawn — call drawPanel path indirectly via openPanel+draw
 sandbox.openPanel();
 sandbox.draw();

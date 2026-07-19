@@ -344,6 +344,14 @@ function selRow(node, label, sub) {
   return { label: label, sub: sub, drill: false, sel: isSelected(node),
     action: (function (n) { return function () { toggleLocNode(n, false); }; })(node) };
 }
+// A row that is BOTH selectable (tap the row = select the whole country/province)
+// AND drillable (tap the › on the right = go deeper). Fixes the class of bug where a
+// country with cities (e.g. 斐济) could only be drilled into, never directly selected.
+function drillSelRow(node, label, sub, drillAction) {
+  return { label: label, sub: sub, drill: true, sel: isSelected(node),
+    action: (function (n) { return function () { toggleLocNode(n, false); }; })(node),
+    drillAction: drillAction };
+}
 // Build the list rows for the current panel level (or search results).
 function buildPanelRows() {
   var rows = [];
@@ -358,12 +366,14 @@ function buildPanelRows() {
         var csub = (r.province ? r.country + ' · ' + r.province : r.country) + ' · 城市';
         rows.push(selRow(cnode, r.label, csub));
       } else if (r.kind === 'province') {
-        // a province search result DRILLS into its cities (Rico: 搜到省能下钻)
-        rows.push({ label: r.label, sub: r.country + ' · 省/州 ›', drill: true,
-          action: (function (rk, co, pv) { return function () { panelToProvince(rk, co, pv); }; })(r.region, r.country, r.province) });
+        // selectable (整省) OR drill into its cities (Rico: 搜到省能下钻)
+        var pnode = { kind: 'province', region: r.region, country: r.country, province: r.province, label: r.country + ' · ' + r.province };
+        rows.push(drillSelRow(pnode, r.label, r.country + ' · 省/州',
+          (function (rk, co, pv) { return function () { panelToProvince(rk, co, pv); }; })(r.region, r.country, r.province)));
       } else {
-        rows.push({ label: r.label, sub: regionLabelOf(r.region) + ' · 国家/地区 ›', drill: true,
-          action: (function (rk, co) { return function () { panelToCountry(rk, co); }; })(r.region, r.country) });
+        var conode = { kind: 'country', region: r.region, country: r.country, label: r.country };
+        rows.push(drillSelRow(conode, r.label, regionLabelOf(r.region) + ' · 国家/地区',
+          (function (rk, co) { return function () { panelToCountry(rk, co); }; })(r.region, r.country)));
       }
     }
     if (!res.length) rows.push({ label: '没找到「' + state.searchText + '」', sub: '换个词试试', drill: false, action: null });
@@ -383,12 +393,13 @@ function buildPanelRows() {
     rows.push(selRow({ kind: 'region', region: rk, label: regionLabelOf(rk) }, '🎯 整个' + regionLabelOf(rk), '不限国家'));
     cs.forEach(function (country) {
       var pc = countryProvinces(rk, country).length, cc = countryCityCount(rk, country);
+      var conode = { kind: 'country', region: rk, country: country, label: country };
       if (pc > 0 || cc > 0) {
-        var sub = pc > 0 ? pc + ' 省/州 › ' + cc + ' 城' : cc + ' 城 ›';
-        rows.push({ label: country, sub: sub, drill: true,
-          action: (function (k, co) { return function () { panelToCountry(k, co); }; })(rk, country) });
+        var sub = pc > 0 ? pc + ' 省/州 · ' + cc + ' 城' : cc + ' 城';
+        rows.push(drillSelRow(conode, country, sub,
+          (function (k, co) { return function () { panelToCountry(k, co); }; })(rk, country)));
       } else {
-        rows.push(selRow({ kind: 'country', region: rk, country: country, label: country }, country, ''));
+        rows.push(selRow(conode, country, ''));
       }
     });
     return rows;
@@ -397,8 +408,9 @@ function buildPanelRows() {
     var rk2 = state.panel.region, co2 = state.panel.country;
     rows.push(selRow({ kind: 'country', region: rk2, country: co2, label: co2 }, '🎯 整个' + co2, '不限省/城'));
     countryProvinces(rk2, co2).forEach(function (prov) {
-      rows.push({ label: prov, sub: provinceCities(rk2, co2, prov).length + ' 城 ›', drill: true,
-        action: (function (k, co, pv) { return function () { panelToProvince(k, co, pv); }; })(rk2, co2, prov) });
+      var pnode = { kind: 'province', region: rk2, country: co2, province: prov, label: co2 + ' · ' + prov };
+      rows.push(drillSelRow(pnode, prov, provinceCities(rk2, co2, prov).length + ' 城',
+        (function (k, co, pv) { return function () { panelToProvince(k, co, pv); }; })(rk2, co2, prov)));
     });
     looseCities(rk2, co2).forEach(function (city) {
       rows.push(selRow({ kind: 'city', region: rk2, country: co2, city: city, label: co2 + ' · ' + city }, city, co2));
@@ -608,27 +620,35 @@ function drawPanel() {
     ctx.lineTo(W - PAD, ry + rowH);
     ctx.stroke();
     var selectable = (rows[i].sel !== undefined);
+    var labelX = selectable ? PAD + 26 : PAD + 2;   // room for a left checkmark
+    // Left checkmark (select state) — for any selectable row.
+    if (selectable) {
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = rows[i].sel ? COL_MARIGOLD : 'rgba(250,243,230,0.32)';
+      ctx.font = '600 17px ' + FONT;
+      ctx.fillText(rows[i].sel ? '✓' : '○', PAD, ry + rowH / 2);
+    }
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = (selectable && rows[i].sel) ? COL_MARIGOLD : COL_CREAM;
     ctx.font = '500 16px ' + FONT;
-    ctx.fillText(rows[i].label, PAD + 2, ry + rowH / 2 - (rows[i].sub ? 8 : 0));
+    ctx.fillText(rows[i].label, labelX, ry + rowH / 2 - (rows[i].sub ? 8 : 0));
     if (rows[i].sub) {
       ctx.fillStyle = COL_MUTED;
       ctx.font = '400 12px ' + FONT;
-      ctx.fillText(rows[i].sub, PAD + 2, ry + rowH / 2 + 11);
+      ctx.fillText(rows[i].sub, labelX, ry + rowH / 2 + 11);
     }
-    ctx.textAlign = 'right';
+    // Right chevron (drill affordance) — for any drillable row.
     if (rows[i].drill) {
+      ctx.textAlign = 'right';
       ctx.fillStyle = COL_MUTED;
       ctx.font = '500 18px ' + FONT;
       ctx.fillText('›', W - PAD, ry + rowH / 2);
-    } else if (selectable) {
-      ctx.fillStyle = rows[i].sel ? COL_MARIGOLD : 'rgba(250,243,230,0.3)';
-      ctx.font = '600 17px ' + FONT;
-      ctx.fillText(rows[i].sel ? '✓' : '○', W - PAD, ry + rowH / 2);
     }
-    if (rows[i].action) panelRows.push({ x: 0, y: ry, w: W, h: rowH, action: rows[i].action });
+    if (rows[i].action || rows[i].drillAction) {
+      panelRows.push({ x: 0, y: ry, w: W, h: rowH, action: rows[i].action, drillAction: rows[i].drillAction });
+    }
   }
   ctx.restore();
   if (maxScroll > 0) {
@@ -1128,7 +1148,13 @@ function handlePanelTap(x, y) {
   if (inRect(x, y, panelSearchRect)) { openKeyboard(); return; }
   if (inRect(x, y, panelBackRect)) { panelBack(); return; }
   for (var i = 0; i < panelRows.length; i++) {
-    if (inRect(x, y, panelRows[i]) && panelRows[i].action) { panelRows[i].action(); return; }
+    var pr = panelRows[i];
+    if (!inRect(x, y, pr)) continue;
+    // Right chevron zone → drill deeper; anywhere else on the row → select.
+    if (pr.drillAction && x > W - 52) { pr.drillAction(); return; }
+    if (pr.action) { pr.action(); return; }
+    if (pr.drillAction) { pr.drillAction(); return; }
+    return;
   }
 }
 
