@@ -4878,7 +4878,7 @@ var DISHES = {
     { name: "黑山玉米糊", cuisine: "黑山", country: "黑山", native: "Kačamak", iconic: true, note: "玉米粉与土豆熬煮成浓稠糊状，拌入卡伊马克奶油与奶酪，黑山山区代表国菜。", rest: "老字号小馆", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
     { name: "北马其顿炖豆", cuisine: "北马其顿", country: "北马其顿", native: "Тавче гравче", iconic: true, note: "白豆与洋葱红椒粉在陶罐中慢烤，北马其顿公认国菜，常配沙拉与面包。", rest: "老字号餐馆", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["豆制品"] },
     { name: "阿尔巴尼亚酸奶焗羊肉", cuisine: "阿尔巴尼亚", country: "阿尔巴尼亚", native: "Tavë kosi", iconic: true, note: "羊肉与米饭覆盖蛋液酸奶烤制，源自埃尔巴桑，阿尔巴尼亚最常被称作国菜的一道。", rest: "老字号小馆", type: "炖菜", flavor: ["酸", "咸鲜"], spice: 0, diet: "荤", protein: ["羊", "蛋"] },
-    { name: "科索沃千层薄饼", cuisine: "科索沃", country: "科索沃", native: "Flija", iconic: true, note: "多层可丽饼状面饼逐层刷奶油炭火烘烤而成，科索沃传统聚会代表食物。", rest: "老字号小馆", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "科索沃千层薄饼", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", native: "Flija", iconic: true, note: "多层可丽饼状面饼逐层刷奶油炭火烘烤而成，科索沃传统聚会代表食物。", rest: "老字号小馆", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "白俄罗斯土豆饼", cuisine: "白俄罗斯", country: "白俄罗斯", native: "Драники", iconic: true, note: "土豆丝煎饼配酸奶油，白俄罗斯国菜，19世纪起因土豆成为主粮而流行。", rest: "老字号小馆", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "摩尔多瓦玉米糊", cuisine: "摩尔多瓦", country: "摩尔多瓦", native: "Mămăligă", iconic: true, note: "玉米粉熬煮的浓稠糊，配奶渣与酸奶油或搭炖肉，摩尔多瓦国菜。", rest: "老字号小馆", type: "主食", flavor: ["清淡"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "立陶宛齐柏林饺", cuisine: "立陶宛", country: "立陶宛", native: "Cepelinai", iconic: true, note: "土豆泥包裹肉馅制成飞艇状大饺子，水煮后配酸奶油培根碎，立陶宛国菜。", rest: "老字号餐馆", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
@@ -8221,9 +8221,6 @@ var LOCATIONS = {
         "戈梅利",
         "明斯克"
       ]
-    },
-    "科索沃": {
-      "": []
     },
     "立陶宛": {
       "": [
