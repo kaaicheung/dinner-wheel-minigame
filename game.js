@@ -326,9 +326,17 @@ function closePanel() {
   if (typeof wx.hideKeyboard === 'function') { try { wx.hideKeyboard({}); } catch (e) {} }
   applyFilter();   // apply the multi-select made in the panel
 }
-function panelToRegion(rk) { state.panel = { level: 'region', region: rk }; state.panelScroll = 0; draw(); }
-function panelToCountry(rk, co) { state.panel = { level: 'country', region: rk, country: co }; state.panelScroll = 0; draw(); }
-function panelToProvince(rk, co, prov) { state.panel = { level: 'province', region: rk, country: co, province: prov }; state.panelScroll = 0; draw(); }
+// Drilling always exits search mode — otherwise buildPanelRows keeps showing the
+// search results (it checks searchText first) and the drill looks like it did nothing.
+function exitSearch() {
+  if (state.searchText || (state.searchResults && state.searchResults.length)) {
+    state.searchText = ''; state.searchResults = [];
+    if (typeof wx.hideKeyboard === 'function') { try { wx.hideKeyboard({}); } catch (e) {} }
+  }
+}
+function panelToRegion(rk) { exitSearch(); state.panel = { level: 'region', region: rk }; state.panelScroll = 0; draw(); }
+function panelToCountry(rk, co) { exitSearch(); state.panel = { level: 'country', region: rk, country: co }; state.panelScroll = 0; draw(); }
+function panelToProvince(rk, co, prov) { exitSearch(); state.panel = { level: 'province', region: rk, country: co, province: prov }; state.panelScroll = 0; draw(); }
 function panelBack() {
   if (!state.panel) return;
   var p = state.panel;
@@ -366,14 +374,13 @@ function buildPanelRows() {
         var csub = (r.province ? r.country + ' · ' + r.province : r.country) + ' · 城市';
         rows.push(selRow(cnode, r.label, csub));
       } else if (r.kind === 'province') {
-        // selectable (整省) OR drill into its cities (Rico: 搜到省能下钻)
-        var pnode = { kind: 'province', region: r.region, country: r.country, province: r.province, label: r.country + ' · ' + r.province };
-        rows.push(drillSelRow(pnode, r.label, r.country + ' · 省/州',
-          (function (rk, co, pv) { return function () { panelToProvince(rk, co, pv); }; })(r.region, r.country, r.province)));
+        // tap a searched 省/州 → drill into it (整省 + cities inside for 全选/多选)
+        rows.push({ label: r.label, sub: r.country + ' · 省/州', drill: true,
+          action: (function (rk, co, pv) { return function () { panelToProvince(rk, co, pv); }; })(r.region, r.country, r.province) });
       } else {
-        var conode = { kind: 'country', region: r.region, country: r.country, label: r.country };
-        rows.push(drillSelRow(conode, r.label, regionLabelOf(r.region) + ' · 国家/地区',
-          (function (rk, co) { return function () { panelToCountry(rk, co); }; })(r.region, r.country)));
+        // tap a searched 国家 → drill into it (整个国家 + 省/城市 inside for 全选/多选)
+        rows.push({ label: r.label, sub: regionLabelOf(r.region) + ' · 国家/地区', drill: true,
+          action: (function (rk, co) { return function () { panelToCountry(rk, co); }; })(r.region, r.country) });
       }
     }
     if (!res.length) rows.push({ label: '没找到「' + state.searchText + '」', sub: '换个词试试', drill: false, action: null });

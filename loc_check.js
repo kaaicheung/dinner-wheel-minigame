@@ -177,6 +177,25 @@ const gdRow = sandbox.buildPanelRows().find(r => r.label === '广东');
 ok(gdRow && gdRow.sel !== undefined && !!gdRow.drillAction, '广东 province row selectable + drillable');
 sandbox.clearAllLoc();
 
+// ---- searched country drills IN (not just select-whole), and clears search ----
+sandbox.clearAllLoc();
+sandbox.openPanel();
+S.searchText = '美国';
+S.searchResults = sandbox.searchLoc('美国');
+const usRow = sandbox.buildPanelRows().find(r => r.label === '美国' && r.drill);
+ok(usRow && !!usRow.action, 'searched 美国 is a drill-in row (not select-only)');
+usRow.action();   // tap → should drill in AND clear search
+ok(S.searchText === '' && S.panel.level === 'country' && S.panel.country === '美国', 'tapping searched 美国 drills into country level + clears search');
+const usInside = sandbox.buildPanelRows();
+ok(usInside.some(r => r.label.indexOf('整个美国') >= 0) && usInside.some(r => r.label === '加州' && r.drill), 'inside 美国: 整个美国 (全选) + 加州 州 (多选/可再下钻)');
+// province/city inside are multi-selectable
+const caRow = usInside.find(r => r.label === '加州');
+caRow.action();  // select 加州 (multi-select)
+const nyRow = sandbox.buildPanelRows().find(r => r.label === '纽约州');
+if (nyRow) nyRow.action();
+ok(S.locSel.length >= 1 && S.locSel.every(n => n.kind === 'province'), '省/州 inside drilled country are multi-selectable');
+sandbox.clearAllLoc();
+
 // done button rect gets drawn — call drawPanel path indirectly via openPanel+draw
 sandbox.openPanel();
 sandbox.draw();
