@@ -960,6 +960,16 @@ function drawResult() {
     y += 3;
   }
 
+  // 在哪吃 — landmark / local go-to / venue type (if we have one and there's room).
+  if (r.rest && by - y >= 20) {
+    ctx.font = '500 13px ' + FONT;
+    ctx.fillStyle = COL_MARIGOLD;
+    var restLine = '📍 在哪吃：' + r.rest;
+    if (ctx.measureText(restLine).width > maxW) restLine = wrapLines(restLine, maxW, 1)[0];
+    ctx.fillText(restLine, W / 2, y);
+    y += 20;
+  }
+
   // Fun one-liner — only if there's still vertical room before the button.
   if (by - y >= 20) {
     ctx.font = '500 14px ' + FONT;
@@ -1056,6 +1066,7 @@ function onLanded(winIndex) {
     native: item.native || '',
     iconic: item.iconic === true,
     note: item.note || '',
+    rest: item.rest || '',
     emoji: emojis[Math.floor(Math.random() * emojis.length)],
     line: dishes.pickFunLine()
   };
