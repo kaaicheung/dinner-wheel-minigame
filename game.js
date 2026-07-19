@@ -207,7 +207,13 @@ var confettiActive = false;
 // ---- Location selection (one multi-select SET) + taste filters -------------
 // Region tabs AND the picker panel both add/remove location nodes to state.locSel.
 // [] = 全部 (all). Nodes combine as UNION (中国 + 熊本 + 福冈 → all their dishes).
-function nodeKey(n) { return n.kind + '|' + (n.region || '') + '|' + (n.country || '') + '|' + (n.city || ''); }
+function nodeKey(n) { return n.kind + '|' + (n.region || '') + '|' + (n.country || '') + '|' + (n.province || '') + '|' + (n.city || ''); }
+// 3-level LOCATIONS accessors: region tab -> country -> province("" = none) -> [cities].
+function locCountry(rk, co) { return (dishes.LOCATIONS[rk] || {})[co] || {}; }
+function countryProvinces(rk, co) { return Object.keys(locCountry(rk, co)).filter(function (p) { return p !== ''; }); }
+function looseCities(rk, co) { return locCountry(rk, co)[''] || []; }          // cities with no province
+function provinceCities(rk, co, prov) { return locCountry(rk, co)[prov] || []; }
+function countryCityCount(rk, co) { var o = locCountry(rk, co), n = 0; for (var p in o) n += o[p].length; return n; }
 function isSelected(n) {
   var k = nodeKey(n);
   for (var i = 0; i < state.locSel.length; i++) if (nodeKey(state.locSel[i]) === k) return true;
@@ -243,10 +249,11 @@ function toggleFilter(key) {
   applyFilter();
 }
 
-// Dishes for a single location node (region / country / city).
+// Dishes for a single location node (region / country / province / city).
 function dishesForNode(n) {
   var pool = dishes.getPool(n.region);
   if (n.city) return pool.filter(function (d) { return d.city === n.city && d.country === n.country; });
+  if (n.province) return pool.filter(function (d) { return d.province === n.province && d.country === n.country; });
   if (n.country) return pool.filter(function (d) { return d.country === n.country; });
   return pool;
 }
@@ -281,16 +288,21 @@ var REGION_LABEL = {};
 dishes.CATEGORIES.forEach(function (c) { REGION_LABEL[c.key] = c.label; });
 function regionLabelOf(rk) { return REGION_LABEL[rk] || rk; }
 
-// Flat searchable index of every country + city across all regions.
+// Flat searchable index of every country + province + city across all regions,
+// so searching a province name (广东 / 加州) surfaces it and can be drilled.
 var LOC_SEARCH = [];
 (function buildSearchIndex() {
   var L = dishes.LOCATIONS || {};
   for (var rk in L) {
     for (var country in L[rk]) {
       LOC_SEARCH.push({ label: country, kind: 'country', region: rk, country: country });
-      var cities = L[rk][country];
-      for (var i = 0; i < cities.length; i++) {
-        LOC_SEARCH.push({ label: cities[i], kind: 'city', region: rk, country: country, city: cities[i] });
+      var provs = L[rk][country];
+      for (var prov in provs) {
+        if (prov) LOC_SEARCH.push({ label: prov, kind: 'province', region: rk, country: country, province: prov });
+        var cities = provs[prov];
+        for (var i = 0; i < cities.length; i++) {
+          LOC_SEARCH.push({ label: cities[i], kind: 'city', region: rk, country: country, province: prov, city: cities[i] });
+        }
       }
     }
   }
@@ -302,11 +314,6 @@ function searchLoc(q) {
     if (LOC_SEARCH[i].label.indexOf(q) >= 0) out.push(LOC_SEARCH[i]);
   }
   return out;
-}
-function scopeFromEntry(r) {
-  return r.kind === 'city'
-    ? { region: r.region, country: r.country, city: r.city, label: r.country + ' · ' + r.city }
-    : { region: r.region, country: r.country, label: r.country };
 }
 
 function openPanel() {
@@ -321,10 +328,13 @@ function closePanel() {
 }
 function panelToRegion(rk) { state.panel = { level: 'region', region: rk }; state.panelScroll = 0; draw(); }
 function panelToCountry(rk, co) { state.panel = { level: 'country', region: rk, country: co }; state.panelScroll = 0; draw(); }
+function panelToProvince(rk, co, prov) { state.panel = { level: 'province', region: rk, country: co, province: prov }; state.panelScroll = 0; draw(); }
 function panelBack() {
   if (!state.panel) return;
-  if (state.panel.level === 'country') state.panel = { level: 'region', region: state.panel.region };
-  else if (state.panel.level === 'region') state.panel = { level: 'root' };
+  var p = state.panel;
+  if (p.level === 'province') state.panel = { level: 'country', region: p.region, country: p.country };
+  else if (p.level === 'country') state.panel = { level: 'region', region: p.region };
+  else if (p.level === 'region') state.panel = { level: 'root' };
   state.panelScroll = 0; draw();
 }
 
@@ -342,10 +352,19 @@ function buildPanelRows() {
     var res = state.searchResults;
     for (var i = 0; i < res.length; i++) {
       var r = res[i];
-      var node = (r.kind === 'city')
-        ? { kind: 'city', region: r.region, country: r.country, city: r.city, label: r.country + ' · ' + r.city }
-        : { kind: 'country', region: r.region, country: r.country, label: r.country };
-      rows.push(selRow(node, r.label, r.kind === 'city' ? r.country + ' · 城市' : regionLabelOf(r.region) + ' · 国家/地区'));
+      if (r.kind === 'city') {
+        var cnode = { kind: 'city', region: r.region, country: r.country, province: r.province || '', city: r.city,
+          label: r.country + ' · ' + r.city };
+        var csub = (r.province ? r.country + ' · ' + r.province : r.country) + ' · 城市';
+        rows.push(selRow(cnode, r.label, csub));
+      } else if (r.kind === 'province') {
+        // a province search result DRILLS into its cities (Rico: 搜到省能下钻)
+        rows.push({ label: r.label, sub: r.country + ' · 省/州 ›', drill: true,
+          action: (function (rk, co, pv) { return function () { panelToProvince(rk, co, pv); }; })(r.region, r.country, r.province) });
+      } else {
+        rows.push({ label: r.label, sub: regionLabelOf(r.region) + ' · 国家/地区 ›', drill: true,
+          action: (function (rk, co) { return function () { panelToCountry(rk, co); }; })(r.region, r.country) });
+      }
     }
     if (!res.length) rows.push({ label: '没找到「' + state.searchText + '」', sub: '换个词试试', drill: false, action: null });
     return rows;
@@ -363,9 +382,10 @@ function buildPanelRows() {
     var rk = state.panel.region, cs = Object.keys(L[rk] || {});
     rows.push(selRow({ kind: 'region', region: rk, label: regionLabelOf(rk) }, '🎯 整个' + regionLabelOf(rk), '不限国家'));
     cs.forEach(function (country) {
-      var cities = L[rk][country] || [];
-      if (cities.length) {
-        rows.push({ label: country, sub: cities.length + ' 城 ›', drill: true,
+      var pc = countryProvinces(rk, country).length, cc = countryCityCount(rk, country);
+      if (pc > 0 || cc > 0) {
+        var sub = pc > 0 ? pc + ' 省/州 › ' + cc + ' 城' : cc + ' 城 ›';
+        rows.push({ label: country, sub: sub, drill: true,
           action: (function (k, co) { return function () { panelToCountry(k, co); }; })(rk, country) });
       } else {
         rows.push(selRow({ kind: 'country', region: rk, country: country, label: country }, country, ''));
@@ -374,10 +394,24 @@ function buildPanelRows() {
     return rows;
   }
   if (state.panel.level === 'country') {
-    var rk2 = state.panel.region, co2 = state.panel.country, cities2 = (L[rk2] && L[rk2][co2]) || [];
-    rows.push(selRow({ kind: 'country', region: rk2, country: co2, label: co2 }, '🎯 整个' + co2, '不限城市'));
-    cities2.forEach(function (city) {
+    var rk2 = state.panel.region, co2 = state.panel.country;
+    rows.push(selRow({ kind: 'country', region: rk2, country: co2, label: co2 }, '🎯 整个' + co2, '不限省/城'));
+    countryProvinces(rk2, co2).forEach(function (prov) {
+      rows.push({ label: prov, sub: provinceCities(rk2, co2, prov).length + ' 城 ›', drill: true,
+        action: (function (k, co, pv) { return function () { panelToProvince(k, co, pv); }; })(rk2, co2, prov) });
+    });
+    looseCities(rk2, co2).forEach(function (city) {
       rows.push(selRow({ kind: 'city', region: rk2, country: co2, city: city, label: co2 + ' · ' + city }, city, co2));
+    });
+    return rows;
+  }
+  if (state.panel.level === 'province') {
+    var rk3 = state.panel.region, co3 = state.panel.country, pv3 = state.panel.province;
+    rows.push(selRow({ kind: 'province', region: rk3, country: co3, province: pv3, label: co3 + ' · ' + pv3 },
+      '🎯 整个' + pv3, '不限城市'));
+    provinceCities(rk3, co3, pv3).forEach(function (city) {
+      rows.push(selRow({ kind: 'city', region: rk3, country: co3, province: pv3, city: city, label: co3 + ' · ' + city },
+        city, co3 + ' · ' + pv3));
     });
     return rows;
   }
@@ -545,9 +579,9 @@ function drawPanel() {
     ctx.textAlign = 'right';
     ctx.fillStyle = COL_MUTED;
     ctx.font = '400 12px ' + FONT;
-    var bc = state.panel.level === 'region'
-      ? regionLabelOf(state.panel.region)
-      : regionLabelOf(state.panel.region) + ' › ' + state.panel.country;
+    var bc = regionLabelOf(state.panel.region);
+    if (state.panel.country) bc += ' › ' + state.panel.country;
+    if (state.panel.province) bc += ' › ' + state.panel.province;
     ctx.fillText(bc, W - PAD, listTop + 14);
     listTop += 34;
   }
@@ -808,25 +842,29 @@ function wrapLines(text, maxWidth, maxLines) {
   return lines;
 }
 
-// If the current selection is a single country, that country is "pinned" — the
-// origin label can drop it (you already know it). Region/multi-country/全部 → null.
-function pinnedCountry() {
-  if (!state.locSel.length) return null;
-  var c = null;
+// What the current selection already pins: a single shared country (and, if the
+// selection also shares one province, that province). The origin label drops the
+// pinned levels — you already know them. Region/multi-country/全部 → nothing pinned.
+function pinnedScope() {
+  if (!state.locSel.length) return {};
+  var c = null, p = null, pConsistent = true;
   for (var i = 0; i < state.locSel.length; i++) {
     var n = state.locSel[i];
-    if (n.kind === 'region' || !n.country) return null;   // a region spans countries
-    if (c === null) c = n.country; else if (c !== n.country) return null;
+    if (n.kind === 'region' || !n.country) return {};   // a region spans countries
+    if (c === null) c = n.country; else if (c !== n.country) return {};
+    var np = n.province || '';
+    if (i === 0) p = np; else if (p !== np) pConsistent = false;
   }
-  return c;
+  return { country: c, province: (pConsistent && p) ? p : null };
 }
-// Context-aware place label: full "国家 · 省 · 城市", minus the level the current
-// selection already pins (single country selected → "省 · 城市"). Never empty, so a
-// bare city (喀山 / 巴里) always shows its country when nothing is pinned.
-function originLabel(country, province, city, pinned) {
+// Context-aware place label: full "国家 · 省 · 城市", minus the levels the current
+// selection already pins (single country → "省 · 城市"; single province → "城市").
+// Never empty, so a bare city (喀山 / 巴里) always shows its country when nothing pinned.
+function originLabel(country, province, city, pin) {
+  var pc = pin && pin.country, pp = pin && pin.province;
   var parts = [];
-  if (country && country !== pinned) parts.push(country);
-  if (province && province !== city && province !== pinned) parts.push(province);
+  if (country && country !== pc) parts.push(country);
+  if (province && province !== city && province !== pp) parts.push(province);
   if (city && city !== country) parts.push(city);
   if (!parts.length) parts.push(city || province || country || '');
   return parts.join(' · ');
@@ -871,7 +909,7 @@ function drawResult() {
 
   // Subtitle — native name (if any) · place. Origin ALWAYS names the country so a
   // bare city (喀山 / 巴里) is never ambiguous: "国家 · 城市", or just the country.
-  var origin = originLabel(r.country, r.province, r.city, pinnedCountry());
+  var origin = originLabel(r.country, r.province, r.city, pinnedScope());
   var sub = r.native ? (r.native + ' · ' + origin) : origin;
   ctx.font = '500 14px ' + FONT;
   ctx.fillStyle = COL_CHILI;

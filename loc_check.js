@@ -120,6 +120,43 @@ sandbox.toggleFilter('all');             // reset
 ok(S.activeFilters.length === 0, '全部 clears filters');
 sandbox.clearAllLoc();
 
+// ---- province tier (3-level: country → province → city) --------------------
+sandbox.clearAllLoc();
+const provNode = { kind: 'province', region: 'cn', country: '中国', province: '广东', label: '中国 · 广东' };
+const provDishes = sandbox.dishesForNode(provNode);
+ok(provDishes.length > 0 && provDishes.every(d => d.province === '广东' && d.country === '中国'), 'province node → only 广东 dishes (' + provDishes.length + ')');
+// province ⊆ country
+sandbox.toggleLocNode({ kind: 'country', region: 'cn', country: '中国', label: '中国' }, false);
+const cnAll = sandbox.basePool().length;
+sandbox.clearAllLoc();
+sandbox.toggleLocNode(provNode, false);
+ok(sandbox.basePool().length <= cnAll, '广东 pool ⊆ 中国 pool (' + sandbox.basePool().length + ' ≤ ' + cnAll + ')');
+// pinnedScope drops both country + province when a single province is selected
+const pin = sandbox.pinnedScope();
+ok(pin.country === '中国' && pin.province === '广东', 'single province selected → pins country+province');
+ok(sandbox.originLabel('中国', '广东', '广州', pin) === '广州', '单选广东 → origin trims to just 城市 (广州)');
+ok(sandbox.originLabel('中国', '广东', '广州', {}) === '中国 · 广东 · 广州', '全部 → origin full 国家·省·城市');
+sandbox.clearAllLoc();
+
+// US has states too (Rico's ask)
+const usProv = sandbox.dishesForNode({ kind: 'province', region: 'na', country: '美国', province: '加州' });
+ok(usProv.length > 0 && usProv.every(d => d.province === '加州'), '美国 加州 province node works (' + usProv.length + ')');
+
+// searching a province name surfaces a drillable province entry
+const searchGD = sandbox.searchLoc('广东').filter(r => r.kind === 'province' && r.province === '广东');
+ok(searchGD.length >= 1, 'search 「广东」 surfaces a province entry');
+const searchCA = sandbox.searchLoc('加州').filter(r => r.kind === 'province');
+ok(searchCA.length >= 1, 'search 「加州」 surfaces a US-state entry');
+
+// picker: country level shows province drill rows; province level shows cities
+sandbox.openPanel();
+sandbox.panelToCountry('cn', '中国');
+const cnRows = sandbox.buildPanelRows();
+ok(cnRows.some(r => r.label === '广东' && r.drill), '中国 country panel lists 广东 as a drill row');
+sandbox.panelToProvince('cn', '中国', '广东');
+const gdRows = sandbox.buildPanelRows();
+ok(gdRows.some(r => r.label.indexOf('整个广东') >= 0) && gdRows.some(r => r.label === '广州'), '广东 province panel shows 整个广东 + cities');
+
 // done button rect gets drawn — call drawPanel path indirectly via openPanel+draw
 sandbox.openPanel();
 sandbox.draw();

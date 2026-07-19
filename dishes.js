@@ -207,26 +207,26 @@ var DISHES = {
     { name: "庐山石鸡", cuisine: "九江", country: "中国", province: "江西", city: "九江", note: "九江庐山特产石蛙，肉质细嫩，是赣菜山珍类代表食材之一。", type: "炖菜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "荤", protein: ["其它"] },
     { name: "四星望月", cuisine: "上饶", country: "中国", province: "江西", city: "上饶", iconic: true, note: "婺源传统名菜，粉蒸肉搭配四个蒸菜围碗摆盘，因毛泽东为其命名“四星望月”而成为婺源饮食的招牌菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "井冈山烟笋", cuisine: "吉安", country: "中国", province: "江西", city: "吉安", note: "井冈山地区传统山货，笋干烟熏晾制而成，是赣南山区饮食特色的代表食材。", type: "小吃", flavor: ["清淡"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "炸酱面", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "老北京家常面食代表，黄酱炸香配面码儿，是北京平民饮食的日常图腾。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "北京烤鸭", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "北京餐桌上的头牌，源自明代宫廷御膳，全聚德、便宜坊两派挂炉/焖炉之争至今仍是京味饮食的招牌符号。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它", "鸭"] },
-    { name: "涮羊肉", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "北京冬季经典，铜锅炭火涮薄切羊肉蘸麻酱，源自蒙古军旅吃法，清代传入宫廷后在京城扎根。", type: "火锅", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "卤煮火烧", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "老北京平民重口味小吃，猪肠猪肺炖煮配火烧，胡同市井饮食的活化石。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "炒肝", cuisine: "北京", country: "中国", city: "北京", note: "猪肠猪肝勾芡煮成糊状，配包子喝，北京老磁器口豆汁店最正宗。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "豆汁儿", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "北京最具争议的传统小吃，绿豆发酵而成，酸馊味是老北京人从小喝到大的乡愁标志。", type: "小吃", flavor: ["酸"], spice: 0, diet: "素", protein: ["豆制品"] },
-    { name: "爆肚", cuisine: "北京", country: "中国", city: "北京", note: "鲜牛羊肚白水爆熟，蘸麻酱蒜汁嚼着脆，北京簋街爆肚冯最有名。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "驴打滚", cuisine: "北京", country: "中国", city: "北京", note: "黄豆面裹糯米卷豆沙馅，软糯香甜，北京传统点心。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "艾窝窝", cuisine: "北京", country: "中国", city: "北京", note: "糯米包入桃仁白糖等馅料，滚上糯米面，熟食店常见京味小吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "豌豆黄", cuisine: "北京", country: "中国", city: "北京", note: "北京传统甜点，豌豆磨浆熬成，入口即化，甜凉清心。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "糖火烧", cuisine: "北京", country: "中国", city: "北京", note: "北京传统点心，面皮裹红糖芝麻馅，烤制而成，外酥内软。", type: "饼馍", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "京酱肉丝", cuisine: "北京", country: "中国", city: "北京", note: "北京名菜，甜面酱爆炒瘦肉丝，配葱丝豆腐皮卷着吃。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "门钉肉饼", cuisine: "北京", country: "中国", city: "北京", note: "北京清真小吃，牛肉馅饼形如门钉，皮薄底脆汁多。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "狗不理包子", cuisine: "天津", country: "中国", city: "天津", iconic: true, note: "天津最响亮的小吃招牌，清末创立，18个褶的灌汤包做法让它成了天津饮食的代名词。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "煎饼馃子", cuisine: "天津", country: "中国", city: "天津", iconic: true, note: "天津街头早点的绝对标志，绿豆面煎饼裹脆馃箅儿，天津人一天从这张饼开始。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["蛋", "面米"] },
-    { name: "耳朵眼炸糕", cuisine: "天津", country: "中国", city: "天津", iconic: true, note: "天津三绝之一，因创始店铺临近耳朵眼胡同得名，糯米皮豆沙馅炸糕是百年天津味道。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "十八街麻花", cuisine: "天津", country: "中国", city: "天津", iconic: true, note: "天津三绝之一，桂发祥十八街所制的酥脆什锦夹馅麻花是天津伴手礼的第一选择。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "锅巴菜", cuisine: "天津", country: "中国", city: "天津", note: "天津人早餐挚爱，煎饼切块浇上卤汁，撒芝麻酱香菜。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "炸糕", cuisine: "天津", country: "中国", city: "天津", note: "天津老字号三绝之一，糯米面裹豆沙馅油炸，金黄酥脆。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "贴饽饽熬小鱼", cuisine: "天津", country: "中国", city: "天津", note: "天津农家菜，玉米面饼子贴锅边，锅底熬小鱼，一锅出。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "鱼"] },
+    { name: "炸酱面", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "老北京家常面食代表，黄酱炸香配面码儿，是北京平民饮食的日常图腾。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "北京烤鸭", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "北京餐桌上的头牌，源自明代宫廷御膳，全聚德、便宜坊两派挂炉/焖炉之争至今仍是京味饮食的招牌符号。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它", "鸭"] },
+    { name: "涮羊肉", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "北京冬季经典，铜锅炭火涮薄切羊肉蘸麻酱，源自蒙古军旅吃法，清代传入宫廷后在京城扎根。", type: "火锅", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "卤煮火烧", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "老北京平民重口味小吃，猪肠猪肺炖煮配火烧，胡同市井饮食的活化石。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "炒肝", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "猪肠猪肝勾芡煮成糊状，配包子喝，北京老磁器口豆汁店最正宗。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "豆汁儿", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "北京最具争议的传统小吃，绿豆发酵而成，酸馊味是老北京人从小喝到大的乡愁标志。", type: "小吃", flavor: ["酸"], spice: 0, diet: "素", protein: ["豆制品"] },
+    { name: "爆肚", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "鲜牛羊肚白水爆熟，蘸麻酱蒜汁嚼着脆，北京簋街爆肚冯最有名。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "驴打滚", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "黄豆面裹糯米卷豆沙馅，软糯香甜，北京传统点心。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "艾窝窝", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "糯米包入桃仁白糖等馅料，滚上糯米面，熟食店常见京味小吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "豌豆黄", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "北京传统甜点，豌豆磨浆熬成，入口即化，甜凉清心。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "糖火烧", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "北京传统点心，面皮裹红糖芝麻馅，烤制而成，外酥内软。", type: "饼馍", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "京酱肉丝", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "北京名菜，甜面酱爆炒瘦肉丝，配葱丝豆腐皮卷着吃。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "门钉肉饼", cuisine: "北京", country: "中国", province: "北京", city: "北京", note: "北京清真小吃，牛肉馅饼形如门钉，皮薄底脆汁多。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "狗不理包子", cuisine: "天津", country: "中国", province: "天津", city: "天津", iconic: true, note: "天津最响亮的小吃招牌，清末创立，18个褶的灌汤包做法让它成了天津饮食的代名词。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "煎饼馃子", cuisine: "天津", country: "中国", province: "天津", city: "天津", iconic: true, note: "天津街头早点的绝对标志，绿豆面煎饼裹脆馃箅儿，天津人一天从这张饼开始。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["蛋", "面米"] },
+    { name: "耳朵眼炸糕", cuisine: "天津", country: "中国", province: "天津", city: "天津", iconic: true, note: "天津三绝之一，因创始店铺临近耳朵眼胡同得名，糯米皮豆沙馅炸糕是百年天津味道。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "十八街麻花", cuisine: "天津", country: "中国", province: "天津", city: "天津", iconic: true, note: "天津三绝之一，桂发祥十八街所制的酥脆什锦夹馅麻花是天津伴手礼的第一选择。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "锅巴菜", cuisine: "天津", country: "中国", province: "天津", city: "天津", note: "天津人早餐挚爱，煎饼切块浇上卤汁，撒芝麻酱香菜。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "炸糕", cuisine: "天津", country: "中国", province: "天津", city: "天津", note: "天津老字号三绝之一，糯米面裹豆沙馅油炸，金黄酥脆。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "贴饽饽熬小鱼", cuisine: "天津", country: "中国", province: "天津", city: "天津", note: "天津农家菜，玉米面饼子贴锅边，锅底熬小鱼，一锅出。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "鱼"] },
     { name: "保定驴肉火烧", cuisine: "保定", country: "中国", province: "河北", city: "保定", iconic: true, note: "河北保定的头号名片，驴肉香酥配火烧酥脆，民间有「天上龙肉，地下驴肉」的说法。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它"] },
     { name: "白肉罩火烧", cuisine: "保定", country: "中国", province: "河北", city: "保定", note: "保定老字号名吃，白煮猪肉切片，罩在脆火烧上浇肉汤。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "白运章包子", cuisine: "保定", country: "中国", province: "河北", city: "保定", note: "保定百年老店，皮薄馅大褶多，猪肉馅咸香多汁。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
@@ -293,27 +293,27 @@ var DISHES = {
     { name: "布里亚特包子", cuisine: "呼伦贝尔", country: "中国", province: "内蒙古", city: "呼伦贝尔", note: "呼伦贝尔布里亚特人的手艺，擀面皮包牛肉馅，个头跟小包子似的。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
     { name: "呼伦湖白鱼", cuisine: "呼伦贝尔", country: "中国", province: "内蒙古", city: "呼伦贝尔", note: "呼伦贝尔湖里的白鱼，肉嫩刺少，清蒸最鲜，本地待客硬菜。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
     { name: "列巴", cuisine: "呼伦贝尔", country: "中国", province: "内蒙古", city: "呼伦贝尔", note: "俄罗斯风味大面包传到呼伦贝尔，圆滚滚硬邦邦，切片抹果酱吃。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "烤全羊", cuisine: "内蒙古", country: "中国", city: "内蒙古", iconic: true, note: "内蒙古草原盛宴的巅峰之作，整羊炭火烤制，是重大庆典和贵宾接待的标志性菜品。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "冰糖葫芦", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "北京最广为人知的街头小吃符号之一，山楂串裹麦芽糖，是老北京庙会和冬日街景的标志画面。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "羊蝎子", cuisine: "北京", country: "中国", city: "北京", iconic: true, note: "北京冬季火锅代表菜之一，羊脊骨炖煮得名「蝎子」形，是京味重口味涮炖文化的代表。", type: "火锅", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["羊"] },
-    { name: "锅包肉", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "东北第一名菜，哈尔滨老厨精创制，酸甜挂糊锅包肉后传遍全国。", type: "其它", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "烤全羊", cuisine: "内蒙古", country: "中国", province: "内蒙古", city: "内蒙古", iconic: true, note: "内蒙古草原盛宴的巅峰之作，整羊炭火烤制，是重大庆典和贵宾接待的标志性菜品。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "冰糖葫芦", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "北京最广为人知的街头小吃符号之一，山楂串裹麦芽糖，是老北京庙会和冬日街景的标志画面。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
+    { name: "羊蝎子", cuisine: "北京", country: "中国", province: "北京", city: "北京", iconic: true, note: "北京冬季火锅代表菜之一，羊脊骨炖煮得名「蝎子」形，是京味重口味涮炖文化的代表。", type: "火锅", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["羊"] },
+    { name: "锅包肉", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "东北第一名菜，哈尔滨老厨精创制，酸甜挂糊锅包肉后传遍全国。", type: "其它", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "哈尔滨红肠", cuisine: "哈尔滨", country: "中国", province: "黑龙江", city: "哈尔滨", iconic: true, note: "源自俄式里道斯灌肠，20世纪初随中东铁路传入哈尔滨后本地化定型。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "朝鲜族冷面", cuisine: "延边", country: "中国", province: "吉林", city: "延边", iconic: true, note: "朝鲜族传统荞麦冷面，酸甜冰爽，延边饮食代表符号之一。", type: "面", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["牛", "蛋"] },
-    { name: "东北铁锅炖", cuisine: "辽宁", country: "中国", city: "辽宁", note: "辽宁农村大灶菜,排骨豆角贴饼子,一锅出。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡", "猪", "面米"] },
-    { name: "东北烧烤", cuisine: "辽宁", country: "中国", city: "辽宁", note: "辽宁烧烤撒孜然辣椒,肉块大,炭火味足。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "猪", "鸡"] },
-    { name: "猪肉炖粉条", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "东北乱炖类的代表，五花肉配红薯粉条，家常炖菜标杆。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "小鸡炖蘑菇", cuisine: "吉林", country: "中国", city: "吉林", iconic: true, note: "土鸡配长白山榛蘑，东北山珍与家禽结合的经典炖菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "地三鲜", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "茄子、土豆、青椒过油后合炒，全国知名度最高的东北素菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "溜肉段", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "与锅包肉同源的裹糊炸溜肉菜，咸鲜口是东北家常菜馆常客。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "东北乱炖", cuisine: "辽宁", country: "中国", city: "辽宁", note: "辽宁家常菜,豆角土豆排骨一锅炖,管饱。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "杀猪菜", cuisine: "黑龙江", country: "中国", city: "黑龙江", iconic: true, note: "东北农家冬季杀年猪后的传统宴，酸菜血肠猪肉同炖，年俗菜代表。", type: "炖菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "血肠", cuisine: "黑龙江", country: "中国", city: "黑龙江", iconic: true, note: "满族传统灌血肠，常与杀猪菜、酸菜白肉同食。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "酸菜炖白肉", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "满族入关前的传统吃法，酸菜配五花白肉，东北酸菜文化的核心菜。", type: "炖菜", flavor: ["酸", "咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "白肉血肠", cuisine: "吉林", country: "中国", city: "吉林", note: "吉林杀猪菜,白煮猪肉和猪血肠,蘸蒜酱吃。", type: "炖菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "排骨炖豆角", cuisine: "辽宁", country: "中国", city: "辽宁", note: "辽宁经典家常菜,排骨软烂,豆角入味,下饭神器。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "东北铁锅炖", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "辽宁农村大灶菜,排骨豆角贴饼子,一锅出。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡", "猪", "面米"] },
+    { name: "东北烧烤", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "辽宁烧烤撒孜然辣椒,肉块大,炭火味足。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "猪", "鸡"] },
+    { name: "猪肉炖粉条", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "东北乱炖类的代表，五花肉配红薯粉条，家常炖菜标杆。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "小鸡炖蘑菇", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", iconic: true, note: "土鸡配长白山榛蘑，东北山珍与家禽结合的经典炖菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "地三鲜", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "茄子、土豆、青椒过油后合炒，全国知名度最高的东北素菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "溜肉段", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "与锅包肉同源的裹糊炸溜肉菜，咸鲜口是东北家常菜馆常客。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "东北乱炖", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "辽宁家常菜,豆角土豆排骨一锅炖,管饱。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "杀猪菜", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", iconic: true, note: "东北农家冬季杀年猪后的传统宴，酸菜血肠猪肉同炖，年俗菜代表。", type: "炖菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "血肠", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", iconic: true, note: "满族传统灌血肠，常与杀猪菜、酸菜白肉同食。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "酸菜炖白肉", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "满族入关前的传统吃法，酸菜配五花白肉，东北酸菜文化的核心菜。", type: "炖菜", flavor: ["酸", "咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "白肉血肠", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", note: "吉林杀猪菜,白煮猪肉和猪血肠,蘸蒜酱吃。", type: "炖菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "排骨炖豆角", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "辽宁经典家常菜,排骨软烂,豆角入味,下饭神器。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "得莫利炖鱼", cuisine: "哈尔滨", country: "中国", province: "黑龙江", city: "哈尔滨", iconic: true, note: "发源于哈尔滨方正县得莫利村的农家炖鱼，配粉条豆腐，东北炖鱼代表。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["豆制品", "面米", "鱼"] },
-    { name: "江鱼炖江水", cuisine: "黑龙江", country: "中国", city: "黑龙江", note: "黑龙江用江水炖江鱼,突出鲜字,原汁原味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "鲶鱼炖茄子", cuisine: "辽宁", country: "中国", city: "辽宁", note: "辽宁河鲜,鲶鱼和茄子同炖,鱼嫩茄子软。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "江鱼炖江水", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", note: "黑龙江用江水炖江鱼,突出鲜字,原汁原味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "鲶鱼炖茄子", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "辽宁河鲜,鲶鱼和茄子同炖,鱼嫩茄子软。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
     { name: "锅包肉沈阳老式", cuisine: "沈阳", country: "中国", province: "辽宁", city: "沈阳", note: "沈阳老式锅包肉,醋糖汁炸肉,酸甜酥脆。", type: "其它", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "沈阳鸡架", cuisine: "沈阳", country: "中国", province: "辽宁", city: "沈阳", iconic: true, note: "沈阳人的深夜下酒菜，啤酒配鸡架是本地饮食标志之一。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡"] },
     { name: "老边饺子", cuisine: "沈阳", country: "中国", province: "辽宁", city: "沈阳", iconic: true, note: "清道光年间创立的百年老字号，煸馅工艺独树一帜。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
@@ -341,9 +341,9 @@ var DISHES = {
     { name: "延吉冷面", cuisine: "延吉", country: "中国", province: "吉林", city: "延吉", iconic: true, note: "延吉本地流派的朝鲜族冷面，牛骨清汤打底，区别于延边其他冷面做法。", type: "面", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["牛", "蛋"] },
     { name: "石锅拌饭", cuisine: "延边", country: "中国", province: "吉林", city: "延边", iconic: true, note: "朝鲜族传统拌饭，石锅锁热出锅巴，延边餐桌代表菜之一。", type: "米饭", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["蛋", "面米", "其它"] },
     { name: "明太鱼", cuisine: "延边", country: "中国", province: "吉林", city: "延边", note: "延边人把明太鱼干撕成丝拌着吃，蘸酱油辣根是经典吃法。", type: "其它", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["鱼"] },
-    { name: "吉林白肉火锅", cuisine: "吉林", country: "中国", city: "吉林", note: "吉林老式火锅，五花肉酸菜打底，肉片现涮现吃，汤鲜肉嫩。", type: "火锅", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "庆岭活鱼", cuisine: "吉林", country: "中国", city: "吉林", note: "吉林庆岭的招牌浇汁活鱼，鱼肉细嫩，浇上浓稠的酱汁特别香。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["鱼"] },
-    { name: "新兴园蒸饺", cuisine: "吉林", country: "中国", city: "吉林", note: "吉林百年老店新兴园的招牌蒸饺，皮薄馅大汁多，去吉林必吃。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "吉林白肉火锅", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", note: "吉林老式火锅，五花肉酸菜打底，肉片现涮现吃，汤鲜肉嫩。", type: "火锅", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "庆岭活鱼", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", note: "吉林庆岭的招牌浇汁活鱼，鱼肉细嫩，浇上浓稠的酱汁特别香。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["鱼"] },
+    { name: "新兴园蒸饺", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", note: "吉林百年老店新兴园的招牌蒸饺，皮薄馅大汁多，去吉林必吃。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
     { name: "哈尔滨锅包肉", cuisine: "哈尔滨", country: "中国", province: "黑龙江", city: "哈尔滨", note: "猪里脊肉片挂糊炸酥，浇糖醋汁，酸甜口，哈尔滨饭馆必点菜。", type: "其它", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "哈尔滨大列巴", cuisine: "哈尔滨", country: "中国", province: "黑龙江", city: "哈尔滨", iconic: true, note: "俄式大面包，中东铁路时期传入哈尔滨，秋林公司百年老字号出品最知名。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "纯素", protein: ["面米"] },
     { name: "马迭尔冰棍", cuisine: "哈尔滨", country: "中国", province: "黑龙江", city: "哈尔滨", iconic: true, note: "1906年俄侨创立的马迭尔宾馆同款冰棍，中央大街百年地标小吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素" },
@@ -358,32 +358,32 @@ var DISHES = {
     { name: "鸡西冷面", cuisine: "鸡西", country: "中国", province: "黑龙江", city: "鸡西", note: "荞麦面条配牛肉汤，酸甜口配辣白菜，鸡西人从小吃到大。", type: "面", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["牛", "蛋"] },
     { name: "鸡西辣菜", cuisine: "鸡西", country: "中国", province: "黑龙江", city: "鸡西", note: "鸡西冷面馆标配的各种辣味拌菜，豆制品和蔬菜为主，辣得过瘾。", type: "凉菜", flavor: ["辣", "酸"], spice: 2, diet: "素", protein: ["其它"] },
     { name: "伊春山野菜", cuisine: "伊春", country: "中国", province: "黑龙江", city: "伊春", note: "大兴安岭林区的蕨菜、猴腿等野菜，清炒或凉拌，山珍味道。", type: "凉菜", flavor: ["清淡"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "东北酸菜", cuisine: "辽宁", country: "中国", city: "辽宁", note: "大白菜腌到发酸，切丝炒肉或者做酸菜白肉血肠，百搭家常菜。", type: "凉菜", flavor: ["酸"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "黏豆包", cuisine: "黑龙江", country: "中国", city: "黑龙江", iconic: true, note: "黄米面包豆沙馅，东北冬季传统主食，家家蒸制过年常备。", type: "主食", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "冻梨", cuisine: "黑龙江", country: "中国", city: "黑龙江", note: "冬天把冻秋梨化开吃，绵软甘甜多汁，东北限定水果。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素" },
-    { name: "糖葫芦", cuisine: "辽宁", country: "中国", city: "辽宁", note: "山楂串冰糖稀冷冻，酸甜酥脆，过年串门必备零食。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "东北大拉皮", cuisine: "辽宁", country: "中国", city: "辽宁", note: "土豆淀粉拉皮配黄瓜丝肉丝，淋麻酱蒜汁，凉拌菜里的扛把子。", type: "凉菜", flavor: ["酸", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "雪衣豆沙", cuisine: "吉林", country: "中国", city: "吉林", note: "蛋清打发裹豆沙馅炸的，吉林老式做法，外酥里软雪白蓬松。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["豆制品"] },
-    { name: "东北酱大骨", cuisine: "辽宁", country: "中国", city: "辽宁", note: "带骨猪脊骨酱炖入味，骨头缝里的肉最香，啃着吃老带劲了。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "烤冷面", cuisine: "黑龙江", country: "中国", city: "黑龙江", note: "铁板压一张冷面刷酱加蛋肠，黑龙江路边摊扛把子，排队等。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["蛋", "面米"] },
-    { name: "拔丝地瓜", cuisine: "辽宁", country: "中国", city: "辽宁", iconic: true, note: "东北宴席收官甜菜，热糖浆挂丝，与拔丝苹果同为东北待客经典。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "红烧肉", cuisine: "上海", country: "中国", city: "上海", note: "上海本帮菜，五花肉切块红烧，酱油冰糖上色，肥肉一抿就化。", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "本帮红烧肉", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "本帮菜浓油赤酱代表作，浓油赤酱、甜咸交织，上海家常菜标杆", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "腌笃鲜", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "咸肉+鲜肉+春笋清炖，春季本帮菜标志，「笃」指小火慢炖", type: "汤", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["猪", "豆制品"] },
-    { name: "响油鳝糊", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "热油浇葱姜蒜末激出滋滋声上桌，本帮菜经典中的经典", type: "其它", flavor: ["咸鲜", "甜"], spice: 1, diet: "荤", protein: ["鱼"] },
-    { name: "油爆虾", cuisine: "上海", country: "中国", city: "上海", note: "上海河虾油锅爆炒，连壳一起吃，酥脆鲜甜，下饭下酒都行。", type: "海鲜", flavor: ["咸鲜", "甜"], spice: 0, diet: "海鲜", protein: ["虾"] },
-    { name: "八宝辣酱", cuisine: "上海", country: "中国", city: "上海", note: "上海本帮炒菜，豆干肉丁笋丁八样料，加辣酱炒，拌饭一绝。", type: "其它", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["猪", "豆制品"] },
-    { name: "草头圈子", cuisine: "上海", country: "中国", city: "上海", note: "草头垫底，大肠红烧铺上面，草头吸饱汤汁，大肠软糯。", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "糟钵头", cuisine: "上海", country: "中国", city: "上海", note: "上海老派菜，用香糟吊出鲜味，猪内脏炖一锅，酒香扑鼻。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "生煎馒头", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "底脆汁多的上海街头小吃标志，一大早排队的经典早点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "小笼包", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "皮薄汤多，上海乃至全国最具代表性的点心之一", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "南翔小笼", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "小笼包发源地嘉定南翔，百年老字号古猗园/南翔馒头店正宗出处", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "蟹壳黄", cuisine: "上海", country: "中国", city: "上海", note: "上海酥皮点心，烤得金黄像蟹壳，馅儿有咸有甜，趁热吃掉渣。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "排骨年糕", cuisine: "上海", country: "中国", city: "上海", note: "大排炸到金黄，配上软糯年糕，浇甜面酱，上海小囡从小吃到大。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "四喜烤麸", cuisine: "上海", country: "中国", city: "上海", note: "上海凉菜，烤麸配木耳香菇黄花菜，甜甜的，婚宴上必有。", type: "凉菜", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["豆制品"] },
-    { name: "白斩鸡", cuisine: "上海", country: "中国", city: "上海", note: "上海人叫它白切鸡，整鸡煮到刚刚好，切块蘸酱油吃，原味最灵。", type: "凉菜", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "葱油拌面", cuisine: "上海", country: "中国", city: "上海", iconic: true, note: "葱油熬香浇拌面条，看似朴素实则考验火候，上海面食代表", type: "面", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "三黄鸡", cuisine: "上海", country: "中国", city: "上海", note: "上海本帮白斩鸡，浦东三黄鸡做的，皮黄肉嫩蘸酱油吃。", type: "其它", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "东北酸菜", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "大白菜腌到发酸，切丝炒肉或者做酸菜白肉血肠，百搭家常菜。", type: "凉菜", flavor: ["酸"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "黏豆包", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", iconic: true, note: "黄米面包豆沙馅，东北冬季传统主食，家家蒸制过年常备。", type: "主食", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "冻梨", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", note: "冬天把冻秋梨化开吃，绵软甘甜多汁，东北限定水果。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素" },
+    { name: "糖葫芦", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "山楂串冰糖稀冷冻，酸甜酥脆，过年串门必备零食。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素", protein: ["其它"] },
+    { name: "东北大拉皮", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "土豆淀粉拉皮配黄瓜丝肉丝，淋麻酱蒜汁，凉拌菜里的扛把子。", type: "凉菜", flavor: ["酸", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "雪衣豆沙", cuisine: "吉林", country: "中国", province: "吉林", city: "吉林", note: "蛋清打发裹豆沙馅炸的，吉林老式做法，外酥里软雪白蓬松。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["豆制品"] },
+    { name: "东北酱大骨", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", note: "带骨猪脊骨酱炖入味，骨头缝里的肉最香，啃着吃老带劲了。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "烤冷面", cuisine: "黑龙江", country: "中国", province: "黑龙江", city: "黑龙江", note: "铁板压一张冷面刷酱加蛋肠，黑龙江路边摊扛把子，排队等。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["蛋", "面米"] },
+    { name: "拔丝地瓜", cuisine: "辽宁", country: "中国", province: "辽宁", city: "辽宁", iconic: true, note: "东北宴席收官甜菜，热糖浆挂丝，与拔丝苹果同为东北待客经典。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
+    { name: "红烧肉", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海本帮菜，五花肉切块红烧，酱油冰糖上色，肥肉一抿就化。", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "本帮红烧肉", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "本帮菜浓油赤酱代表作，浓油赤酱、甜咸交织，上海家常菜标杆", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "腌笃鲜", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "咸肉+鲜肉+春笋清炖，春季本帮菜标志，「笃」指小火慢炖", type: "汤", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["猪", "豆制品"] },
+    { name: "响油鳝糊", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "热油浇葱姜蒜末激出滋滋声上桌，本帮菜经典中的经典", type: "其它", flavor: ["咸鲜", "甜"], spice: 1, diet: "荤", protein: ["鱼"] },
+    { name: "油爆虾", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海河虾油锅爆炒，连壳一起吃，酥脆鲜甜，下饭下酒都行。", type: "海鲜", flavor: ["咸鲜", "甜"], spice: 0, diet: "海鲜", protein: ["虾"] },
+    { name: "八宝辣酱", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海本帮炒菜，豆干肉丁笋丁八样料，加辣酱炒，拌饭一绝。", type: "其它", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["猪", "豆制品"] },
+    { name: "草头圈子", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "草头垫底，大肠红烧铺上面，草头吸饱汤汁，大肠软糯。", type: "其它", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "糟钵头", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海老派菜，用香糟吊出鲜味，猪内脏炖一锅，酒香扑鼻。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "生煎馒头", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "底脆汁多的上海街头小吃标志，一大早排队的经典早点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "小笼包", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "皮薄汤多，上海乃至全国最具代表性的点心之一", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "南翔小笼", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "小笼包发源地嘉定南翔，百年老字号古猗园/南翔馒头店正宗出处", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "蟹壳黄", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海酥皮点心，烤得金黄像蟹壳，馅儿有咸有甜，趁热吃掉渣。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "排骨年糕", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "大排炸到金黄，配上软糯年糕，浇甜面酱，上海小囡从小吃到大。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "四喜烤麸", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海凉菜，烤麸配木耳香菇黄花菜，甜甜的，婚宴上必有。", type: "凉菜", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["豆制品"] },
+    { name: "白斩鸡", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海人叫它白切鸡，整鸡煮到刚刚好，切块蘸酱油吃，原味最灵。", type: "凉菜", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "葱油拌面", cuisine: "上海", country: "中国", province: "上海", city: "上海", iconic: true, note: "葱油熬香浇拌面条，看似朴素实则考验火候，上海面食代表", type: "面", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "三黄鸡", cuisine: "上海", country: "中国", province: "上海", city: "上海", note: "上海本帮白斩鸡，浦东三黄鸡做的，皮黄肉嫩蘸酱油吃。", type: "其它", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡"] },
     { name: "松鼠鳜鱼", cuisine: "苏州", country: "中国", province: "江苏", city: "苏州", iconic: true, note: "鱼身剞刀炸成松鼠形，浇糖醋汁，苏帮菜造型与口味双标杆", type: "海鲜", flavor: ["甜", "酸"], spice: 0, diet: "海鲜", protein: ["鱼"] },
     { name: "苏式糖醋排骨", cuisine: "苏州", country: "中国", province: "江苏", city: "苏州", note: "苏州老法头菜，外层酥脆，酸酸甜甜挂满酱汁。", type: "其它", flavor: ["甜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "碧螺虾仁", cuisine: "苏州", country: "中国", province: "江苏", city: "苏州", note: "洞庭碧螺春泡开，跟太湖虾仁一起炒，茶香配虾鲜。", type: "海鲜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
@@ -620,57 +620,57 @@ var DISHES = {
     { name: "椰子饭", cuisine: "海口", country: "中国", province: "海南", city: "海口", note: "糯米塞进椰子里蒸的，软糯带椰香，当主食或甜点都行。", type: "主食", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "临高烤乳猪", cuisine: "临高", country: "中国", province: "海南", city: "临高", note: "临高本地小乳猪，烤得皮酥肉嫩，切块蘸白糖吃，脆到冒油。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "儋州米烂", cuisine: "儋州", country: "中国", province: "海南", city: "儋州", note: "儋州人叫米烂其实是米线，拌上酸菜肉末和花生，街边随便找。", type: "小吃", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "港式烧腊", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港街头「烧味饭」的核心，烧鹅叉烧油鸡挂炉现切，茶餐厅与烧腊店的招牌。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它", "鹅"] },
-    { name: "港式云吞面", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港街头面食代表，竹升面配虾云吞，size小而精是老字号的坚持。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
-    { name: "丝袜奶茶", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "英式奶茶的香港本地化产物，以棉布网袋（似丝袜）反复拉茶滤茶，形成浓滑口感，是香港茶餐厅文化符号。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "菠萝油", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港茶餐厅经典，菠萝包夹冷牛油，热包遇冷油瞬间融化是精髓。", type: "饼馍", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
-    { name: "蛋挞", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "港式西点代表，酥皮或曲奇皮配滑嫩蛋浆，茶餐厅与饼店必备。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "鸳鸯奶茶", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港独创混搭饮品，奶茶加咖啡，体现香港中西合璧的城市性格。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "港式奶茶", cuisine: "香港", country: "中国", city: "香港", note: "茶餐厅必备，用淡奶和红茶撞出来的，丝滑微苦，冻柠茶是标配搭档。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "车仔面", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港平民美食代表，源于流动木头车摆卖，自选面底配料是其特色。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
-    { name: "鱼蛋粉", cuisine: "香港", country: "中国", city: "香港", note: "手打鱼丸配细米粉，汤底清甜，鱼蛋弹牙，街边档常见。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "鱼"] },
-    { name: "碗仔翅", cuisine: "香港", country: "中国", city: "香港", note: "街边小推车卖的小碗鸡胸肉丝羹，加醋和辣椒油，喝着暖胃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
-    { name: "煲仔饭", cuisine: "香港", country: "中国", city: "香港", note: "砂锅焖出来的饭，腊味窝蛋最经典，锅巴才是灵魂。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "鸡蛋仔", cuisine: "香港", country: "中国", city: "香港", note: "街边鸡蛋味的小蛋糕，外脆里软，逛街必买，边走边吃。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "格仔饼", cuisine: "香港", country: "中国", city: "香港", note: "格仔形状的软饼，抹牛油加糖或炼奶，怀旧零食。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "杨枝甘露", cuisine: "香港", country: "中国", city: "香港", note: "芒果西柚配椰奶西米，清甜解腻，甜品店必点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "港式甜品", cuisine: "香港", country: "中国", city: "香港", note: "芒果班戟、榴莲忘返、杨枝甘露这些，糖水铺子随便挑。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "钵仔糕", cuisine: "香港", country: "中国", city: "香港", note: "老式街头甜糕，透明黄糖或白色原味，戳根竹签拿着吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "牛腩面", cuisine: "香港", country: "中国", city: "香港", note: "茶餐厅常餐，牛腩炖得软烂，汤头清甜，面是出前一丁。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "避风塘炒蟹", cuisine: "香港", country: "中国", city: "香港", iconic: true, note: "香港避风塘渔民发明的做法，蒜蓉豆豉爆香炒蟹，衍生出避风塘系列菜式。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["蟹"] },
-    { name: "星洲炒米", cuisine: "香港", country: "中国", city: "香港", note: "新加坡炒贵刁变种，咖喱味炒米粉，微辣带点甜。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
-    { name: "干炒牛河", cuisine: "香港", country: "中国", city: "香港", note: "芽菜牛肉炒河粉，镬气要足，油多不腻，茶餐厅镬记最出名。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "叉烧饭", cuisine: "香港", country: "中国", city: "香港", note: "腊肠叉烧配白饭，叉烧要半肥瘦，酱油汁拌饭绝了。", type: "米饭", flavor: ["甜", "咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "油炸鬼", cuisine: "香港", country: "中国", city: "香港", note: "油条配粥是老港早餐，脆皮泡豆浆里，吸满汤汁才叫吃法。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "葡式蛋挞", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门葡式蛋挞由英国人安德鲁改良自葡萄牙里斯本蛋挞，焦糖脆面是与港式蛋挞最大区别，是中西融合的代表符号。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "猪扒包", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门平民美食代表，酥脆猪仔包夹现炸猪扒，路环肥仔美食街尤为出名。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "澳门葡国鸡", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门土生葡菜代表，融合葡萄牙、非洲、印度香料与椰浆咖喱，体现澳门中葡混血饮食文化。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡"] },
-    { name: "非洲鸡", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门土生葡菜标志性菜式，辣汁烤鸡源自葡萄牙殖民地非洲香料传统，是「不是葡国菜的葡国菜」。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
-    { name: "马介休", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门土生葡菜必备食材，源自葡萄牙咸鳕鱼传统，可煎可焗多种做法。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "水蟹粥", cuisine: "澳门", country: "中国", city: "澳门", iconic: true, note: "澳门渔村传统美食代表，膏蟹熬粥米粒开花，鲜甜浓郁。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "澳门杏仁饼", cuisine: "澳门", country: "中国", city: "澳门", note: "手信必买，绿豆杏仁粉压的饼，入口松化，钜记最正宗。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "木糠布甸", cuisine: "澳门", country: "中国", city: "澳门", note: "澳门葡国甜品，饼干碎和淡奶一层层叠着，冷藏后吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "澳门牛杂", cuisine: "澳门", country: "中国", city: "澳门", note: "官也街街边的牛杂档，牛腩牛筋牛肠炖得软烂，蘸黄芥末吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "竹升面", cuisine: "澳门", country: "中国", city: "澳门", note: "澳门传统全蛋面，人坐在竹竿上压出来的，细而弹牙。", type: "面", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "大菜糕", cuisine: "澳门", country: "中国", city: "澳门", note: "澳门路边摊的凉粉糕，冻吃超爽口，夏天解暑必备。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "葡式焗饭", cuisine: "澳门", country: "中国", city: "澳门", note: "澳门土生葡菜，焗饭有鸡肉或海鲜，表面一层芝士。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它"] },
-    { name: "澳门虾多士", cuisine: "澳门", country: "中国", city: "澳门", note: "葡国风小食，虾胶酿面包片炸酥，蘸酸甜酱吃。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蛋", "面米", "虾"] },
+    { name: "港式烧腊", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港街头「烧味饭」的核心，烧鹅叉烧油鸡挂炉现切，茶餐厅与烧腊店的招牌。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它", "鹅"] },
+    { name: "港式云吞面", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港街头面食代表，竹升面配虾云吞，size小而精是老字号的坚持。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
+    { name: "丝袜奶茶", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "英式奶茶的香港本地化产物，以棉布网袋（似丝袜）反复拉茶滤茶，形成浓滑口感，是香港茶餐厅文化符号。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "菠萝油", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港茶餐厅经典，菠萝包夹冷牛油，热包遇冷油瞬间融化是精髓。", type: "饼馍", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
+    { name: "蛋挞", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "港式西点代表，酥皮或曲奇皮配滑嫩蛋浆，茶餐厅与饼店必备。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "鸳鸯奶茶", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港独创混搭饮品，奶茶加咖啡，体现香港中西合璧的城市性格。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "港式奶茶", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "茶餐厅必备，用淡奶和红茶撞出来的，丝滑微苦，冻柠茶是标配搭档。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "车仔面", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港平民美食代表，源于流动木头车摆卖，自选面底配料是其特色。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
+    { name: "鱼蛋粉", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "手打鱼丸配细米粉，汤底清甜，鱼蛋弹牙，街边档常见。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "鱼"] },
+    { name: "碗仔翅", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "街边小推车卖的小碗鸡胸肉丝羹，加醋和辣椒油，喝着暖胃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
+    { name: "煲仔饭", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "砂锅焖出来的饭，腊味窝蛋最经典，锅巴才是灵魂。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "鸡蛋仔", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "街边鸡蛋味的小蛋糕，外脆里软，逛街必买，边走边吃。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "格仔饼", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "格仔形状的软饼，抹牛油加糖或炼奶，怀旧零食。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "杨枝甘露", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "芒果西柚配椰奶西米，清甜解腻，甜品店必点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "港式甜品", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "芒果班戟、榴莲忘返、杨枝甘露这些，糖水铺子随便挑。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "钵仔糕", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "老式街头甜糕，透明黄糖或白色原味，戳根竹签拿着吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "牛腩面", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "茶餐厅常餐，牛腩炖得软烂，汤头清甜，面是出前一丁。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "避风塘炒蟹", cuisine: "香港", country: "中国", province: "香港", city: "香港", iconic: true, note: "香港避风塘渔民发明的做法，蒜蓉豆豉爆香炒蟹，衍生出避风塘系列菜式。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["蟹"] },
+    { name: "星洲炒米", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "新加坡炒贵刁变种，咖喱味炒米粉，微辣带点甜。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
+    { name: "干炒牛河", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "芽菜牛肉炒河粉，镬气要足，油多不腻，茶餐厅镬记最出名。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "叉烧饭", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "腊肠叉烧配白饭，叉烧要半肥瘦，酱油汁拌饭绝了。", type: "米饭", flavor: ["甜", "咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "油炸鬼", cuisine: "香港", country: "中国", province: "香港", city: "香港", note: "油条配粥是老港早餐，脆皮泡豆浆里，吸满汤汁才叫吃法。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "葡式蛋挞", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门葡式蛋挞由英国人安德鲁改良自葡萄牙里斯本蛋挞，焦糖脆面是与港式蛋挞最大区别，是中西融合的代表符号。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "猪扒包", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门平民美食代表，酥脆猪仔包夹现炸猪扒，路环肥仔美食街尤为出名。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "澳门葡国鸡", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门土生葡菜代表，融合葡萄牙、非洲、印度香料与椰浆咖喱，体现澳门中葡混血饮食文化。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡"] },
+    { name: "非洲鸡", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门土生葡菜标志性菜式，辣汁烤鸡源自葡萄牙殖民地非洲香料传统，是「不是葡国菜的葡国菜」。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
+    { name: "马介休", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门土生葡菜必备食材，源自葡萄牙咸鳕鱼传统，可煎可焗多种做法。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "水蟹粥", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", iconic: true, note: "澳门渔村传统美食代表，膏蟹熬粥米粒开花，鲜甜浓郁。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "澳门杏仁饼", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "手信必买，绿豆杏仁粉压的饼，入口松化，钜记最正宗。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "木糠布甸", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "澳门葡国甜品，饼干碎和淡奶一层层叠着，冷藏后吃。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "澳门牛杂", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "官也街街边的牛杂档，牛腩牛筋牛肠炖得软烂，蘸黄芥末吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "竹升面", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "澳门传统全蛋面，人坐在竹竿上压出来的，细而弹牙。", type: "面", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "大菜糕", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "澳门路边摊的凉粉糕，冻吃超爽口，夏天解暑必备。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["其它"] },
+    { name: "葡式焗饭", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "澳门土生葡菜，焗饭有鸡肉或海鲜，表面一层芝士。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["其它"] },
+    { name: "澳门虾多士", cuisine: "澳门", country: "中国", province: "澳门", city: "澳门", note: "葡国风小食，虾胶酿面包片炸酥，蘸酸甜酱吃。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蛋", "面米", "虾"] },
     { name: "煎堆", cuisine: "广州", country: "中国", province: "广东", city: "广州", iconic: true, note: "广式贺年油炸小吃，「煎堆碌碌，金银满屋」是广府新年俗语，象征团圆吉庆。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "潮州牛肉丸粿条汤", cuisine: "潮州", country: "中国", province: "广东", city: "潮州", iconic: true, note: "潮州街头国民早餐/宵夜，手打牛肉丸配爽滑粿条，清汤见牛肉本味。", type: "面", flavor: ["清淡", "咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
     { name: "白云猪手", cuisine: "广州", country: "中国", province: "广东", city: "广州", iconic: true, note: "广州名菜之一，猪手经卤煮冰镇后拌糖醋汁，酸甜爽脆开胃。", type: "凉菜", flavor: ["酸", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "重庆火锅", cuisine: "重庆", country: "中国", city: "重庆", iconic: true, note: "重庆火锅以牛油锅底、麻辣厚重著称，江边码头工人用牛杂下锅涮食的吃法演变而来，与成都火锅的清油锅底、口感更柔和形成鲜明对比。", type: "火锅", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["牛", "猪", "鱼", "虾"] },
-    { name: "重庆小面", cuisine: "重庆", country: "中国", city: "重庆", iconic: true, note: "重庆人的早餐标配，靠红油、花椒面、蒜水调出的「油辣子」提味，街头巷尾小面馆比便利店还密。", type: "面", flavor: ["辣", "咸鲜"], spice: 2, diet: "素", protein: ["面米"] },
-    { name: "毛血旺", cuisine: "重庆", country: "中国", city: "重庆", iconic: true, note: "起源于重庆磁器口码头，猪血、毛肚、黄喉等下水一锅烫煮，红油翻滚，是重庆江湖菜的代表作。", type: "炖菜", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["猪", "牛", "其它"] },
-    { name: "重庆酸辣粉", cuisine: "重庆", country: "中国", city: "重庆", note: "红苕粉烫熟浇酸辣汤，酸得开胃辣得冒汗，路边蹲着吃。", type: "小吃", flavor: ["酸", "辣"], spice: 2, diet: "素", protein: ["面米"] },
-    { name: "重庆辣子鸡", cuisine: "重庆", country: "中国", city: "重庆", note: "干辣椒段炸香后炒鸡块，辣椒比鸡还多，吃着满嘴麻。", type: "其它", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["鸡"] },
-    { name: "重庆烤鱼", cuisine: "重庆", country: "中国", city: "重庆", note: "整条鱼炭火烤熟，铺上配菜豆花，吃完还能加菜涮。", type: "烧烤", flavor: ["辣", "麻"], spice: 2, diet: "海鲜", protein: ["鱼"] },
-    { name: "重庆鸡公煲", cuisine: "重庆", country: "中国", city: "重庆", note: "鸡块配土豆洋葱焖一锅，麻辣重口味，下饭下酒都行。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
-    { name: "重庆江湖菜", cuisine: "重庆", country: "中国", city: "重庆", note: "街头馆子自创的土菜，不讲摆盘，够辣够油吃着过瘾。", type: "其它", flavor: ["辣", "麻"], spice: 2, diet: "荤", protein: ["其它"] },
-    { name: "重庆抄手", cuisine: "重庆", country: "中国", city: "重庆", note: "皮薄馅大的馄饨，浸在红油辣子汤里，辣得舒服。", type: "饺子包子", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "水煮鱼", cuisine: "重庆", country: "中国", city: "重庆", iconic: true, note: "川渝江湖菜代表，鱼片过油后浸在满是红油辣椒的汤中，麻辣鲜香，是川菜馆点单率最高的菜品之一。", type: "炖菜", flavor: ["辣", "麻"], spice: 3, diet: "海鲜", protein: ["鱼"] },
-    { name: "口水鸡", cuisine: "重庆", country: "中国", city: "重庆", iconic: true, note: "凉拌鸡块淋红油蒜泥汁，「口水」之名取自郭沫若诗句形容的「想起就流口水」，麻辣鲜香兼具，是川渝凉菜代表。", type: "凉菜", flavor: ["辣", "麻"], spice: 2, diet: "荤", protein: ["鸡"] },
-    { name: "泉水鸡", cuisine: "重庆", country: "中国", city: "重庆", note: "南山上农家乐的做法，鸡块麻辣炖，泉水指水质好。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡"] },
-    { name: "重庆烧白", cuisine: "重庆", country: "中国", city: "重庆", note: "重庆传统蒸菜，五花肉配芽菜蒸到软烂，肥肉化渣不腻，咸香下饭。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "重庆火锅", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", iconic: true, note: "重庆火锅以牛油锅底、麻辣厚重著称，江边码头工人用牛杂下锅涮食的吃法演变而来，与成都火锅的清油锅底、口感更柔和形成鲜明对比。", type: "火锅", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["牛", "猪", "鱼", "虾"] },
+    { name: "重庆小面", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", iconic: true, note: "重庆人的早餐标配，靠红油、花椒面、蒜水调出的「油辣子」提味，街头巷尾小面馆比便利店还密。", type: "面", flavor: ["辣", "咸鲜"], spice: 2, diet: "素", protein: ["面米"] },
+    { name: "毛血旺", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", iconic: true, note: "起源于重庆磁器口码头，猪血、毛肚、黄喉等下水一锅烫煮，红油翻滚，是重庆江湖菜的代表作。", type: "炖菜", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["猪", "牛", "其它"] },
+    { name: "重庆酸辣粉", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "红苕粉烫熟浇酸辣汤，酸得开胃辣得冒汗，路边蹲着吃。", type: "小吃", flavor: ["酸", "辣"], spice: 2, diet: "素", protein: ["面米"] },
+    { name: "重庆辣子鸡", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "干辣椒段炸香后炒鸡块，辣椒比鸡还多，吃着满嘴麻。", type: "其它", flavor: ["辣", "麻"], spice: 3, diet: "荤", protein: ["鸡"] },
+    { name: "重庆烤鱼", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "整条鱼炭火烤熟，铺上配菜豆花，吃完还能加菜涮。", type: "烧烤", flavor: ["辣", "麻"], spice: 2, diet: "海鲜", protein: ["鱼"] },
+    { name: "重庆鸡公煲", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "鸡块配土豆洋葱焖一锅，麻辣重口味，下饭下酒都行。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
+    { name: "重庆江湖菜", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "街头馆子自创的土菜，不讲摆盘，够辣够油吃着过瘾。", type: "其它", flavor: ["辣", "麻"], spice: 2, diet: "荤", protein: ["其它"] },
+    { name: "重庆抄手", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "皮薄馅大的馄饨，浸在红油辣子汤里，辣得舒服。", type: "饺子包子", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "水煮鱼", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", iconic: true, note: "川渝江湖菜代表，鱼片过油后浸在满是红油辣椒的汤中，麻辣鲜香，是川菜馆点单率最高的菜品之一。", type: "炖菜", flavor: ["辣", "麻"], spice: 3, diet: "海鲜", protein: ["鱼"] },
+    { name: "口水鸡", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", iconic: true, note: "凉拌鸡块淋红油蒜泥汁，「口水」之名取自郭沫若诗句形容的「想起就流口水」，麻辣鲜香兼具，是川渝凉菜代表。", type: "凉菜", flavor: ["辣", "麻"], spice: 2, diet: "荤", protein: ["鸡"] },
+    { name: "泉水鸡", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "南山上农家乐的做法，鸡块麻辣炖，泉水指水质好。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡"] },
+    { name: "重庆烧白", cuisine: "重庆", country: "中国", province: "重庆", city: "重庆", note: "重庆传统蒸菜，五花肉配芽菜蒸到软烂，肥肉化渣不腻，咸香下饭。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
     { name: "涪陵榨菜", cuisine: "涪陵", country: "中国", province: "重庆", city: "涪陵", note: "涪陵特产腌芥菜，脆嫩咸鲜，是炒菜下面提味的常用配菜。", type: "小吃", flavor: ["咸鲜", "酸"], spice: 1, diet: "素", protein: ["其它"] },
     { name: "武隆羊角豆干", cuisine: "武隆", country: "中国", province: "重庆", city: "武隆", note: "武隆特产豆干，形状像羊角，质地紧实，可凉拌或炒着吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["豆制品"] },
     { name: "垫江牛肉", cuisine: "垫江", country: "中国", province: "重庆", city: "垫江", note: "垫江当地卤制或风干的牛肉，肉质紧实入味，越嚼越香。", type: "其它", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛"] },
@@ -781,13 +781,13 @@ var DISHES = {
     { name: "岐山擀面皮", cuisine: "岐山", country: "中国", province: "陕西", city: "岐山", note: "岐山凉皮王，面皮筋道，浇辣子醋水，夏天最爽。", type: "凉菜", flavor: ["酸", "辣"], spice: 2, diet: "素", protein: ["面米"] },
     { name: "锅盔", cuisine: "乾县", country: "中国", province: "陕西", city: "乾县", note: "乾县大饼，铁锅烙得又厚又硬，夹肉泡汤都行。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "水盆羊肉", cuisine: "渭南", country: "中国", province: "陕西", city: "渭南", note: "渭南人早餐挚爱，羊肉炖烂汤浓，配月牙饼掰着泡。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "荞面饸饹", cuisine: "陕西", country: "中国", city: "陕西", note: "陕西到处有，荞麦面压成的圆面条，凉拌热汤都行。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "荞面饸饹", cuisine: "陕西", country: "中国", province: "陕西", city: "陕西", note: "陕西到处有，荞麦面压成的圆面条，凉拌热汤都行。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "油泼面", cuisine: "西安", country: "中国", province: "陕西", city: "西安", iconic: true, note: "热油一泼激出蒜香辣香，陕西面食家族里最家常的一款。", type: "面", flavor: ["辣", "咸鲜"], spice: 2, diet: "素", protein: ["面米"] },
     { name: "蘸水面", cuisine: "杨凌", country: "中国", province: "陕西", city: "杨凌", note: "杨凌原创，面条粗又宽，蘸酸辣汤汁吃。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["面米", "猪"] },
     { name: "甑糕", cuisine: "西安", country: "中国", province: "陕西", city: "西安", note: "西安早点甜点，糯米红枣层层叠，甜软黏糯。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "石子馍", cuisine: "陕西", country: "中国", city: "陕西", note: "陕西古老烙饼，把面饼埋在烧热石子里，酥脆咸香。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "腊汁肉揪面片", cuisine: "陕西", country: "中国", city: "陕西", note: "陕西家常，手揪面片配腊汁肉，香得很。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "菜疙瘩", cuisine: "陕西", country: "中国", city: "陕西", note: "陕西农家饭，绿菜拌面粉蒸熟，蘸汁吃。", type: "面", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "石子馍", cuisine: "陕西", country: "中国", province: "陕西", city: "陕西", note: "陕西古老烙饼，把面饼埋在烧热石子里，酥脆咸香。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "腊汁肉揪面片", cuisine: "陕西", country: "中国", province: "陕西", city: "陕西", note: "陕西家常，手揪面片配腊汁肉，香得很。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "菜疙瘩", cuisine: "陕西", country: "中国", province: "陕西", city: "陕西", note: "陕西农家饭，绿菜拌面粉蒸熟，蘸汁吃。", type: "面", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "陕北荞面饸饹", cuisine: "榆林", country: "中国", province: "陕西", city: "榆林", note: "榆林特色，荞面饸饹配羊腥汤，陕北人爱吃。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "羊杂碎", cuisine: "榆林", country: "中国", province: "陕西", city: "榆林", note: "榆林早点，羊头肉羊血羊肠煮一锅，重口味。", type: "汤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
     { name: "洋芋擦擦", cuisine: "陕北", country: "中国", province: "陕西", city: "陕北", note: "陕北家常，土豆丝裹面蒸熟，蘸汁吃。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "素", protein: ["其它"] },
@@ -799,7 +799,7 @@ var DISHES = {
     { name: "酿皮子", cuisine: "兰州", country: "中国", province: "甘肃", city: "兰州", note: "兰州凉皮，面糊蒸成，拌辣子醋蒜泥。", type: "凉菜", flavor: ["酸", "辣"], spice: 1, diet: "素", protein: ["面米"] },
     { name: "灰豆子", cuisine: "兰州", country: "中国", province: "甘肃", city: "兰州", note: "兰州甜品，灰豆子煮烂加红枣，冰镇喝。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["豆制品"] },
     { name: "甜醅子", cuisine: "兰州", country: "中国", province: "甘肃", city: "兰州", note: "兰州甜食，青稞发酵，微甜有酒香。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "浆水面", cuisine: "甘肃", country: "中国", city: "甘肃", note: "甘肃家常面，浆水酸菜做汤底，清热解暑。", type: "面", flavor: ["酸", "清淡"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "浆水面", cuisine: "甘肃", country: "中国", province: "甘肃", city: "甘肃", note: "甘肃家常面，浆水酸菜做汤底，清热解暑。", type: "面", flavor: ["酸", "清淡"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "臊子面", cuisine: "陇西", country: "中国", province: "甘肃", city: "陇西", note: "陇西版本，面条细长，酸辣汤底。", type: "面", flavor: ["酸", "辣", "咸鲜"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
     { name: "陇西腊肉", cuisine: "陇西", country: "中国", province: "甘肃", city: "陇西", note: "陇西特产，腊肉腌制晾晒，肥瘦相间。", type: "凉菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "天水呱呱", cuisine: "天水", country: "中国", province: "甘肃", city: "天水", note: "天水街头小吃，荞麦面做的面皮，撕小块拌辣子。", type: "小吃", flavor: ["辣", "酸"], spice: 2, diet: "素", protein: ["面米"] },
@@ -817,40 +817,40 @@ var DISHES = {
     { name: "青海酿皮", cuisine: "西宁", country: "中国", province: "青海", city: "西宁", note: "面粉蒸的凉皮，拌上辣油醋汁，筋道爽口，西宁街头常见。", type: "凉菜", flavor: ["酸", "辣"], spice: 1, diet: "素", protein: ["面米"] },
     { name: "羊肠面", cuisine: "西宁", country: "中国", province: "青海", city: "西宁", note: "羊肠灌馅煮熟配面条，浇上羊杂汤，早上来一碗管饱。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
     { name: "炕锅羊肉", cuisine: "西宁", country: "中国", province: "青海", city: "西宁", note: "铁锅焖出来的羊肉，土豆垫底肉烂入味，青海人家常吃。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
-    { name: "羊肉炒面片", cuisine: "青海", country: "中国", city: "青海", note: "面片揪成小块和羊肉一起炒，主食带肉一顿解决。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "羊肉炒面片", cuisine: "青海", country: "中国", province: "青海", city: "青海", note: "面片揪成小块和羊肉一起炒，主食带肉一顿解决。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
     { name: "青海老酸奶", cuisine: "西宁", country: "中国", province: "青海", city: "西宁", note: "稠得像豆腐脑，舀一勺放嘴里，配白糖吃酸酸甜甜。", type: "甜点", flavor: ["酸", "甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "青稞酒", cuisine: "青海", country: "中国", city: "青海", note: "青稞酿的粮食酒，喝着有点冲但不上头，青海人待客必备。", type: "其它", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "狗浇尿", cuisine: "青海", country: "中国", city: "青海", note: "名字怪但很好吃，青稞面煎的薄饼，烙得酥脆带焦香。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "青稞酒", cuisine: "青海", country: "中国", province: "青海", city: "青海", note: "青稞酿的粮食酒，喝着有点冲但不上头，青海人待客必备。", type: "其它", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "狗浇尿", cuisine: "青海", country: "中国", province: "青海", city: "青海", note: "名字怪但很好吃，青稞面煎的薄饼，烙得酥脆带焦香。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "青海甜醅", cuisine: "西宁", country: "中国", province: "青海", city: "西宁", note: "青稞或者小麦发酵的甜品，有点像甜酒酿，天热喝一碗解渴。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素", protein: ["面米"] },
     { name: "宁夏手抓羊肉", cuisine: "银川", country: "中国", province: "宁夏", city: "银川", iconic: true, note: "宁夏滩羊肉质细嫩少膻味，手抓是当地回族待客的招牌吃法。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
     { name: "羊杂碎", cuisine: "银川", country: "中国", province: "宁夏", city: "银川", note: "羊心羊肺羊肠煮一锅汤，撒上香菜葱花，银川人早起的暖胃饭。", type: "汤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
     { name: "羊肉臊子面", cuisine: "银川", country: "中国", province: "宁夏", city: "银川", note: "面条浇上羊肉丁豆腐丁做的臊子，银川人家家会做的面。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "面米"] },
     { name: "燕面揉揉", cuisine: "固原", country: "中国", province: "宁夏", city: "固原", note: "燕麦面压成细条凉拌着吃，固原人夏天就爱这一口。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "宁夏烩羊肉", cuisine: "银川", country: "中国", province: "宁夏", city: "银川", note: "羊肉块粉条豆腐一起烩，汤鲜肉烂，银川馆子里的招牌。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "羊肉搓面", cuisine: "宁夏", country: "中国", city: "宁夏", note: "面条全靠手搓出来，粗细不均，羊肉汤一浇味道足。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "羊肉搓面", cuisine: "宁夏", country: "中国", province: "宁夏", city: "宁夏", note: "面条全靠手搓出来，粗细不均，羊肉汤一浇味道足。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
     { name: "清蒸羊羔肉", cuisine: "吴忠", country: "中国", province: "宁夏", city: "吴忠", note: "小羊羔肉直接清蒸，蘸椒盐吃最能尝出肉嫩，吴忠待客硬菜。", type: "炖菜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "手工馓子", cuisine: "宁夏", country: "中国", city: "宁夏", note: "面丝盘成花下油锅炸，酥脆掉渣，宁夏人过节炸着吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "手工馓子", cuisine: "宁夏", country: "中国", province: "宁夏", city: "宁夏", note: "面丝盘成花下油锅炸，酥脆掉渣，宁夏人过节炸着吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "纯素", protein: ["面米"] },
     { name: "八宝盖碗茶", cuisine: "银川", country: "中国", province: "宁夏", city: "银川", iconic: true, note: "回族传统茶饮，红枣、枸杞、冰糖等八味同泡，宁夏待客必备。", type: "其它", flavor: ["甜"], spice: 0, diet: "纯素" },
     { name: "新疆大盘鸡", cuisine: "沙湾", country: "中国", province: "新疆", city: "沙湾", iconic: true, note: "新疆代表菜，鸡块与土豆红烧后配宽面，一盘量大管饱。", type: "炖菜", flavor: ["咸鲜", "辣"], spice: 2, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "烤羊肉串", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "孜然辣椒炭火现烤，新疆美食最具国民度的符号。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
-    { name: "馕", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "维吾尔族主食，与中亚、波斯的馕饼传统同源，馕坑烤制。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "纯素", protein: ["面米"] },
-    { name: "手抓饭", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "抓饭（波劳/pilaf）源自中亚饮食传统，羊肉胡萝卜洋葱焖煮拌饭。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "新疆拌面", cuisine: "新疆", country: "中国", city: "新疆", note: "也叫拉条子，面条筋道，配的各种炒菜随便加，管饱。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "面米"] },
-    { name: "椒麻鸡", cuisine: "新疆", country: "中国", city: "新疆", note: "煮熟的鸡手撕成条，浇上花椒油拌的调料，又麻又辣夏天吃着过瘾。", type: "凉菜", flavor: ["麻", "辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
-    { name: "烤全羊", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "整羊炭火烤制，新疆待贵客的隆重吃法，外皮酥脆内里多汁。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "烤包子", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "馕坑烤制的羊肉馅酥皮包，与中亚萨姆萨（samsa）系出同源。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "馕包肉", cuisine: "新疆", country: "中国", city: "新疆", note: "烤馕垫底摆上红烧羊肉，馕吸了肉汁比肉还香。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "羊肉焖饼", cuisine: "新疆", country: "中国", city: "新疆", note: "生面饼盖在羊肉上一起焖，饼子浸透肉汤，新疆乡下菜。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "手撕羊肉", cuisine: "新疆", country: "中国", city: "新疆", note: "整块羊肉煮熟后直接手撕着吃，蘸盐吃原汁原味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "架子肉", cuisine: "新疆", country: "中国", city: "新疆", note: "羊肉块挂在架子上烤，外焦里嫩，南疆维吾尔族做法。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "缸子肉", cuisine: "新疆", country: "中国", city: "新疆", note: "小陶缸里炖的羊肉，清炖原味，一人一缸刚刚好。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
-    { name: "羊杂汤", cuisine: "新疆", country: "中国", city: "新疆", note: "羊血羊肺羊肠煮的浓汤，奶白色的汤底，喀什早市标配。", type: "汤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
+    { name: "烤羊肉串", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "孜然辣椒炭火现烤，新疆美食最具国民度的符号。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
+    { name: "馕", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "维吾尔族主食，与中亚、波斯的馕饼传统同源，馕坑烤制。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "手抓饭", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "抓饭（波劳/pilaf）源自中亚饮食传统，羊肉胡萝卜洋葱焖煮拌饭。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "新疆拌面", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "也叫拉条子，面条筋道，配的各种炒菜随便加，管饱。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "面米"] },
+    { name: "椒麻鸡", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "煮熟的鸡手撕成条，浇上花椒油拌的调料，又麻又辣夏天吃着过瘾。", type: "凉菜", flavor: ["麻", "辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
+    { name: "烤全羊", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "整羊炭火烤制，新疆待贵客的隆重吃法，外皮酥脆内里多汁。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "烤包子", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "馕坑烤制的羊肉馅酥皮包，与中亚萨姆萨（samsa）系出同源。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "馕包肉", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "烤馕垫底摆上红烧羊肉，馕吸了肉汁比肉还香。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "羊肉焖饼", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "生面饼盖在羊肉上一起焖，饼子浸透肉汤，新疆乡下菜。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "手撕羊肉", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "整块羊肉煮熟后直接手撕着吃，蘸盐吃原汁原味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "架子肉", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "羊肉块挂在架子上烤，外焦里嫩，南疆维吾尔族做法。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "缸子肉", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "小陶缸里炖的羊肉，清炖原味，一人一缸刚刚好。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "羊杂汤", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "羊血羊肺羊肠煮的浓汤，奶白色的汤底，喀什早市标配。", type: "汤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊"] },
     { name: "薄皮包子", cuisine: "喀什", country: "中国", province: "新疆", city: "喀什", note: "皮薄得透光，包着羊肉馅蒸出来，咬一口满嘴汤，喀什早茶必点。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "拉条子", cuisine: "新疆", country: "中国", city: "新疆", iconic: true, note: "新疆拌面的俗称，手工拉制的粗面条，与中亚、回族拉面传统一脉相承。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "面米"] },
-    { name: "碎肉面", cuisine: "新疆", country: "中国", city: "新疆", note: "拉条子拌上羊肉末，羊肉切成小碎块裹满面条，吃着香。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "曲曲", cuisine: "新疆", country: "中国", city: "新疆", note: "像小馄饨的羊肉馅面食，汤煮着吃，维吾尔族做法。", type: "饺子包子", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "米肠子面肺子", cuisine: "新疆", country: "中国", city: "新疆", note: "羊肠子灌米、羊肺灌面，一锅煮出来切成片，蘸醋蒜汁吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "奶茶", cuisine: "新疆", country: "中国", city: "新疆", note: "砖茶熬的茶汤兑上鲜奶，放盐喝，新疆牧民天天离不了。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "素" },
+    { name: "拉条子", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", iconic: true, note: "新疆拌面的俗称，手工拉制的粗面条，与中亚、回族拉面传统一脉相承。", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["羊", "面米"] },
+    { name: "碎肉面", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "拉条子拌上羊肉末，羊肉切成小碎块裹满面条，吃着香。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "曲曲", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "像小馄饨的羊肉馅面食，汤煮着吃，维吾尔族做法。", type: "饺子包子", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "米肠子面肺子", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "羊肠子灌米、羊肺灌面，一锅煮出来切成片，蘸醋蒜汁吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "奶茶", cuisine: "新疆", country: "中国", province: "新疆", city: "新疆", note: "砖茶熬的茶汤兑上鲜奶，放盐喝，新疆牧民天天离不了。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "素" },
     { name: "牛肉面", cuisine: "台北", country: "中国", city: "台北", iconic: true, note: "1949年后随外省移民融合川味牛肉与本地口味发展而成，台北牛肉面节使其成为台湾代表美食之一", type: "面", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛", "面米"] },
     { name: "卤肉饭", cuisine: "台北", country: "中国", city: "台北", iconic: true, note: "南部称「肉燥饭」，是台湾最普及的国民日常餐，猪皮猪肉丁卤汁淋白饭", type: "米饭", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "珍珠奶茶", cuisine: "台中", country: "中国", city: "台中", iconic: true, note: "1980年代春水堂发明，粉圆加奶茶的组合风靡全球，是台湾饮品最成功的文化输出", type: "其它", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
@@ -3072,65 +3072,65 @@ var DISHES = {
     { name: "培根汉堡", cuisine: "美国", country: "美国", note: "美式汉堡，牛肉饼上铺煎脆培根和芝士，肉香十足。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "猪"] },
     { name: "斯莱德小汉堡", cuisine: "美国", country: "美国", native: "Slider", note: "美国南方的迷你汉堡，个头小牛肉饼薄，通常用汽水面包。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
     { name: "热狗", cuisine: "美国", country: "美国", note: "美国街头小吃，长条面包夹香肠，可加芥末、番茄酱等多种酱料。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "芝加哥热狗", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "芝加哥招牌热狗，加番茄、生桃、芥末和特制辣椒，禁止加 ketchup。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "科尼岛热狗", cuisine: "底特律", country: "美国", city: "底特律", native: "Coney Dog", note: "底特律名吃，方形面包夹香肠，淋上番茄芝士酱。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "牛"] },
-    { name: "芝加哥深盘披萨", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "芝加哥特产，厚实面饼上面铺满芝士和肉块，烤到边缘焦脆。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "纽约客薄底披萨", cuisine: "纽约", country: "美国", city: "纽约", note: "纽约经典，饼底薄脆只撒简单配料，折叠着吃。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "底特律方形披萨", cuisine: "底特律", country: "美国", city: "底特律", note: "底特律名产，方形厚底用铸铁盘烤，边缘酥脆芝士焦香。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "纽约百吉饼", cuisine: "纽约", country: "美国", city: "纽约", native: "Bagel", note: "纽约早餐必备，外皮韧内心软，蒸完再烤有嚼劲。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "贝果配熏三文鱼奶油奶酪", cuisine: "纽约", country: "美国", city: "纽约", native: "Lox", note: "纽约经典早午餐，抹厚厚奶油奶酪再铺烟熏三文鱼。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "费城芝士牛肉三明治", cuisine: "费城", country: "美国", city: "费城", native: "Cheesesteak", note: "费城快餐代表，薄切牛肉和融化的芝士炒香夹进意式长面包。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "费城软脆饼", cuisine: "费城", country: "美国", city: "费城", native: "Soft Pretzel", note: "费城街头标志性软扭结面包，外裹粗盐、常蘸黄芥末吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "得州牛胸肉烧烤", cuisine: "得州", country: "美国", city: "得州", native: "Brisket", note: "得州 BBQ 招牌，慢熏十几个小时撕成薄片，配烧烤酱。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "得州烟熏牛肋排", cuisine: "得州", country: "美国", city: "得州", note: "得州 BBQ 名菜，带骨牛肋排用木炭慢熏，肉软脱骨。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "孟菲斯干揉排骨", cuisine: "孟菲斯", country: "美国", city: "孟菲斯", native: "Dry Rub Ribs", note: "孟菲斯 BBQ 特色，猪排用香料干揉后慢烤，不刷酱。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "孟菲斯手撕猪肉三明治", cuisine: "孟菲斯", country: "美国", city: "孟菲斯", note: "孟菲斯 BBQ，手撕猪肉拌烧烤酱夹进面包，酱汁偏甜。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "卡罗来纳醋汁手撕猪肉", cuisine: "北卡罗来纳", country: "美国", city: "北卡罗来纳", native: "Pulled Pork", note: "北卡 BBQ 经典，手撕猪肉淋醋味烧烤酱，带点酸口。", type: "三明治", flavor: ["酸", "咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "卡罗来纳芥末烧烤", cuisine: "南卡罗来纳", country: "美国", city: "南卡罗来纳", native: "Mustard BBQ", note: "南卡 BBQ 特色，用芥末为主的黄色酱汁调味烤肉。", type: "烧烤", flavor: ["酸", "咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "堪萨斯城烧烤", cuisine: "堪萨斯城", country: "美国", city: "堪萨斯城", native: "Burnt Ends", note: "以干香料慢熏、浓稠番茄酱著称，招牌是牛胸肉焦头。", type: "烧烤", flavor: ["甜", "咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
-    { name: "新奥尔良秋葵浓汤", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Gumbo", note: "新奥尔良灵魂菜，用秋葵熬稠加海鲜和熏肉，香浓粘稠。", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["鸡", "鱼", "虾"] },
-    { name: "什锦饭", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Jambalaya", note: "新奥尔良卡津名菜，米饭加虾、香肠和香料炒成，色彩丰富。", type: "米饭", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡", "猪", "鱼", "虾"] },
-    { name: "穷小子三明治", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Po'boy", note: "新奥尔良发明，油炸肉饼配酱料夹进法国面包，街头快餐。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
-    { name: "小龙虾煮", cuisine: "路易斯安那", country: "美国", city: "路易斯安那", native: "Crawfish Boil", note: "路易斯安那卡津聚会菜，整锅小龙虾和香料一起煮，围站着吃。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["虾"] },
-    { name: "红豆饭", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Red Beans and Rice", note: "新奥尔良路易斯安那菜，红豆和米饭一起煮，配猪肉或香肠。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "猪"] },
-    { name: "法式甜甜圈", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Beignet", note: "新奥尔良经典甜点，环形面团炸到金黄裹糖粉，外酥内软。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "黑椒煎鱼", cuisine: "路易斯安那", country: "美国", city: "路易斯安那", native: "Blackened Fish", note: "路易斯安那做法，整条鱼裹粗黑胡椒煎，外皮焦香鱼肉嫩。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["鱼"] },
-    { name: "埃图菲小龙虾烩 (Étouffée)", cuisine: "路易斯安那", country: "美国", city: "路易斯安那", note: "路易斯安那卡真名菜，小龙虾在油面糊酱汁里焖煮、浇在米饭上。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["虾"] },
-    { name: "水牛城辣鸡翅", cuisine: "水牛城", country: "美国", city: "水牛城", native: "Buffalo Wings", note: "纽约州水牛城发明，鸡翅炸酥后裹辣酱，配蓝纹奶酪酱。", type: "烧烤", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
-    { name: "新英格兰蛤蜊浓汤", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Clam Chowder", note: "波士顿特产，奶油为底加蛤蜊、土豆和洋葱，浓稠暖胃。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "龙虾卷", cuisine: "缅因", country: "美国", city: "缅因", native: "Lobster Roll", note: "缅因名吃，缅因大龙虾肉拌蛋黄酱夹进热狗面包，鲜甜可口。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
-    { name: "波士顿焗豆", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Baked Beans", note: "用糖蜜和培根慢炖的甜咸焗豆，波士顿经典下酒菜。", type: "炖菜", flavor: ["甜", "咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "猪"] },
-    { name: "曼哈顿蛤蜊浓汤", cuisine: "纽约", country: "美国", city: "纽约", note: "番茄汤底的蛤蜊浓汤，是纽约曼哈顿的咸鲜风味汤品。", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "马里兰蟹饼", cuisine: "马里兰", country: "美国", city: "马里兰", native: "Crab Cake", note: "用马里兰蓝蟹肉做成的金黄酥脆蟹饼，蟹味鲜甜。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "切萨皮克蒸蓝蟹", cuisine: "马里兰", country: "美国", city: "马里兰", native: "Old Bay", note: "切萨皮克湾的整只蓝蟹清蒸，配蟹锤砸开吃。", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["蟹"] },
-    { name: "纳什维尔热鸡", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Hot Chicken", note: "纳什维尔特产辣炸鸡，外皮裹满辣椒油，红彤彤的巨辣。", type: "烧烤", flavor: ["辣", "咸鲜"], spice: 3, diet: "荤", protein: ["鸡"] },
-    { name: "南方炸鸡", cuisine: "美国南部", country: "美国", city: "美国南部", note: "美国南方传统炸鸡，外皮酥脆、肉汁多。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "炸鸡华夫饼", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Chicken and Waffles", note: "酥脆炸鸡盖在松软华夫饼上，淋枫糖浆，咸甜搭配。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "什锦玉米糊配虾", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Shrimp and Grits", note: "玉米糊配鲜虾和浓郁酱汁，路易斯安那南方的代表菜。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
-    { name: "比斯吉配肉汁", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Biscuits and Gravy", note: "南方蓬松小餐包掰开，浇上浓稠肉汁吃。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "通心粉芝士", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Mac and Cheese", note: "通心粉拌融化的芝士烤到金黄，美国人从小吃到大。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "绿叶菜", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Collard Greens", note: "南方慢炖羽衣绿叶菜，常加烟肉提味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "玉米面包", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Cornbread", note: "用玉米粉烤的四方小面包，南方日常主食，有点甜。", type: "饼馍", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "加州墨西哥卷饼", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Mission Burrito", note: "旧金山式超大卷饼，馅料塞得满满当当。", type: "饼馍", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "豆制品"] },
-    { name: "鱼肉塔可", cuisine: "圣地亚哥", country: "美国", city: "圣地亚哥", native: "Fish Taco", note: "炸鱼块配卷心菜丝和酱料塞进玉米饼，圣地亚哥发明。", type: "小吃", flavor: ["咸鲜", "酸"], spice: 1, diet: "海鲜", protein: ["鱼"] },
-    { name: "牛油果吐司", cuisine: "加州", country: "美国", city: "加州", native: "Avocado Toast", note: "加州流行的早餐，把牛油果泥抹在烤吐司上。", type: "三明治", flavor: ["清淡"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "科布沙拉", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Cobb Salad", note: "培根、鸡蛋、蓝纹奶酪、 Ranch酱拌的丰富沙拉，洛杉矶常见。", type: "沙拉", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "蛋"] },
-    { name: "加州卷寿司", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", note: "洛杉矶发明的反卷寿司，用蟹肉牛油果代替生鱼。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
-    { name: "墨西哥玉米卷", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Street Taco", note: "洛杉矶街头常见小食，馅料丰富、味道浓郁。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "汉堡", cuisine: "加州", country: "美国", city: "加州", native: "In-N-Out", note: "加州汉堡个大料多，汉堡文化浓厚。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "科布萨拉多三明治", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Cubano", note: "迈阿密流行，把科布沙拉食材夹在面包里的三明治。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "古巴烤三明治与咖啡", cuisine: "迈阿密", country: "美国", city: "迈阿密", note: "迈阿密经典，烤面包夹腌烤猪肉、火腿、瑞士奶酪，配古巴咖啡。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "青柠派（Key Lime）", cuisine: "佛罗里达", country: "美国", city: "佛罗里达", native: "Key Lime Pie", note: "佛罗里达青柠榨汁做的酸甜派，馅是黄绿色。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "素", protein: ["蛋", "其它"] },
-    { name: "墨西哥辣椒炖肉", cuisine: "得州", country: "美国", city: "得州", native: "Chili con Carne", note: "得州粗犷菜，大块牛肉和辣椒一起炖，够劲。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["牛", "豆制品"] },
-    { name: "得州墨西哥卷", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Breakfast Taco", note: "奥斯汀的墨西哥卷饼，饼大肉多馅足。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["蛋", "猪"] },
-    { name: "绿辣椒炖肉", cuisine: "新墨西哥", country: "美国", city: "新墨西哥", native: "Green Chile Stew", note: "新墨西哥名菜，用当地绿辣椒和猪肉炖成。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["猪"] },
+    { name: "芝加哥热狗", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "芝加哥招牌热狗，加番茄、生桃、芥末和特制辣椒，禁止加 ketchup。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "科尼岛热狗", cuisine: "底特律", country: "美国", province: "密歇根州", city: "底特律", native: "Coney Dog", note: "底特律名吃，方形面包夹香肠，淋上番茄芝士酱。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "牛"] },
+    { name: "芝加哥深盘披萨", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "芝加哥特产，厚实面饼上面铺满芝士和肉块，烤到边缘焦脆。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "纽约客薄底披萨", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "纽约经典，饼底薄脆只撒简单配料，折叠着吃。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "底特律方形披萨", cuisine: "底特律", country: "美国", province: "密歇根州", city: "底特律", note: "底特律名产，方形厚底用铸铁盘烤，边缘酥脆芝士焦香。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "纽约百吉饼", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Bagel", note: "纽约早餐必备，外皮韧内心软，蒸完再烤有嚼劲。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "贝果配熏三文鱼奶油奶酪", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Lox", note: "纽约经典早午餐，抹厚厚奶油奶酪再铺烟熏三文鱼。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "费城芝士牛肉三明治", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Cheesesteak", note: "费城快餐代表，薄切牛肉和融化的芝士炒香夹进意式长面包。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "费城软脆饼", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Soft Pretzel", note: "费城街头标志性软扭结面包，外裹粗盐、常蘸黄芥末吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "得州牛胸肉烧烤", cuisine: "得州", country: "美国", province: "得州", city: "得州", native: "Brisket", note: "得州 BBQ 招牌，慢熏十几个小时撕成薄片，配烧烤酱。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "得州烟熏牛肋排", cuisine: "得州", country: "美国", province: "得州", city: "得州", note: "得州 BBQ 名菜，带骨牛肋排用木炭慢熏，肉软脱骨。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "孟菲斯干揉排骨", cuisine: "孟菲斯", country: "美国", province: "田纳西州", city: "孟菲斯", native: "Dry Rub Ribs", note: "孟菲斯 BBQ 特色，猪排用香料干揉后慢烤，不刷酱。", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "孟菲斯手撕猪肉三明治", cuisine: "孟菲斯", country: "美国", province: "田纳西州", city: "孟菲斯", note: "孟菲斯 BBQ，手撕猪肉拌烧烤酱夹进面包，酱汁偏甜。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "卡罗来纳醋汁手撕猪肉", cuisine: "北卡罗来纳", country: "美国", province: "北卡罗来纳", city: "北卡罗来纳", native: "Pulled Pork", note: "北卡 BBQ 经典，手撕猪肉淋醋味烧烤酱，带点酸口。", type: "三明治", flavor: ["酸", "咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "卡罗来纳芥末烧烤", cuisine: "南卡罗来纳", country: "美国", province: "南卡罗来纳", city: "南卡罗来纳", native: "Mustard BBQ", note: "南卡 BBQ 特色，用芥末为主的黄色酱汁调味烤肉。", type: "烧烤", flavor: ["酸", "咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "堪萨斯城烧烤", cuisine: "堪萨斯城", country: "美国", province: "密苏里州", city: "堪萨斯城", native: "Burnt Ends", note: "以干香料慢熏、浓稠番茄酱著称，招牌是牛胸肉焦头。", type: "烧烤", flavor: ["甜", "咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
+    { name: "新奥尔良秋葵浓汤", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Gumbo", note: "新奥尔良灵魂菜，用秋葵熬稠加海鲜和熏肉，香浓粘稠。", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["鸡", "鱼", "虾"] },
+    { name: "什锦饭", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Jambalaya", note: "新奥尔良卡津名菜，米饭加虾、香肠和香料炒成，色彩丰富。", type: "米饭", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡", "猪", "鱼", "虾"] },
+    { name: "穷小子三明治", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Po'boy", note: "新奥尔良发明，油炸肉饼配酱料夹进法国面包，街头快餐。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
+    { name: "小龙虾煮", cuisine: "路易斯安那", country: "美国", province: "路易斯安那", city: "路易斯安那", native: "Crawfish Boil", note: "路易斯安那卡津聚会菜，整锅小龙虾和香料一起煮，围站着吃。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["虾"] },
+    { name: "红豆饭", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Red Beans and Rice", note: "新奥尔良路易斯安那菜，红豆和米饭一起煮，配猪肉或香肠。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "猪"] },
+    { name: "法式甜甜圈", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Beignet", note: "新奥尔良经典甜点，环形面团炸到金黄裹糖粉，外酥内软。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "黑椒煎鱼", cuisine: "路易斯安那", country: "美国", province: "路易斯安那", city: "路易斯安那", native: "Blackened Fish", note: "路易斯安那做法，整条鱼裹粗黑胡椒煎，外皮焦香鱼肉嫩。", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["鱼"] },
+    { name: "埃图菲小龙虾烩 (Étouffée)", cuisine: "路易斯安那", country: "美国", province: "路易斯安那", city: "路易斯安那", note: "路易斯安那卡真名菜，小龙虾在油面糊酱汁里焖煮、浇在米饭上。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["虾"] },
+    { name: "水牛城辣鸡翅", cuisine: "水牛城", country: "美国", province: "纽约州", city: "水牛城", native: "Buffalo Wings", note: "纽约州水牛城发明，鸡翅炸酥后裹辣酱，配蓝纹奶酪酱。", type: "烧烤", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
+    { name: "新英格兰蛤蜊浓汤", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Clam Chowder", note: "波士顿特产，奶油为底加蛤蜊、土豆和洋葱，浓稠暖胃。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "龙虾卷", cuisine: "缅因", country: "美国", province: "缅因", city: "缅因", native: "Lobster Roll", note: "缅因名吃，缅因大龙虾肉拌蛋黄酱夹进热狗面包，鲜甜可口。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
+    { name: "波士顿焗豆", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Baked Beans", note: "用糖蜜和培根慢炖的甜咸焗豆，波士顿经典下酒菜。", type: "炖菜", flavor: ["甜", "咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "猪"] },
+    { name: "曼哈顿蛤蜊浓汤", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "番茄汤底的蛤蜊浓汤，是纽约曼哈顿的咸鲜风味汤品。", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "马里兰蟹饼", cuisine: "马里兰", country: "美国", province: "马里兰", city: "马里兰", native: "Crab Cake", note: "用马里兰蓝蟹肉做成的金黄酥脆蟹饼，蟹味鲜甜。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "切萨皮克蒸蓝蟹", cuisine: "马里兰", country: "美国", province: "马里兰", city: "马里兰", native: "Old Bay", note: "切萨皮克湾的整只蓝蟹清蒸，配蟹锤砸开吃。", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["蟹"] },
+    { name: "纳什维尔热鸡", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Hot Chicken", note: "纳什维尔特产辣炸鸡，外皮裹满辣椒油，红彤彤的巨辣。", type: "烧烤", flavor: ["辣", "咸鲜"], spice: 3, diet: "荤", protein: ["鸡"] },
+    { name: "南方炸鸡", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", note: "美国南方传统炸鸡，外皮酥脆、肉汁多。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "炸鸡华夫饼", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Chicken and Waffles", note: "酥脆炸鸡盖在松软华夫饼上，淋枫糖浆，咸甜搭配。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "什锦玉米糊配虾", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Shrimp and Grits", note: "玉米糊配鲜虾和浓郁酱汁，路易斯安那南方的代表菜。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
+    { name: "比斯吉配肉汁", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Biscuits and Gravy", note: "南方蓬松小餐包掰开，浇上浓稠肉汁吃。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "通心粉芝士", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Mac and Cheese", note: "通心粉拌融化的芝士烤到金黄，美国人从小吃到大。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "绿叶菜", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Collard Greens", note: "南方慢炖羽衣绿叶菜，常加烟肉提味。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "玉米面包", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Cornbread", note: "用玉米粉烤的四方小面包，南方日常主食，有点甜。", type: "饼馍", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "加州墨西哥卷饼", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Mission Burrito", note: "旧金山式超大卷饼，馅料塞得满满当当。", type: "饼馍", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "豆制品"] },
+    { name: "鱼肉塔可", cuisine: "圣地亚哥", country: "美国", province: "加州", city: "圣地亚哥", native: "Fish Taco", note: "炸鱼块配卷心菜丝和酱料塞进玉米饼，圣地亚哥发明。", type: "小吃", flavor: ["咸鲜", "酸"], spice: 1, diet: "海鲜", protein: ["鱼"] },
+    { name: "牛油果吐司", cuisine: "加州", country: "美国", province: "加州", city: "加州", native: "Avocado Toast", note: "加州流行的早餐，把牛油果泥抹在烤吐司上。", type: "三明治", flavor: ["清淡"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "科布沙拉", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Cobb Salad", note: "培根、鸡蛋、蓝纹奶酪、 Ranch酱拌的丰富沙拉，洛杉矶常见。", type: "沙拉", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "蛋"] },
+    { name: "加州卷寿司", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", note: "洛杉矶发明的反卷寿司，用蟹肉牛油果代替生鱼。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
+    { name: "墨西哥玉米卷", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Street Taco", note: "洛杉矶街头常见小食，馅料丰富、味道浓郁。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "汉堡", cuisine: "加州", country: "美国", province: "加州", city: "加州", native: "In-N-Out", note: "加州汉堡个大料多，汉堡文化浓厚。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "科布萨拉多三明治", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Cubano", note: "迈阿密流行，把科布沙拉食材夹在面包里的三明治。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "古巴烤三明治与咖啡", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", note: "迈阿密经典，烤面包夹腌烤猪肉、火腿、瑞士奶酪，配古巴咖啡。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "青柠派（Key Lime）", cuisine: "佛罗里达", country: "美国", province: "佛罗里达", city: "佛罗里达", native: "Key Lime Pie", note: "佛罗里达青柠榨汁做的酸甜派，馅是黄绿色。", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "素", protein: ["蛋", "其它"] },
+    { name: "墨西哥辣椒炖肉", cuisine: "得州", country: "美国", province: "得州", city: "得州", native: "Chili con Carne", note: "得州粗犷菜，大块牛肉和辣椒一起炖，够劲。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["牛", "豆制品"] },
+    { name: "得州墨西哥卷", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Breakfast Taco", note: "奥斯汀的墨西哥卷饼，饼大肉多馅足。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["蛋", "猪"] },
+    { name: "绿辣椒炖肉", cuisine: "新墨西哥", country: "美国", province: "新墨西哥", city: "新墨西哥", native: "Green Chile Stew", note: "新墨西哥名菜，用当地绿辣椒和猪肉炖成。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["猪"] },
     { name: "深盘苹果派", cuisine: "美国", country: "美国", native: "Apple Pie", note: "芝加哥特产深锅烤苹果派，馅厚皮厚。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "感恩节烤火鸡", cuisine: "美国", country: "美国", note: "美国感恩节必备，整只火鸡肚子里塞馅烤。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "三明治肉卷", cuisine: "纽约", country: "美国", city: "纽约", native: "Reuben", note: "纽约经典，薄牛肉片卷火腿奶酪配褐酱。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "熏牛肉三明治", cuisine: "纽约", country: "美国", city: "纽约", native: "Pastrami on Rye", note: "纽约犹太区特产，烟熏牛肉片堆在黑面包里。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "芝加哥意大利牛肉三明治", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Italian Beef", note: "芝加哥名吃，薄切牛肉浸满肉汁夹在意大利面包里。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "辛辛那提辣肉酱面", cuisine: "辛辛那提", country: "美国", city: "辛辛那提", native: "Chili", note: "辛辛那提特有肉酱意面，加肉桂和豆子，带点甜辣。", type: "面", flavor: ["辣", "咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "密尔沃基啤酒煮香肠", cuisine: "密尔沃基", country: "美国", city: "密尔沃基", native: "Bratwurst", note: "密尔沃基德国移民带来的菜，香肠用啤酒炖煮。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "三明治肉卷", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Reuben", note: "纽约经典，薄牛肉片卷火腿奶酪配褐酱。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "熏牛肉三明治", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Pastrami on Rye", note: "纽约犹太区特产，烟熏牛肉片堆在黑面包里。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "芝加哥意大利牛肉三明治", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Italian Beef", note: "芝加哥名吃，薄切牛肉浸满肉汁夹在意大利面包里。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "辛辛那提辣肉酱面", cuisine: "辛辛那提", country: "美国", province: "俄亥俄州", city: "辛辛那提", native: "Chili", note: "辛辛那提特有肉酱意面，加肉桂和豆子，带点甜辣。", type: "面", flavor: ["辣", "咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "密尔沃基啤酒煮香肠", cuisine: "密尔沃基", country: "美国", province: "威斯康星", city: "密尔沃基", native: "Bratwurst", note: "密尔沃基德国移民带来的菜，香肠用啤酒炖煮。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
     { name: "油腻乔三明治", cuisine: "美国", country: "美国", native: "Sloppy Joe", note: "炸肉排配酱汁和腌菜，路易斯安那的快餐三明治。", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
     { name: "薯条肉汁奶酪", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Poutine", note: "魁北克快餐，炸薯条浇肉汁和奶酪块，极香。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
     { name: "枫糖浆", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Maple Syrup", note: "魁北克特产枫树汁熬的糖浆，甜香用来配煎饼。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素" },
@@ -3144,28 +3144,28 @@ var DISHES = {
     { name: "哈利法克斯甜酱唐纳三明治", cuisine: "哈利法克斯", country: "加拿大", city: "哈利法克斯", native: "Donair", note: "新斯科舍省名吃，油炸薯条淋上棕色肉汁和甜番茄酱。", type: "三明治", flavor: ["甜", "咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
     { name: "卡尔加里牛排", cuisine: "卡尔加里", country: "加拿大", city: "卡尔加里", note: "用阿尔伯塔AAA级牛肉煎烤的厚切牛排，当地牧牛业的招牌。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
     { name: "糖枫太妃", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Maple Taffy", note: "魁北克特产太妃糖，用枫糖熬成，奶香浓郁。", type: "甜点", flavor: ["甜"], spice: 0, diet: "纯素" },
-    { name: "雪松板烤三文鱼", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Cedar Plank Salmon", iconic: true, note: "太平洋西北招牌，鲜三文鱼放在雪松木板上烤，做法直接借自当地原住民的传统烤鱼法，木板熏香是灵魂。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "珍宝蟹", cuisine: "华盛顿州奥林匹克半岛", country: "美国", city: "华盛顿州奥林匹克半岛", native: "Dungeness Crab", note: "因华盛顿州港口小镇Dungeness得名，肉质清甜，是西北海岸渔业文化的象征，常清蒸配黄油。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "象拔蚌", cuisine: "普吉特湾", country: "美国", city: "普吉特湾", native: "Geoduck", note: "名字发音'gooey-duck'源自原住民语，巨型本地蛤蜊，脆甜，可生切刺身或快炒。", type: "海鲜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "玛丽安莓派", cuisine: "俄勒冈州", country: "美国", city: "俄勒冈州", native: "Marionberry Pie", note: "玛丽安莓是俄勒冈州立大学培育的黑莓杂交品种，得名于Marion县，夏季当地烘焙店的招牌馅饼。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
-    { name: "炸奶酪凝块", cuisine: "威斯康星", country: "美国", city: "威斯康星", native: "Fried Cheese Curds", iconic: true, note: "威州招牌小吃，新鲜奶酪凝块裹啤酒面糊油炸，最好的凝块咬下去会'吱吱'响，集市与酒馆必备。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "焙盘杂烩", cuisine: "明尼苏达", country: "美国", city: "明尼苏达", native: "Hotdish", iconic: true, note: "明尼苏达家常砂锅菜，经典版是牛肉末+奶油汤+冷冻蔬菜、表面铺一层土豆饼球（tater tots）烤成，教堂聚餐与冬季必吃。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
-    { name: "散肉三明治", cuisine: "爱荷华", country: "美国", city: "爱荷华", native: "Loose Meat Sandwich", note: "1926年爱荷华Maid-Rite连锁发明，调味牛肉末煮到松散不成饼、夹圆面包，形似没成型的汉堡，配腌黄瓜洋葱芥末。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "帕斯蒂肉馅饼", cuisine: "密歇根上半岛", country: "美国", city: "密歇根上半岛", native: "Pasty", note: "由康沃尔矿工移民带入密歇根铜矿区，牛肉、土豆、洋葱、芜菁包进半月形酥皮，是矿工便携午餐的本地化遗存。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "油炸面包", cuisine: "美国西南部原住民", country: "美国", city: "美国西南部原住民", native: "Frybread", iconic: true, note: "最广为人知的美洲原住民食物，油炸发面饼；源起沉重——1860年代政府配给面粉猪油迫使部落发明，如今成了文化韧性的象征，也是印第安塔可的饼底。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "三姐妹炖菜", cuisine: "美东北易洛魁", country: "美国", city: "美东北易洛魁", native: "Three Sisters Stew", note: "玉米、豆、南瓜三种共生作物一锅炖，源自易洛魁/豪德诺索尼农耕传统：玉米撑豆藤、豆固氮、南瓜遮地。", type: "炖菜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "纯素", protein: ["豆制品", "面米", "其它"] },
-    { name: "野生菰米", cuisine: "五大湖区奥吉布瓦", country: "美国", city: "五大湖区奥吉布瓦", native: "Wild Rice (Manoomin)", iconic: true, note: "奥吉布瓦语manoomin意为'好种子'，其实不是稻而是湖生水草籽，五大湖原住民手工采收的圣食，高蛋白高纤。", type: "米饭", flavor: ["清淡"], spice: 0, diet: "纯素", protein: ["面米"] },
+    { name: "雪松板烤三文鱼", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Cedar Plank Salmon", iconic: true, note: "太平洋西北招牌，鲜三文鱼放在雪松木板上烤，做法直接借自当地原住民的传统烤鱼法，木板熏香是灵魂。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "珍宝蟹", cuisine: "华盛顿州奥林匹克半岛", country: "美国", province: "华盛顿州奥林匹克半岛", city: "华盛顿州奥林匹克半岛", native: "Dungeness Crab", note: "因华盛顿州港口小镇Dungeness得名，肉质清甜，是西北海岸渔业文化的象征，常清蒸配黄油。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "象拔蚌", cuisine: "普吉特湾", country: "美国", province: "普吉特湾", city: "普吉特湾", native: "Geoduck", note: "名字发音'gooey-duck'源自原住民语，巨型本地蛤蜊，脆甜，可生切刺身或快炒。", type: "海鲜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "玛丽安莓派", cuisine: "俄勒冈州", country: "美国", province: "俄勒冈州", city: "俄勒冈州", native: "Marionberry Pie", note: "玛丽安莓是俄勒冈州立大学培育的黑莓杂交品种，得名于Marion县，夏季当地烘焙店的招牌馅饼。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
+    { name: "炸奶酪凝块", cuisine: "威斯康星", country: "美国", province: "威斯康星", city: "威斯康星", native: "Fried Cheese Curds", iconic: true, note: "威州招牌小吃，新鲜奶酪凝块裹啤酒面糊油炸，最好的凝块咬下去会'吱吱'响，集市与酒馆必备。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "焙盘杂烩", cuisine: "明尼苏达", country: "美国", province: "明尼苏达", city: "明尼苏达", native: "Hotdish", iconic: true, note: "明尼苏达家常砂锅菜，经典版是牛肉末+奶油汤+冷冻蔬菜、表面铺一层土豆饼球（tater tots）烤成，教堂聚餐与冬季必吃。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
+    { name: "散肉三明治", cuisine: "爱荷华", country: "美国", province: "爱荷华", city: "爱荷华", native: "Loose Meat Sandwich", note: "1926年爱荷华Maid-Rite连锁发明，调味牛肉末煮到松散不成饼、夹圆面包，形似没成型的汉堡，配腌黄瓜洋葱芥末。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "帕斯蒂肉馅饼", cuisine: "密歇根上半岛", country: "美国", province: "密歇根上半岛", city: "密歇根上半岛", native: "Pasty", note: "由康沃尔矿工移民带入密歇根铜矿区，牛肉、土豆、洋葱、芜菁包进半月形酥皮，是矿工便携午餐的本地化遗存。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "油炸面包", cuisine: "美国西南部原住民", country: "美国", province: "美国西南部原住民", city: "美国西南部原住民", native: "Frybread", iconic: true, note: "最广为人知的美洲原住民食物，油炸发面饼；源起沉重——1860年代政府配给面粉猪油迫使部落发明，如今成了文化韧性的象征，也是印第安塔可的饼底。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "三姐妹炖菜", cuisine: "美东北易洛魁", country: "美国", province: "美东北易洛魁", city: "美东北易洛魁", native: "Three Sisters Stew", note: "玉米、豆、南瓜三种共生作物一锅炖，源自易洛魁/豪德诺索尼农耕传统：玉米撑豆藤、豆固氮、南瓜遮地。", type: "炖菜", flavor: ["清淡", "咸鲜"], spice: 0, diet: "纯素", protein: ["豆制品", "面米", "其它"] },
+    { name: "野生菰米", cuisine: "五大湖区奥吉布瓦", country: "美国", province: "五大湖区奥吉布瓦", city: "五大湖区奥吉布瓦", native: "Wild Rice (Manoomin)", iconic: true, note: "奥吉布瓦语manoomin意为'好种子'，其实不是稻而是湖生水草籽，五大湖原住民手工采收的圣食，高蛋白高纤。", type: "米饭", flavor: ["清淡"], spice: 0, diet: "纯素", protein: ["面米"] },
     { name: "杂碎", cuisine: "旧金山/纽约", country: "美国", city: "旧金山/纽约", native: "Chop Suey", iconic: true, note: "美式中餐的老招牌，肉丝、蛋、杂菜勾芡烩一锅——中国本土几乎无人识得，是19世纪华人移民为迎合美国口味发明的'异国想象菜'。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "蛋", "其它"] },
     { name: "芙蓉蛋", cuisine: "美国", country: "美国", native: "Egg Foo Young", note: "源自广东'芙蓉蛋'，但美式版做成厚煎蛋饼、淋褐色浓芡汁，比原版更油更厚，是唐人街本地化产物。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["蛋"] },
-    { name: "左宗棠鸡近亲·陈皮橙鸡", cuisine: "加州", country: "美国", city: "加州", native: "Orange Chicken", iconic: true, note: "1987年熊猫快餐发明，裹粉炸鸡块浇甜酸橙皮厚芡；灵感来自湘/粤但实为纯美式快餐创作，中国餐馆见不到。", type: "烧烤", flavor: ["甜", "酸", "咸鲜"], spice: 1, diet: "荤", protein: ["鸡"] },
+    { name: "左宗棠鸡近亲·陈皮橙鸡", cuisine: "加州", country: "美国", province: "加州", city: "加州", native: "Orange Chicken", iconic: true, note: "1987年熊猫快餐发明，裹粉炸鸡块浇甜酸橙皮厚芡；灵感来自湘/粤但实为纯美式快餐创作，中国餐馆见不到。", type: "烧烤", flavor: ["甜", "酸", "咸鲜"], spice: 1, diet: "荤", protein: ["鸡"] },
     { name: "蟹角", cuisine: "美国", country: "美国", native: "Crab Rangoon", note: "奶油奶酪加蟹肉包进云吞皮油炸——中国没有这道菜，20世纪中叶美国中餐馆（一说旧金山Trader Vic's）发明的伪东南亚菜。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "幸运签饼", cuisine: "加州", country: "美国", city: "加州", native: "Fortune Cookie", note: "里面塞纸条的脆饼，其实源自日本'辻占煎饼'，经加州日裔与华人餐馆推广成'中餐'收尾——中国本土并无此物。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "幸运签饼", cuisine: "加州", country: "美国", province: "加州", city: "加州", native: "Fortune Cookie", note: "里面塞纸条的脆饼，其实源自日本'辻占煎饼'，经加州日裔与华人餐馆推广成'中餐'收尾——中国本土并无此物。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "帕玛森芝士鸡排", cuisine: "纽约/新泽西", country: "美国", city: "纽约/新泽西", native: "Chicken Parmigiana", iconic: true, note: "意裔美国招牌，炸鸡排铺番茄酱盖融化芝士；意大利本土只有茄子做的Parmigiana、绝不用鸡，是美国用便宜鸡肉替换茄子的改造菜。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "美式肉丸意面", cuisine: "纽约", country: "美国", city: "纽约", native: "Spaghetti and Meatballs", iconic: true, note: "意大利没有这道菜——当地肉丸(polpette)小且单独作第二道菜。美式大肉丸压在面上，是移民因肉便宜管饱而创的组合。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "焗烤通心粉", cuisine: "美国东北", country: "美国", city: "美国东北", native: "Baked Ziti", note: "齐蒂粉配番茄肉酱、大量芝士入炉焗；聚会大锅菜，是意裔美国的家庭改造版，意大利不常见此做法。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "无酵饼丸汤", cuisine: "纽约", country: "美国", city: "纽约", native: "Matzo Ball Soup", iconic: true, note: "犹太熟食店经典，鸡汤里浮着松软无酵饼粉团，被戏称'犹太青霉素'——感冒安慰食，源自阿什肯纳兹犹太移民传统。", type: "汤", flavor: ["清淡", "咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "尼什酥饼", cuisine: "纽约", country: "美国", city: "纽约", native: "Knish", note: "东欧犹太点心，酥皮或面皮里包土豆泥或荞麦(kasha)，是纽约街头与熟食店的老派主食。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
-    { name: "鸡蛋苏打", cuisine: "纽约布鲁克林", country: "美国", city: "纽约布鲁克林", native: "Egg Cream", note: "名不副实——既无蛋也无奶油，只有牛奶、苏打水、巧克力糖浆；约1890年布鲁克林犹太糖果店老板Louis Auster发明。", type: "其它", flavor: ["甜"], spice: 0, diet: "素" },
+    { name: "美式肉丸意面", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Spaghetti and Meatballs", iconic: true, note: "意大利没有这道菜——当地肉丸(polpette)小且单独作第二道菜。美式大肉丸压在面上，是移民因肉便宜管饱而创的组合。", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "焗烤通心粉", cuisine: "美国东北", country: "美国", province: "美国东北", city: "美国东北", native: "Baked Ziti", note: "齐蒂粉配番茄肉酱、大量芝士入炉焗；聚会大锅菜，是意裔美国的家庭改造版，意大利不常见此做法。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "无酵饼丸汤", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Matzo Ball Soup", iconic: true, note: "犹太熟食店经典，鸡汤里浮着松软无酵饼粉团，被戏称'犹太青霉素'——感冒安慰食，源自阿什肯纳兹犹太移民传统。", type: "汤", flavor: ["清淡", "咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
+    { name: "尼什酥饼", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Knish", note: "东欧犹太点心，酥皮或面皮里包土豆泥或荞麦(kasha)，是纽约街头与熟食店的老派主食。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
+    { name: "鸡蛋苏打", cuisine: "纽约布鲁克林", country: "美国", province: "纽约州", city: "纽约布鲁克林", native: "Egg Cream", note: "名不副实——既无蛋也无奶油，只有牛奶、苏打水、巧克力糖浆；约1890年布鲁克林犹太糖果店老板Louis Auster发明。", type: "其它", flavor: ["甜"], spice: 0, diet: "素" },
     { name: "美式旋转烤肉卷", cuisine: "纽约/芝加哥", country: "美国", city: "纽约/芝加哥", native: "Gyro", iconic: true, note: "希裔美国街头食，pita卷旋转烤肉、番茄洋葱与酸奶黄瓜酱；美式常用预制成型的牛羊混合肉塔，与希腊现切原版不同。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
     { name: "中式肉批", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Pâté chinois", iconic: true, note: "名叫'中式'其实与中国无关——牛肉末、玉米、土豆泥三层烤制，2007年获选魁北克'国菜'，说法之一源自19世纪中国铁路工人。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
     { name: "猪肉酱", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Cretons", note: "魁北克早餐熟肉酱，猪肉末加肉桂、丁香、香薄荷慢煮成绵糊，抹在烤面包上吃。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
@@ -3177,107 +3177,107 @@ var DISHES = {
     { name: "萨斯卡通莓派", cuisine: "萨斯喀彻温", country: "加拿大", city: "萨斯喀彻温", native: "Saskatoon Berry Pie", iconic: true, note: "草原招牌甜点，萨斯卡通莓带杏仁般麝香甜味，几千年来是原住民重要食源，也做汤、甜茶与班诺克饼。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
     { name: "班诺克饼", cuisine: "加拿大草原/原住民", country: "加拿大", city: "加拿大草原/原住民", native: "Bannock", note: "苏格兰移民带来、被原住民广泛吸收的扁面饼，可烤可煎可炸，是草原与First Nations社区的日常主食。", type: "饼馍", flavor: ["清淡"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "乌克兰裔加拿大饺", cuisine: "曼尼托巴/萨斯喀彻温", country: "加拿大", city: "曼尼托巴/萨斯喀彻温", native: "Perogies (Pyrohy)", iconic: true, note: "百年前乌克兰移民带到草原，土豆奶酪馅面饺配炸洋葱酸奶油；本地还发展出用萨斯卡通莓做甜馅的独特变体。", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
-    { name: "高丽烤肉塔可", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Kogi Korean BBQ Taco", iconic: true, note: "2008年Roy Choi的Kogi餐车开创韩墨融合浪潮：韩式烤牛肉(bulgogi)夹进墨西哥玉米饼，靠推特发定位走红，重塑了美国餐车文化。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "泡菜芝士墨西哥卷饼", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Kimchi Quesadilla", note: "同出Kogi的韩墨融合，泡菜与融化芝士夹进墨西哥薄饼煎香，酸辣咸鲜混搭的洛杉矶街头味。", type: "小吃", flavor: ["酸", "辣", "咸鲜"], spice: 1, diet: "素", protein: ["其它"] },
-    { name: "炸青番茄", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Fried Green Tomatoes", note: "未熟的青番茄切片裹玉米面油炸，酸脆，是美国南方经典配菜。", type: "小吃", flavor: ["酸", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "香蕉布丁", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Banana Pudding", iconic: true, note: "南方灵魂食甜点，香蕉、奶油布丁、香草威化饼层叠，早期版顶层烤蛋白霜，后多改成鲜奶油。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "山核桃派", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Pecan Pie", iconic: true, note: "南方标志甜点，山核桃仁嵌在鸡蛋、黄油、玉米糖浆的糖芯里烤成，甜而酥。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "红丝绒蛋糕", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Red Velvet Cake", note: "红色可可蛋糕体配奶油奶酪糖霜，在南方黑人家庭是庆典与体面的象征。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
-    { name: "南方甜冰茶", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Sweet Tea", note: "趁热大量加糖泡的浓红茶再冰镇，被称作南方的'家常酒'，是深南地区餐桌标配饮料。", type: "其它", flavor: ["甜"], spice: 0, diet: "纯素" },
-    { name: "炖猪肠", cuisine: "美国南部", country: "美国", city: "美国南部", native: "Chitterlings", note: "清洗后的猪肠慢炖调味，起于奴隶制时期——奴隶主只给下水，黑人厨艺把边角料化为灵魂食，与西非、亚洲食内脏传统相通。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "波士顿奶油派", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Boston Cream Pie", note: "其实是蛋糕不是派——两层海绵蛋糕夹卡仕达奶油、顶浇巧克力甘纳许，1856年波士顿Parker House酒店创制，是马萨诸塞州官方甜点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "缅因呼派夹心饼", cuisine: "缅因州刘易斯顿", country: "美国", city: "缅因州刘易斯顿", native: "Whoopie Pie", iconic: true, note: "两片松软巧克力蛋糕夹棉花糖奶油或香草糖霜，首次商业量产在缅因州刘易斯顿，是缅因官方零食。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "罗德岛蛤蜊饼", cuisine: "罗德岛", country: "美国", city: "罗德岛", native: "Clam Cakes", note: "面糊拌大蛤(quahog)碎油炸成球，罗德岛夏日海边小吃，蘸蛤蜊浓汤吃最地道。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "酿蛤", cuisine: "罗德岛", country: "美国", city: "罗德岛", native: "Stuffies", note: "大蛤(quahog)肉剁碎拌面包糠、蔬菜、葡萄牙香肠chouriço再填回壳里烤，罗德岛的葡裔风味海鲜。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["猪", "其它"] },
-    { name: "佛蒙特枫糖霜淇淋", cuisine: "佛蒙特", country: "美国", city: "佛蒙特", native: "Maple Creemee", iconic: true, note: "佛蒙特特产软冰淇淋，用真枫糖浆和本地奶油做，当地人只认枫糖味，是夏天路边奶棚的必点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "贝果配熏三文鱼", cuisine: "纽约", country: "美国", city: "纽约", native: "Bagel with lox", iconic: true, note: "犹太移民带来的传统,涂奶油奶酸配熏鲑鱼是周末早午餐经典", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "蛋", "鱼"] },
-    { name: "黑麦面包烟熏牛肉三明治", cuisine: "纽约", country: "美国", city: "纽约", native: "Pastrami on rye", iconic: true, note: "Katz's Delicatessen 招牌,罗马尼亚犹太移民带来的烟熏牛肉夹黑麦面包", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "纽约热狗", cuisine: "纽约", country: "美国", city: "纽约", native: "NYC street hot dog", iconic: true, note: "街头餐车标配,配酸菜和洋葱酱汁,是纽约人最快的午饭", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "牛"] },
-    { name: "纽约芝士蛋糕", cuisine: "纽约", country: "美国", city: "纽约", native: "New York cheesecake", iconic: true, note: "以奶油奶酪为基底,质地浓密顺滑,是纽约代表性甜点", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "其它"] },
-    { name: "清真餐车鸡肉饭", cuisine: "纽约", country: "美国", city: "纽约", native: "Halal cart chicken over rice", iconic: true, note: "始于90年代53街The Halal Guys,如今遍布曼哈顿街头,配白酱辣酱", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "哈莱姆炒芝士三明治", cuisine: "纽约", country: "美国", city: "纽约", native: "Chopped cheese", note: "哈莱姆街角小卖部(bodega)招牌,牛肉碎与芝士在铁板上炒制夹入长面包", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "蛋奶苏打水", cuisine: "纽约", country: "美国", city: "纽约", native: "Egg cream", note: "用Fox's U-Bet巧克力糖浆+牛奶+苏打水调制,不含蛋不含奶油,是老纽约糖水店饮品", type: "其它", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "意式肉丸三明治", cuisine: "纽约", country: "美国", city: "纽约", native: "Meatball sub", note: "意大利裔移民社区常见家常快餐,长棍面包夹肉丸淋番茄酱", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "炸鸡蛋卷配咸牛肉", cuisine: "纽约", country: "美国", city: "纽约", native: "Reuben sandwich", note: "黑麦面包夹咸牛肉、酸菜、瑞士芝士与千岛酱,纽约熟食店常见午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "意式牛肉三明治", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Italian beef sandwich", iconic: true, note: "意大利移民街头小贩发明,薄切炖牛肉夹长面包,可选dry/wet/dipped蘸卤汁", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "芝加哥式炸鱼薯条", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Chicago fish fry", note: "周五斋戒传统延续下来的社区教堂/酒吧炸鱼餐,常配薯条卷心菜沙拉", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "芝加哥牛排披萨卷", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Stuffed pizza", note: "深盘披萨的进阶版,两层面皮中间夹满料,顶部再盖一层薄面皮和酱汁", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
-    { name: "波兰香肠三明治", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Chicago-style Polish sausage", note: "波兰移民带来的粗烟熏香肠,路边摊配炒洋葱和芥末,是芝加哥工人阶级快餐", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "彩虹冰淇淋筒", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Rainbow Cone", note: "1926年Original Rainbow Cone首创,巧克力草莓帕尔默之家开心果与橙子雪芭五层叠加,南区社区甜品记忆", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "波多黎各大蕉三明治", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Jibarito", note: "1996年芝加哥波多黎各裔社区发明,用炸扁大蕉片代替面包夹肉菜芝士", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "德庆虾", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Shrimp De Jonghe", note: "比利时移民德庆兄弟19世纪末发明,虾肉拌黄油雪利酒蒜末盖面包糠烤制", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
-    { name: "希腊城烤肉卷", cuisine: "芝加哥", country: "美国", city: "芝加哥", native: "Greektown gyro", note: "希腊裔社区聚集地Greektown的日常快餐,烤肉卷饼配黄瓜酸奶酱,常配火烤芝士Saganaki开场", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊", "猪", "面米"] },
-    { name: "什锦秋葵浓汤", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Gumbo", iconic: true, note: "克里奥尔文化融合代表菜,油面糊打底,配海鲜或安杜耶香肠与秋葵,几乎家家都做", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["猪", "其它", "鱼", "虾"] },
-    { name: "炸虾波波三明治", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Shrimp po'boy", iconic: true, note: "法棍面包夹裹粉油炸墨西哥湾虾,是路易斯安那州最经典的三明治", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
-    { name: "贝奈特糖粉甜甜圈", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Beignets", iconic: true, note: "方形无孔炸面团堆满糖粉,Cafe du Monde配咖啡欧蕾是本地人日常下午茶", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "红豆米饭", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Red beans and rice", iconic: true, note: "传统周一洗衣日菜式,炖红豆配香肠盖在米饭上,是本地人最日常的一餐", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "豆制品", "面米"] },
-    { name: "意式冷切三明治", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Muffuletta", iconic: true, note: "西西里移民发明,圆形意式面包夹意大利腊肠、火腿、摩德纳干酪与橄榄沙拉", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "香辣黄油虾", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "BBQ shrimp", note: "带壳虾用黄油、大蒜、白葡萄酒与伍斯特酱烹制,Pascal's Manale首创", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["虾"] },
-    { name: "炭烤生蚝", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Charbroiled oysters", note: "墨西哥湾生蚝盖蒜香黄油与芝士炭火烤制,Drago's招牌菜", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "水煮小龙虾", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Boiled crawfish", note: "春季当季小龙虾配香料蔬菜整锅水煮,倒在报纸上一群人围着剥壳吃", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["虾"] },
-    { name: "火焰香蕉", cuisine: "新奥尔良", country: "美国", city: "新奥尔良", native: "Bananas Foster", note: "香蕉用朗姆酒、香蕉利口酒、糖与肉桂现场火烤,配香草冰淇淋,Brennan's首创", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "缅因龙虾卷", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Lobster roll", iconic: true, note: "龙虾肉拌蛋黄酱或蘸黄油,夹入烤过的开顶热狗面包,新英格兰夏季代表菜", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
-    { name: "意式奶油卷", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Cannoli", iconic: true, note: "North End意大利裔社区甜点,酥脆管状外皮填瑞可塔奶酪馅", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "新英格兰派", cuisine: "波士顿", country: "美国", city: "波士顿", native: "New England-style pot pie", note: "酥皮包裹奶油炖肉蔬菜,寒冷季节本地人常见的暖心家常菜", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "炸蛤蜊", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Fried clams", note: "整只蛤蜊裹粉油炸,新英格兰海边小吃摊经典", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "意大利三明治", cuisine: "波士顿", country: "美国", city: "波士顿", native: "Italian sandwich (North End)", note: "North End意大利裔社区常见冷切三明治,配普罗沃隆芝士与油醋腌菜,街边熟食店日常午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "费城芝士牛排", cuisine: "费城", country: "美国", city: "费城", native: "Philly cheesesteak", iconic: true, note: "薄切肋眼牛肉与融化芝士(传统用Cheez Whiz)夹入软面包,Pat's与Geno's是打卡地标", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "烤猪肉三明治", cuisine: "费城", country: "美国", city: "费城", native: "Roast pork sandwich", iconic: true, note: "本地人心中比芝士牛排更地道的招牌,慢烤猪肩肉配浓味普罗沃隆芝士与花椰菜苗", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "费城长条三明治", cuisine: "费城", country: "美国", city: "费城", native: "Hoagie", iconic: true, note: "长面包夹肉类芝士蔬菜与调味酱,Amoroso's面包坊是灵魂所在", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "费城软椒盐卷饼", cuisine: "费城", country: "美国", city: "费城", native: "Soft pretzel", iconic: true, note: "街头小贩现烤现卖,是费城人全城痴迷的日常小吃", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "斯克拉普肉饼", cuisine: "费城", country: "美国", city: "费城", native: "Scrapple", note: "德裔移民发明,猪肉碎与玉米粉压成块煎至外脆内软,费城早餐常见", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "塔斯蒂开克蛋糕", cuisine: "费城", country: "美国", city: "费城", native: "Tastykake", note: "费城本地烘焙品牌,便利店常见的家常零食蛋糕", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
-    { name: "雷丁车站市场炸鸡", cuisine: "费城", country: "美国", city: "费城", native: "Reading Terminal Market fried chicken", note: "宾夕法尼亚荷兰社区带来的传统炸鸡,读者市场内多个摊位常年排队", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "意面沙拉水冰", cuisine: "费城", country: "美国", city: "费城", native: "Water ice (Italian ice)", note: "意大利裔社区带来的冰沙甜品,John's Water Ice等老店是费城人夏日日常", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "纳什维尔辣炸鸡", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Nashville hot chicken", iconic: true, note: "炸鸡涂辣椒油辣酱,配白面包与腌黄瓜,Prince's是发源地,Hattie B's是当代人气首选", type: "其它", flavor: ["辣", "咸鲜"], spice: 3, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "一荤三素套餐", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Meat and three", iconic: true, note: "点一份肉配三份时令蔬菜配菜,是纳什维尔人最日常的午餐吃法,Swett's自1954年供应", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪", "其它"] },
-    { name: "田纳西烟熏烧烤", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Tennessee BBQ", note: "猪肩肉慢烟熏后手撕,配醋基烧烤酱,是南方烧烤传统的一支", type: "烧烤", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "玉米面包", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Cornbread", note: "南方餐桌常年主食配菜,玉米粉烤制,松软微甜", type: "饼馍", flavor: ["咸鲜", "甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
-    { name: "炸鲇鱼", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Fried catfish", note: "南方内陆河鲜传统,裹玉米粉炸至酥脆,常作meat and three的肉选项", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "班尼迪克蛋配比斯吉", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Biscuits and gravy", note: "南方经典早餐,松软比斯吉浇肉汁白酱,家常早餐店常见", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "咕咕坚果巧克力棒", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Goo Goo Cluster", note: "1912年Standard Candy Co.发明,棉花糖牛轧糖焦糖花生裹巧克力,纳什维尔本地经典零食", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "红椒芝士酱", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Pimento cheese", note: "南方家庭祖传配方的红椒芝士酱,涂面包或配烧烤,烧烤店常作前菜或三明治夹馅", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "干腌烤排骨", cuisine: "纳什维尔", country: "美国", city: "纳什维尔", native: "Dry rub ribs", note: "香料干腌不刷酱慢烤,Rendezvous式做法在田纳西烧烤圈是经典分支", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪"] },
-    { name: "古巴三明治", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Cuban sandwich (Cubano)", iconic: true, note: "古巴面包夹烤猪肉、火腿、瑞士芝士、腌黄瓜与芥末压烤至酥脆,小哈瓦那日常主食", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "午夜三明治", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Medianoche", iconic: true, note: "古巴三明治的甜软面包版本,深夜聚会后常吃,故称午夜三明治", type: "三明治", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "古巴炸肉饼", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Croquetas", iconic: true, note: "贝夏梅尔酱打底裹面包糠油炸的一口酥,Islas Canarias自1977年称霸,街头快餐必点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "古巴炖牛肉丝", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Ropa vieja", iconic: true, note: "直译\"旧衣服\",牛肉丝与蔬菜慢炖配米饭黑豆,古巴裔家庭餐桌主菜", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "豆制品"] },
-    { name: "古巴咖啡", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Cafecito", note: "浓缩咖啡加糖高速搅打出泡沫,迈阿密人日常街边窗口(ventanita)必点", type: "其它", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "黑豆饭", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Moros y Cristianos (black beans and rice)", note: "黑豆与白米同煮,是古巴/加勒比裔家庭的日常主食搭配", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["豆制品", "面米"] },
-    { name: "炸大蕉", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Tostones", note: "青大蕉切片压扁两次油炸,加勒比裔家庭餐桌常见配菜小吃", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "石蟹爪", cuisine: "迈阿密", country: "美国", city: "迈阿密", native: "Stone crab claws", note: "佛罗里达当季海鲜,冷食蘸芥末酱油,Joe's Stone Crab是迈阿密地标餐厅", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "洛杉矶街头塔可", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "LA street tacos (al pastor)", iconic: true, note: "墨西哥移民带来的旋转烤肉塔可,配香菜洋葱与青柠,深夜餐车文化的核心", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "韩式烤肉", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Korean BBQ (Koreatown)", iconic: true, note: "K-town桌边现烤肉配一桌小菜,Parks BBQ被视为标杆,是洛杉矶多元饮食标志", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
-    { name: "韩墨融合塔可", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Korean taco", iconic: true, note: "玉米饼夹韩式烤牛肉/泡菜,韩裔与墨西哥裔社区融合的洛杉矶原创", type: "三明治", flavor: ["咸鲜", "辣"], spice: 2, diet: "荤", protein: ["牛", "面米"] },
-    { name: "泰式竹筒面", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Jade noodles (Thai Town)", note: "美国唯一官方泰国城East Hollywood特色菜,Sapp Coffee Shop招牌", type: "面", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "炸虾墨西哥塔可", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Fried shrimp tacos", note: "Mariscos Jalisco餐车代表作,酥炸虾配莎莎,洛杉矶餐车文化标志", type: "三明治", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["面米", "虾"] },
-    { name: "墨西哥辣味水煮海鲜", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Aguachile", note: "生虾/章鱼用青柠汁与辣椒腌制,清爽辛辣,是墨西哥裔社区周末小吃", type: "海鲜", flavor: ["辣", "酸"], spice: 2, diet: "海鲜", protein: ["虾", "鱼"] },
-    { name: "洛杉矶比里亚塔可", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", native: "Birria tacos", note: "墨西哥炖羊肉/牛肉塔可蘸浓郁红汤,近年洛杉矶街头餐车爆红品类", type: "三明治", flavor: ["咸鲜", "辣"], spice: 2, diet: "荤", protein: ["牛", "羊", "面米"] },
-    { name: "酸面包", cuisine: "旧金山", country: "美国", city: "旧金山", native: "San Francisco sourdough", iconic: true, note: "旧金山雾气孕育的特殊野生酵母菌种,造就独特酸香,Boudin自1849年供应至今", type: "饼馍", flavor: ["酸"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "教会区大墨西哥卷饼", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Mission burrito", iconic: true, note: "60-70年代教会区墨西哥裔移民发明的加大版卷饼,饭豆肉菜一卷管饱,本地人日常午餐", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "豆制品", "面米"] },
-    { name: "意式海鲜杂烩汤", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Cioppino", iconic: true, note: "北滩意大利渔民发明,当日渔获配番茄酒香汤底,旧金山渔人码头代表菜", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
-    { name: "酸面包碗蛤蜊浓汤", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Clam chowder in sourdough bowl", iconic: true, note: "1849年Boudin首创,浓汤直接盛在挖空的酸面包碗里,渔人码头游客与本地人都爱", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["面米", "其它"] },
-    { name: "点心", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Dim sum (Chinatown)", iconic: true, note: "唐人街早茶传统,蒸饺烧卖叉烧包一笼笼推车供应,本地华人社区周末日常", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米", "鱼", "虾"] },
-    { name: "越南三明治", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Bánh mì", note: "越南裔社区带来的法式长棍夹肉配腌萝卜香菜,旧金山日常快餐选项", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "意式蒸蟹", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Dungeness crab (Fisherman's Wharf)", note: "当季当纳吉斯蟹清蒸或做cioppino,渔人码头街边摊现煮现卖", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "吉拉德利热浆圣代", cuisine: "旧金山", country: "美国", city: "旧金山", native: "Ghirardelli hot fudge sundae", note: "Ghirardelli Square百年巧克力工厂出品的经典圣代,本地人代代传承的甜品打卡地", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "太平洋三文鱼", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Cedar-plank grilled salmon", iconic: true, note: "派克市场鱼摊标志性商品,雪松木板烤三文鱼是西雅图代表菜", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "当纳吉斯蟹", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Dungeness crab", iconic: true, note: "太平洋西北海域特产蟹种,肉质鲜甜,The Crab Pot等餐厅招牌", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
-    { name: "西雅图照烧饭", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Seattle teriyaki", iconic: true, note: "1976年Toshi's Teriyaki首创的非正宗日式融合料理,如今是西雅图人日常外卖首选", type: "主食", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "派克市场飞鱼", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Pike Place fish throwing salmon", note: "派克市场鱼贩抛鱼表演背后是本地人买新鲜/熏三文鱼的日常场景", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "西雅图浓缩咖啡文化", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Seattle espresso", note: "星巴克发源地,街角咖啡亭(espresso stand)是本地人日常通勤标配", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "炸生蚝", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Fried oysters", note: "太平洋西北海岸盛产生蚝,裹粉油炸是本地海鲜馆常见做法", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "象拔蚌刺身/椰香象拔蚌", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Geoduck", note: "太平洋西北特产巨型蛤类,可生食或如Anchovies & Salt做法用椰子黄油煮制,本地海鲜控最爱", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "生蚝欢乐时光", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Oyster happy hour", note: "Taylor Shellfish等生蚝吧下午提供$2-2.25/只生蚝优惠,是西雅图人下班后的日常社交仪式", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
-    { name: "肉汁比斯吉", cuisine: "西雅图", country: "美国", city: "西雅图", native: "Biscuit Bitch breakfast biscuit", note: "Biscuit Bitch餐车/小店招牌,松软比斯吉配肉汁、玉米粥、香肠,西雅图人日常早餐", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "早餐塔可", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Austin breakfast taco", iconic: true, note: "软玉米/面粉饼卷鸡蛋、土豆、培根或墨西哥辣肠,Joe's自1962年供应,是奥斯汀人的日常早餐", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["蛋", "猪", "面米"] },
-    { name: "德州烟熏牛胸肉", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Texas BBQ brisket", iconic: true, note: "橡木慢烟熏12-18小时,外层焦黑内里软嫩,Franklin Barbecue排队盛况闻名全美", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "芝士酱", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Queso (Bob Armstrong dip)", iconic: true, note: "Tex-Mex餐桌必点的融化芝士酱蘸玉米片,Matt's El Rancho自1952年的分层版本最出名", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "素", protein: ["其它"] },
-    { name: "德州辣味香肠", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Texas smoked sausage", note: "德式移民带来的烟熏香肠传统,烧烤店常见配菜,配白面包与腌菜", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "牛"] },
-    { name: "墨西哥炖肉玉米粉蒸肉", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Tex-Mex tamales", note: "玉米叶包裹玉米面团与肉馅蒸制,德州墨西哥裔社区节庆家常食物", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "科拉奇甜面包", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Kolache", note: "捷克移民带来的甜面团点心,德州本地演变出咸味版填布里斯科特与芝士,是本地人日常早餐", type: "饼馍", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "米加斯炒蛋", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Migas", note: "Tex-Mex经典早餐,炒蛋混入炸玉米饼条,配洋葱番茄辣椒与芝士,常做成早餐塔可馅料", type: "其它", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["蛋", "面米"] },
-    { name: "红辣酱牛肉卷饼", cuisine: "奥斯汀", country: "美国", city: "奥斯汀", native: "Enchiladas (Tex-Mex)", note: "玉米饼卷肉芝士盖红/绿辣酱烤制,Maudie's等本地老店的日常主食", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛", "面米"] },
+    { name: "高丽烤肉塔可", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Kogi Korean BBQ Taco", iconic: true, note: "2008年Roy Choi的Kogi餐车开创韩墨融合浪潮：韩式烤牛肉(bulgogi)夹进墨西哥玉米饼，靠推特发定位走红，重塑了美国餐车文化。", type: "小吃", flavor: ["咸鲜", "甜"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "泡菜芝士墨西哥卷饼", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Kimchi Quesadilla", note: "同出Kogi的韩墨融合，泡菜与融化芝士夹进墨西哥薄饼煎香，酸辣咸鲜混搭的洛杉矶街头味。", type: "小吃", flavor: ["酸", "辣", "咸鲜"], spice: 1, diet: "素", protein: ["其它"] },
+    { name: "炸青番茄", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Fried Green Tomatoes", note: "未熟的青番茄切片裹玉米面油炸，酸脆，是美国南方经典配菜。", type: "小吃", flavor: ["酸", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "香蕉布丁", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Banana Pudding", iconic: true, note: "南方灵魂食甜点，香蕉、奶油布丁、香草威化饼层叠，早期版顶层烤蛋白霜，后多改成鲜奶油。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "山核桃派", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Pecan Pie", iconic: true, note: "南方标志甜点，山核桃仁嵌在鸡蛋、黄油、玉米糖浆的糖芯里烤成，甜而酥。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "红丝绒蛋糕", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Red Velvet Cake", note: "红色可可蛋糕体配奶油奶酪糖霜，在南方黑人家庭是庆典与体面的象征。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
+    { name: "南方甜冰茶", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Sweet Tea", note: "趁热大量加糖泡的浓红茶再冰镇，被称作南方的'家常酒'，是深南地区餐桌标配饮料。", type: "其它", flavor: ["甜"], spice: 0, diet: "纯素" },
+    { name: "炖猪肠", cuisine: "美国南部", country: "美国", province: "美国南部", city: "美国南部", native: "Chitterlings", note: "清洗后的猪肠慢炖调味，起于奴隶制时期——奴隶主只给下水，黑人厨艺把边角料化为灵魂食，与西非、亚洲食内脏传统相通。", type: "炖菜", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "波士顿奶油派", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Boston Cream Pie", note: "其实是蛋糕不是派——两层海绵蛋糕夹卡仕达奶油、顶浇巧克力甘纳许，1856年波士顿Parker House酒店创制，是马萨诸塞州官方甜点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "缅因呼派夹心饼", cuisine: "缅因州刘易斯顿", country: "美国", province: "缅因", city: "缅因州刘易斯顿", native: "Whoopie Pie", iconic: true, note: "两片松软巧克力蛋糕夹棉花糖奶油或香草糖霜，首次商业量产在缅因州刘易斯顿，是缅因官方零食。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "罗德岛蛤蜊饼", cuisine: "罗德岛", country: "美国", province: "罗德岛", city: "罗德岛", native: "Clam Cakes", note: "面糊拌大蛤(quahog)碎油炸成球，罗德岛夏日海边小吃，蘸蛤蜊浓汤吃最地道。", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "酿蛤", cuisine: "罗德岛", country: "美国", province: "罗德岛", city: "罗德岛", native: "Stuffies", note: "大蛤(quahog)肉剁碎拌面包糠、蔬菜、葡萄牙香肠chouriço再填回壳里烤，罗德岛的葡裔风味海鲜。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["猪", "其它"] },
+    { name: "佛蒙特枫糖霜淇淋", cuisine: "佛蒙特", country: "美国", province: "佛蒙特", city: "佛蒙特", native: "Maple Creemee", iconic: true, note: "佛蒙特特产软冰淇淋，用真枫糖浆和本地奶油做，当地人只认枫糖味，是夏天路边奶棚的必点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "贝果配熏三文鱼", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Bagel with lox", iconic: true, note: "犹太移民带来的传统,涂奶油奶酸配熏鲑鱼是周末早午餐经典", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "蛋", "鱼"] },
+    { name: "黑麦面包烟熏牛肉三明治", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Pastrami on rye", iconic: true, note: "Katz's Delicatessen 招牌,罗马尼亚犹太移民带来的烟熏牛肉夹黑麦面包", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "纽约热狗", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "NYC street hot dog", iconic: true, note: "街头餐车标配,配酸菜和洋葱酱汁,是纽约人最快的午饭", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "牛"] },
+    { name: "纽约芝士蛋糕", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "New York cheesecake", iconic: true, note: "以奶油奶酪为基底,质地浓密顺滑,是纽约代表性甜点", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "其它"] },
+    { name: "清真餐车鸡肉饭", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Halal cart chicken over rice", iconic: true, note: "始于90年代53街The Halal Guys,如今遍布曼哈顿街头,配白酱辣酱", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["鸡", "面米"] },
+    { name: "哈莱姆炒芝士三明治", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Chopped cheese", note: "哈莱姆街角小卖部(bodega)招牌,牛肉碎与芝士在铁板上炒制夹入长面包", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "蛋奶苏打水", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Egg cream", note: "用Fox's U-Bet巧克力糖浆+牛奶+苏打水调制,不含蛋不含奶油,是老纽约糖水店饮品", type: "其它", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "意式肉丸三明治", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Meatball sub", note: "意大利裔移民社区常见家常快餐,长棍面包夹肉丸淋番茄酱", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "炸鸡蛋卷配咸牛肉", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", native: "Reuben sandwich", note: "黑麦面包夹咸牛肉、酸菜、瑞士芝士与千岛酱,纽约熟食店常见午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "意式牛肉三明治", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Italian beef sandwich", iconic: true, note: "意大利移民街头小贩发明,薄切炖牛肉夹长面包,可选dry/wet/dipped蘸卤汁", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "芝加哥式炸鱼薯条", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Chicago fish fry", note: "周五斋戒传统延续下来的社区教堂/酒吧炸鱼餐,常配薯条卷心菜沙拉", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "芝加哥牛排披萨卷", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Stuffed pizza", note: "深盘披萨的进阶版,两层面皮中间夹满料,顶部再盖一层薄面皮和酱汁", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
+    { name: "波兰香肠三明治", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Chicago-style Polish sausage", note: "波兰移民带来的粗烟熏香肠,路边摊配炒洋葱和芥末,是芝加哥工人阶级快餐", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "彩虹冰淇淋筒", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Rainbow Cone", note: "1926年Original Rainbow Cone首创,巧克力草莓帕尔默之家开心果与橙子雪芭五层叠加,南区社区甜品记忆", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "波多黎各大蕉三明治", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Jibarito", note: "1996年芝加哥波多黎各裔社区发明,用炸扁大蕉片代替面包夹肉菜芝士", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "德庆虾", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Shrimp De Jonghe", note: "比利时移民德庆兄弟19世纪末发明,虾肉拌黄油雪利酒蒜末盖面包糠烤制", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾"] },
+    { name: "希腊城烤肉卷", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", native: "Greektown gyro", note: "希腊裔社区聚集地Greektown的日常快餐,烤肉卷饼配黄瓜酸奶酱,常配火烤芝士Saganaki开场", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊", "猪", "面米"] },
+    { name: "什锦秋葵浓汤", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Gumbo", iconic: true, note: "克里奥尔文化融合代表菜,油面糊打底,配海鲜或安杜耶香肠与秋葵,几乎家家都做", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["猪", "其它", "鱼", "虾"] },
+    { name: "炸虾波波三明治", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Shrimp po'boy", iconic: true, note: "法棍面包夹裹粉油炸墨西哥湾虾,是路易斯安那州最经典的三明治", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
+    { name: "贝奈特糖粉甜甜圈", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Beignets", iconic: true, note: "方形无孔炸面团堆满糖粉,Cafe du Monde配咖啡欧蕾是本地人日常下午茶", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "红豆米饭", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Red beans and rice", iconic: true, note: "传统周一洗衣日菜式,炖红豆配香肠盖在米饭上,是本地人最日常的一餐", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "豆制品", "面米"] },
+    { name: "意式冷切三明治", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Muffuletta", iconic: true, note: "西西里移民发明,圆形意式面包夹意大利腊肠、火腿、摩德纳干酪与橄榄沙拉", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "香辣黄油虾", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "BBQ shrimp", note: "带壳虾用黄油、大蒜、白葡萄酒与伍斯特酱烹制,Pascal's Manale首创", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["虾"] },
+    { name: "炭烤生蚝", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Charbroiled oysters", note: "墨西哥湾生蚝盖蒜香黄油与芝士炭火烤制,Drago's招牌菜", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "水煮小龙虾", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Boiled crawfish", note: "春季当季小龙虾配香料蔬菜整锅水煮,倒在报纸上一群人围着剥壳吃", type: "海鲜", flavor: ["咸鲜", "辣"], spice: 2, diet: "海鲜", protein: ["虾"] },
+    { name: "火焰香蕉", cuisine: "新奥尔良", country: "美国", province: "路易斯安那", city: "新奥尔良", native: "Bananas Foster", note: "香蕉用朗姆酒、香蕉利口酒、糖与肉桂现场火烤,配香草冰淇淋,Brennan's首创", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "缅因龙虾卷", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Lobster roll", iconic: true, note: "龙虾肉拌蛋黄酱或蘸黄油,夹入烤过的开顶热狗面包,新英格兰夏季代表菜", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["面米", "虾"] },
+    { name: "意式奶油卷", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Cannoli", iconic: true, note: "North End意大利裔社区甜点,酥脆管状外皮填瑞可塔奶酪馅", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
+    { name: "新英格兰派", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "New England-style pot pie", note: "酥皮包裹奶油炖肉蔬菜,寒冷季节本地人常见的暖心家常菜", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
+    { name: "炸蛤蜊", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Fried clams", note: "整只蛤蜊裹粉油炸,新英格兰海边小吃摊经典", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "意大利三明治", cuisine: "波士顿", country: "美国", province: "马萨诸塞州", city: "波士顿", native: "Italian sandwich (North End)", note: "North End意大利裔社区常见冷切三明治,配普罗沃隆芝士与油醋腌菜,街边熟食店日常午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "费城芝士牛排", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Philly cheesesteak", iconic: true, note: "薄切肋眼牛肉与融化芝士(传统用Cheez Whiz)夹入软面包,Pat's与Geno's是打卡地标", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "烤猪肉三明治", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Roast pork sandwich", iconic: true, note: "本地人心中比芝士牛排更地道的招牌,慢烤猪肩肉配浓味普罗沃隆芝士与花椰菜苗", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "费城长条三明治", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Hoagie", iconic: true, note: "长面包夹肉类芝士蔬菜与调味酱,Amoroso's面包坊是灵魂所在", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "费城软椒盐卷饼", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Soft pretzel", iconic: true, note: "街头小贩现烤现卖,是费城人全城痴迷的日常小吃", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "斯克拉普肉饼", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Scrapple", note: "德裔移民发明,猪肉碎与玉米粉压成块煎至外脆内软,费城早餐常见", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "塔斯蒂开克蛋糕", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Tastykake", note: "费城本地烘焙品牌,便利店常见的家常零食蛋糕", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
+    { name: "雷丁车站市场炸鸡", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Reading Terminal Market fried chicken", note: "宾夕法尼亚荷兰社区带来的传统炸鸡,读者市场内多个摊位常年排队", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "意面沙拉水冰", cuisine: "费城", country: "美国", province: "宾夕法尼亚州", city: "费城", native: "Water ice (Italian ice)", note: "意大利裔社区带来的冰沙甜品,John's Water Ice等老店是费城人夏日日常", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "纳什维尔辣炸鸡", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Nashville hot chicken", iconic: true, note: "炸鸡涂辣椒油辣酱,配白面包与腌黄瓜,Prince's是发源地,Hattie B's是当代人气首选", type: "其它", flavor: ["辣", "咸鲜"], spice: 3, diet: "荤", protein: ["鸡", "面米"] },
+    { name: "一荤三素套餐", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Meat and three", iconic: true, note: "点一份肉配三份时令蔬菜配菜,是纳什维尔人最日常的午餐吃法,Swett's自1954年供应", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪", "其它"] },
+    { name: "田纳西烟熏烧烤", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Tennessee BBQ", note: "猪肩肉慢烟熏后手撕,配醋基烧烤酱,是南方烧烤传统的一支", type: "烧烤", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "玉米面包", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Cornbread", note: "南方餐桌常年主食配菜,玉米粉烤制,松软微甜", type: "饼馍", flavor: ["咸鲜", "甜"], spice: 0, diet: "素", protein: ["面米", "蛋"] },
+    { name: "炸鲇鱼", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Fried catfish", note: "南方内陆河鲜传统,裹玉米粉炸至酥脆,常作meat and three的肉选项", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "班尼迪克蛋配比斯吉", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Biscuits and gravy", note: "南方经典早餐,松软比斯吉浇肉汁白酱,家常早餐店常见", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "咕咕坚果巧克力棒", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Goo Goo Cluster", note: "1912年Standard Candy Co.发明,棉花糖牛轧糖焦糖花生裹巧克力,纳什维尔本地经典零食", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "红椒芝士酱", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Pimento cheese", note: "南方家庭祖传配方的红椒芝士酱,涂面包或配烧烤,烧烤店常作前菜或三明治夹馅", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "干腌烤排骨", cuisine: "纳什维尔", country: "美国", province: "田纳西州", city: "纳什维尔", native: "Dry rub ribs", note: "香料干腌不刷酱慢烤,Rendezvous式做法在田纳西烧烤圈是经典分支", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪"] },
+    { name: "古巴三明治", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Cuban sandwich (Cubano)", iconic: true, note: "古巴面包夹烤猪肉、火腿、瑞士芝士、腌黄瓜与芥末压烤至酥脆,小哈瓦那日常主食", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "午夜三明治", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Medianoche", iconic: true, note: "古巴三明治的甜软面包版本,深夜聚会后常吃,故称午夜三明治", type: "三明治", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "古巴炸肉饼", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Croquetas", iconic: true, note: "贝夏梅尔酱打底裹面包糠油炸的一口酥,Islas Canarias自1977年称霸,街头快餐必点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "古巴炖牛肉丝", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Ropa vieja", iconic: true, note: "直译\"旧衣服\",牛肉丝与蔬菜慢炖配米饭黑豆,古巴裔家庭餐桌主菜", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "豆制品"] },
+    { name: "古巴咖啡", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Cafecito", note: "浓缩咖啡加糖高速搅打出泡沫,迈阿密人日常街边窗口(ventanita)必点", type: "其它", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "黑豆饭", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Moros y Cristianos (black beans and rice)", note: "黑豆与白米同煮,是古巴/加勒比裔家庭的日常主食搭配", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["豆制品", "面米"] },
+    { name: "炸大蕉", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Tostones", note: "青大蕉切片压扁两次油炸,加勒比裔家庭餐桌常见配菜小吃", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "石蟹爪", cuisine: "迈阿密", country: "美国", province: "佛罗里达", city: "迈阿密", native: "Stone crab claws", note: "佛罗里达当季海鲜,冷食蘸芥末酱油,Joe's Stone Crab是迈阿密地标餐厅", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "洛杉矶街头塔可", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "LA street tacos (al pastor)", iconic: true, note: "墨西哥移民带来的旋转烤肉塔可,配香菜洋葱与青柠,深夜餐车文化的核心", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "韩式烤肉", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Korean BBQ (Koreatown)", iconic: true, note: "K-town桌边现烤肉配一桌小菜,Parks BBQ被视为标杆,是洛杉矶多元饮食标志", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
+    { name: "韩墨融合塔可", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Korean taco", iconic: true, note: "玉米饼夹韩式烤牛肉/泡菜,韩裔与墨西哥裔社区融合的洛杉矶原创", type: "三明治", flavor: ["咸鲜", "辣"], spice: 2, diet: "荤", protein: ["牛", "面米"] },
+    { name: "泰式竹筒面", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Jade noodles (Thai Town)", note: "美国唯一官方泰国城East Hollywood特色菜,Sapp Coffee Shop招牌", type: "面", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "炸虾墨西哥塔可", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Fried shrimp tacos", note: "Mariscos Jalisco餐车代表作,酥炸虾配莎莎,洛杉矶餐车文化标志", type: "三明治", flavor: ["咸鲜", "辣"], spice: 1, diet: "海鲜", protein: ["面米", "虾"] },
+    { name: "墨西哥辣味水煮海鲜", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Aguachile", note: "生虾/章鱼用青柠汁与辣椒腌制,清爽辛辣,是墨西哥裔社区周末小吃", type: "海鲜", flavor: ["辣", "酸"], spice: 2, diet: "海鲜", protein: ["虾", "鱼"] },
+    { name: "洛杉矶比里亚塔可", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", native: "Birria tacos", note: "墨西哥炖羊肉/牛肉塔可蘸浓郁红汤,近年洛杉矶街头餐车爆红品类", type: "三明治", flavor: ["咸鲜", "辣"], spice: 2, diet: "荤", protein: ["牛", "羊", "面米"] },
+    { name: "酸面包", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "San Francisco sourdough", iconic: true, note: "旧金山雾气孕育的特殊野生酵母菌种,造就独特酸香,Boudin自1849年供应至今", type: "饼馍", flavor: ["酸"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "教会区大墨西哥卷饼", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Mission burrito", iconic: true, note: "60-70年代教会区墨西哥裔移民发明的加大版卷饼,饭豆肉菜一卷管饱,本地人日常午餐", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "豆制品", "面米"] },
+    { name: "意式海鲜杂烩汤", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Cioppino", iconic: true, note: "北滩意大利渔民发明,当日渔获配番茄酒香汤底,旧金山渔人码头代表菜", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["鱼", "虾"] },
+    { name: "酸面包碗蛤蜊浓汤", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Clam chowder in sourdough bowl", iconic: true, note: "1849年Boudin首创,浓汤直接盛在挖空的酸面包碗里,渔人码头游客与本地人都爱", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["面米", "其它"] },
+    { name: "点心", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Dim sum (Chinatown)", iconic: true, note: "唐人街早茶传统,蒸饺烧卖叉烧包一笼笼推车供应,本地华人社区周末日常", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米", "鱼", "虾"] },
+    { name: "越南三明治", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Bánh mì", note: "越南裔社区带来的法式长棍夹肉配腌萝卜香菜,旧金山日常快餐选项", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "意式蒸蟹", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Dungeness crab (Fisherman's Wharf)", note: "当季当纳吉斯蟹清蒸或做cioppino,渔人码头街边摊现煮现卖", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "吉拉德利热浆圣代", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", native: "Ghirardelli hot fudge sundae", note: "Ghirardelli Square百年巧克力工厂出品的经典圣代,本地人代代传承的甜品打卡地", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "太平洋三文鱼", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Cedar-plank grilled salmon", iconic: true, note: "派克市场鱼摊标志性商品,雪松木板烤三文鱼是西雅图代表菜", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "当纳吉斯蟹", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Dungeness crab", iconic: true, note: "太平洋西北海域特产蟹种,肉质鲜甜,The Crab Pot等餐厅招牌", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹"] },
+    { name: "西雅图照烧饭", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Seattle teriyaki", iconic: true, note: "1976年Toshi's Teriyaki首创的非正宗日式融合料理,如今是西雅图人日常外卖首选", type: "主食", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["鸡", "面米"] },
+    { name: "派克市场飞鱼", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Pike Place fish throwing salmon", note: "派克市场鱼贩抛鱼表演背后是本地人买新鲜/熏三文鱼的日常场景", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "西雅图浓缩咖啡文化", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Seattle espresso", note: "星巴克发源地,街角咖啡亭(espresso stand)是本地人日常通勤标配", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "炸生蚝", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Fried oysters", note: "太平洋西北海岸盛产生蚝,裹粉油炸是本地海鲜馆常见做法", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "象拔蚌刺身/椰香象拔蚌", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Geoduck", note: "太平洋西北特产巨型蛤类,可生食或如Anchovies & Salt做法用椰子黄油煮制,本地海鲜控最爱", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "生蚝欢乐时光", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Oyster happy hour", note: "Taylor Shellfish等生蚝吧下午提供$2-2.25/只生蚝优惠,是西雅图人下班后的日常社交仪式", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["其它"] },
+    { name: "肉汁比斯吉", cuisine: "西雅图", country: "美国", province: "华盛顿州", city: "西雅图", native: "Biscuit Bitch breakfast biscuit", note: "Biscuit Bitch餐车/小店招牌,松软比斯吉配肉汁、玉米粥、香肠,西雅图人日常早餐", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "早餐塔可", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Austin breakfast taco", iconic: true, note: "软玉米/面粉饼卷鸡蛋、土豆、培根或墨西哥辣肠,Joe's自1962年供应,是奥斯汀人的日常早餐", type: "三明治", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["蛋", "猪", "面米"] },
+    { name: "德州烟熏牛胸肉", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Texas BBQ brisket", iconic: true, note: "橡木慢烟熏12-18小时,外层焦黑内里软嫩,Franklin Barbecue排队盛况闻名全美", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "芝士酱", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Queso (Bob Armstrong dip)", iconic: true, note: "Tex-Mex餐桌必点的融化芝士酱蘸玉米片,Matt's El Rancho自1952年的分层版本最出名", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "素", protein: ["其它"] },
+    { name: "德州辣味香肠", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Texas smoked sausage", note: "德式移民带来的烟熏香肠传统,烧烤店常见配菜,配白面包与腌菜", type: "烧烤", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "牛"] },
+    { name: "墨西哥炖肉玉米粉蒸肉", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Tex-Mex tamales", note: "玉米叶包裹玉米面团与肉馅蒸制,德州墨西哥裔社区节庆家常食物", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "科拉奇甜面包", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Kolache", note: "捷克移民带来的甜面团点心,德州本地演变出咸味版填布里斯科特与芝士,是本地人日常早餐", type: "饼馍", flavor: ["咸鲜", "甜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "米加斯炒蛋", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Migas", note: "Tex-Mex经典早餐,炒蛋混入炸玉米饼条,配洋葱番茄辣椒与芝士,常做成早餐塔可馅料", type: "其它", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["蛋", "面米"] },
+    { name: "红辣酱牛肉卷饼", cuisine: "奥斯汀", country: "美国", province: "得州", city: "奥斯汀", native: "Enchiladas (Tex-Mex)", note: "玉米饼卷肉芝士盖红/绿辣酱烤制,Maudie's等本地老店的日常主食", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["牛", "面米"] },
     { name: "魁北克奶酪肉汁薯条", cuisine: "蒙特利尔", country: "加拿大", city: "蒙特利尔", native: "Poutine", iconic: true, note: "薯条盖芝士凝乳与肉汁,凝乳要新鲜到会\"吱吱响\",La Banquise提供30多种做法,24小时营业", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "其它"] },
     { name: "蒙特利尔烟熏肉三明治", cuisine: "蒙特利尔", country: "加拿大", city: "蒙特利尔", native: "Montreal smoked meat", iconic: true, note: "东欧犹太移民带来的腌制烟熏牛胸肉,Schwartz's Deli自1928年是城市身份的一部分", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
     { name: "蒙特利尔贝果", cuisine: "蒙特利尔", country: "加拿大", city: "蒙特利尔", native: "Montreal bagel", iconic: true, note: "比纽约贝果更小更密更甜,先在蜂蜜水中煮过再用柴烧炉烘烤,St-Viateur与Fairmount是招牌老店", type: "饼馍", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
@@ -3303,34 +3303,34 @@ var DISHES = {
     { name: "法式肉酱", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Cretons (Quebec pork spread)", note: "法裔传统猪肉酱,涂抹烤面包作早餐,是魁北克家庭代代传承的家常味道", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
     { name: "豌豆浓汤", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Soupe aux pois (pea soup)", note: "17世纪法国殖民者传下的驱寒汤,黄豌豆配咸猪肉洋葱胡萝卜慢炖,糖屋餐桌常见", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "猪"] },
     { name: "魁北克可丽饼", cuisine: "魁北克", country: "加拿大", city: "魁北克", native: "Quebec crêpe", note: "比欧洲版更厚边缘更脆,常淋枫糖浆,老城早餐店与糖屋都常见", type: "其它", flavor: ["甜"], spice: 0, diet: "素", protein: ["蛋", "面米"] },
-    { name: "唐人街灌汤小笼包", cuisine: "纽约", country: "美国", city: "纽约", iconic: true, note: "华人移民带来,曼哈顿华埠茶楼里一笼笼上桌,如今是市中心打工人的日常午饭", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "华埠虾饺烧卖点心", cuisine: "纽约", country: "美国", city: "纽约", iconic: true, note: "广东移民把粤式饮茶带进曼哈顿华埠,推车叫卖的虾饺烧卖是周末早茶固定戏码", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
-    { name: "多米尼加大蕉捣泥 mofongo", cuisine: "纽约", country: "美国", city: "纽约", iconic: true, note: "多米尼加与波多黎各移民带来,华盛顿高地一带的日常主食,炸大蕉捣泥配蒜香猪皮或炖肉", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
-    { name: "波多黎各煎大蕉配炖肉", cuisine: "纽约", country: "美国", city: "纽约", note: "波多黎各移民社区的家常菜,煎压扁的青大蕉配炖牛肉,东哈莱姆的日常饭点", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
-    { name: "犹太熟食店马佐球汤", cuisine: "纽约", country: "美国", city: "纽约", note: "东欧犹太移民的家常汤,鸡汤里浮着无酵饼粉做的丸子,是纽约老熟食店的暖胃常备", type: "汤", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡", "面米", "蛋"] },
-    { name: "波多黎各炸绿蕉肉丸", cuisine: "纽约", country: "美国", city: "纽约", note: "波多黎各裔带来的街头小吃,青大蕉包碎牛肉炸成一团,布朗克斯小卖部常见", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
-    { name: "希腊烤肉三明治 gyro", cuisine: "纽约", country: "美国", city: "纽约", note: "希腊移民带进纽约,旋转烤肉刨片夹皮塔饼配酸奶黄瓜酱,是餐车和小店的快手午饭", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "牛", "面米"] },
-    { name: "洛杉矶越南牛肉粉", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", iconic: true, note: "越南难民在橙县小西贡扎根后带火的一碗汤粉,如今是全洛城随处可吃的日常", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "韩国城嫩豆腐锅", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", iconic: true, note: "韩裔移民把嫩豆腐锅开遍韩国城,滚烫砂锅配石锅饭是当地人平价快餐的头号选择", type: "汤", flavor: ["辣", "咸鲜"], spice: 2, diet: "海鲜", protein: ["豆制品", "虾", "蛋"] },
-    { name: "菲律宾锡西格铁板碎肉", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", iconic: true, note: "菲律宾移民带进历史菲律宾城的招牌,猪头肉切碎煎得焦香配米饭,当地菲裔的下饭主食", type: "烧烤", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "蛋"] },
-    { name: "In-N-Out 双层芝士汉堡", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", iconic: true, note: "1948年南加州起家的快餐,现做鲜牛肉饼配秘制酱,是加州人自己的汉堡信仰", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米", "蛋"] },
-    { name: "菲律宾烤乳猪 lechon", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", note: "菲律宾移民聚会必上的整只炭烤乳猪,皮脆肉嫩,在南加州菲裔社区是节庆日常", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "韩国城石锅拌饭", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", note: "韩裔带来的家常饭,滚烫石锅里的杂菜拌饭配辣酱,韩国城午市最省事的一餐", type: "米饭", flavor: ["辣", "咸鲜"], spice: 1, diet: "素", protein: ["面米", "蛋", "豆制品"] },
-    { name: "泰国城船面", cuisine: "洛杉矶", country: "美国", city: "洛杉矶", note: "洛杉矶泰国城是全美唯一官方泰国城,泰裔带来的浓汤船面是当地人熟门熟路的小吃", type: "面", flavor: ["咸鲜", "酸", "辣"], spice: 2, diet: "荤", protein: ["牛", "猪", "面米"] },
-    { name: "华埠越式蒜香捞面配烤蟹", cuisine: "旧金山", country: "美国", city: "旧金山", iconic: true, note: "越南裔在旧金山首创的蒜香黄油捞面配烤蟹,被《纽约时报》称为地道的旧金山味道", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹", "面米"] },
-    { name: "华埠港式虾饺点心", cuisine: "旧金山", country: "美国", city: "旧金山", iconic: true, note: "旧金山华埠有全美第一家点心楼,广东移民把饮茶传统留了下来,虾饺是熟客必点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
-    { name: "田德隆区越南法棍三明治", cuisine: "旧金山", country: "美国", city: "旧金山", iconic: true, note: "越南移民聚居的田德隆小西贡把越式法棍卖成招牌,脆皮夹烤肉配腌萝卜,便宜管饱的午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "小西贡越南牛肉粉", cuisine: "旧金山", country: "美国", city: "旧金山", note: "越南移民带进湾区的汤粉,清汤牛骨配生牛片,田德隆一带是当地人吃粉的老地方", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "华埠叉烧云吞面", cuisine: "旧金山", country: "美国", city: "旧金山", note: "广东移民带来的一碗面,弹牙细面配鲜虾云吞和蜜汁叉烧,华埠小馆的日常吃食", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
-    { name: "萨尔瓦多厚玉米饼 pupusa", cuisine: "旧金山", country: "美国", city: "旧金山", note: "萨尔瓦多移民带进教会区的国民主食,厚玉米饼夹奶酪或猪肉配腌菜,是拉美社区的日常暖食", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米", "其它"] },
-    { name: "华埠椒盐炒蟹", cuisine: "旧金山", country: "美国", city: "旧金山", note: "广东移民把椒盐爆炒的本地珍宝蟹端上桌,华埠餐馆的招牌大菜,鲜甜带镬气", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["蟹"] },
-    { name: "芝加哥意式冰镇柠檬冰沙", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "意大利移民带来的街头解暑冰,手刨碎冰淋柠檬糖浆,芝加哥夏天路边小摊的老味道", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素", protein: ["其它"] },
-    { name: "希腊城火焰芝士", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "芝加哥希腊城餐馆发扬的开胃菜,煎芝士上桌淋白兰地点火,是当地希腊裔的招牌花活", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "波兰移民手工波兰饺", cuisine: "芝加哥", country: "美国", city: "芝加哥", iconic: true, note: "芝加哥是华沙以外最大的波兰人聚居地,土豆奶酪馅的波兰饺是波兰社区的家常主食", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
-    { name: "墨西哥街头玉米杯 elote", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "墨西哥移民带来的街头小吃,玉米粒杯淋蛋黄酱撒辣椒粉和奶酪,芝加哥小推车常年在卖", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "素", protein: ["面米", "其它"] },
-    { name: "小村庄牧师烤肉塔可", cuisine: "芝加哥", country: "美国", city: "芝加哥", iconic: true, note: "墨西哥移民聚居的小村庄社区把牧师风味塔可做成招牌,腌红肉旋转烤配菠萝,街边随处能吃", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "墨西哥玉米叶粽 tamale", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "墨西哥移民带来的玉米面蒸粽,玉米叶裹辣猪肉馅,芝加哥街头推车清早就在卖", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "阿盖尔街越南牛肉粉", cuisine: "芝加哥", country: "美国", city: "芝加哥", note: "越南难民在上城阿盖尔街扎根后带来的汤粉,清汤牛骨配米粉,是芝加哥小越南的日常一碗", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "唐人街灌汤小笼包", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", iconic: true, note: "华人移民带来,曼哈顿华埠茶楼里一笼笼上桌,如今是市中心打工人的日常午饭", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "华埠虾饺烧卖点心", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", iconic: true, note: "广东移民把粤式饮茶带进曼哈顿华埠,推车叫卖的虾饺烧卖是周末早茶固定戏码", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
+    { name: "多米尼加大蕉捣泥 mofongo", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", iconic: true, note: "多米尼加与波多黎各移民带来,华盛顿高地一带的日常主食,炸大蕉捣泥配蒜香猪皮或炖肉", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "其它"] },
+    { name: "波多黎各煎大蕉配炖肉", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "波多黎各移民社区的家常菜,煎压扁的青大蕉配炖牛肉,东哈莱姆的日常饭点", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
+    { name: "犹太熟食店马佐球汤", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "东欧犹太移民的家常汤,鸡汤里浮着无酵饼粉做的丸子,是纽约老熟食店的暖胃常备", type: "汤", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["鸡", "面米", "蛋"] },
+    { name: "波多黎各炸绿蕉肉丸", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "波多黎各裔带来的街头小吃,青大蕉包碎牛肉炸成一团,布朗克斯小卖部常见", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "其它"] },
+    { name: "希腊烤肉三明治 gyro", cuisine: "纽约", country: "美国", province: "纽约州", city: "纽约", note: "希腊移民带进纽约,旋转烤肉刨片夹皮塔饼配酸奶黄瓜酱,是餐车和小店的快手午饭", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "牛", "面米"] },
+    { name: "洛杉矶越南牛肉粉", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", iconic: true, note: "越南难民在橙县小西贡扎根后带火的一碗汤粉,如今是全洛城随处可吃的日常", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "韩国城嫩豆腐锅", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", iconic: true, note: "韩裔移民把嫩豆腐锅开遍韩国城,滚烫砂锅配石锅饭是当地人平价快餐的头号选择", type: "汤", flavor: ["辣", "咸鲜"], spice: 2, diet: "海鲜", protein: ["豆制品", "虾", "蛋"] },
+    { name: "菲律宾锡西格铁板碎肉", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", iconic: true, note: "菲律宾移民带进历史菲律宾城的招牌,猪头肉切碎煎得焦香配米饭,当地菲裔的下饭主食", type: "烧烤", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "蛋"] },
+    { name: "In-N-Out 双层芝士汉堡", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", iconic: true, note: "1948年南加州起家的快餐,现做鲜牛肉饼配秘制酱,是加州人自己的汉堡信仰", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米", "蛋"] },
+    { name: "菲律宾烤乳猪 lechon", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", note: "菲律宾移民聚会必上的整只炭烤乳猪,皮脆肉嫩,在南加州菲裔社区是节庆日常", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "韩国城石锅拌饭", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", note: "韩裔带来的家常饭,滚烫石锅里的杂菜拌饭配辣酱,韩国城午市最省事的一餐", type: "米饭", flavor: ["辣", "咸鲜"], spice: 1, diet: "素", protein: ["面米", "蛋", "豆制品"] },
+    { name: "泰国城船面", cuisine: "洛杉矶", country: "美国", province: "加州", city: "洛杉矶", note: "洛杉矶泰国城是全美唯一官方泰国城,泰裔带来的浓汤船面是当地人熟门熟路的小吃", type: "面", flavor: ["咸鲜", "酸", "辣"], spice: 2, diet: "荤", protein: ["牛", "猪", "面米"] },
+    { name: "华埠越式蒜香捞面配烤蟹", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", iconic: true, note: "越南裔在旧金山首创的蒜香黄油捞面配烤蟹,被《纽约时报》称为地道的旧金山味道", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹", "面米"] },
+    { name: "华埠港式虾饺点心", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", iconic: true, note: "旧金山华埠有全美第一家点心楼,广东移民把饮茶传统留了下来,虾饺是熟客必点", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
+    { name: "田德隆区越南法棍三明治", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", iconic: true, note: "越南移民聚居的田德隆小西贡把越式法棍卖成招牌,脆皮夹烤肉配腌萝卜,便宜管饱的午餐", type: "三明治", flavor: ["咸鲜", "酸"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "小西贡越南牛肉粉", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", note: "越南移民带进湾区的汤粉,清汤牛骨配生牛片,田德隆一带是当地人吃粉的老地方", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "华埠叉烧云吞面", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", note: "广东移民带来的一碗面,弹牙细面配鲜虾云吞和蜜汁叉烧,华埠小馆的日常吃食", type: "面", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "猪", "面米"] },
+    { name: "萨尔瓦多厚玉米饼 pupusa", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", note: "萨尔瓦多移民带进教会区的国民主食,厚玉米饼夹奶酪或猪肉配腌菜,是拉美社区的日常暖食", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米", "其它"] },
+    { name: "华埠椒盐炒蟹", cuisine: "旧金山", country: "美国", province: "加州", city: "旧金山", note: "广东移民把椒盐爆炒的本地珍宝蟹端上桌,华埠餐馆的招牌大菜,鲜甜带镬气", type: "海鲜", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["蟹"] },
+    { name: "芝加哥意式冰镇柠檬冰沙", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "意大利移民带来的街头解暑冰,手刨碎冰淋柠檬糖浆,芝加哥夏天路边小摊的老味道", type: "甜点", flavor: ["甜", "酸"], spice: 0, diet: "纯素", protein: ["其它"] },
+    { name: "希腊城火焰芝士", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "芝加哥希腊城餐馆发扬的开胃菜,煎芝士上桌淋白兰地点火,是当地希腊裔的招牌花活", type: "小吃", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "波兰移民手工波兰饺", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", iconic: true, note: "芝加哥是华沙以外最大的波兰人聚居地,土豆奶酪馅的波兰饺是波兰社区的家常主食", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米", "其它"] },
+    { name: "墨西哥街头玉米杯 elote", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "墨西哥移民带来的街头小吃,玉米粒杯淋蛋黄酱撒辣椒粉和奶酪,芝加哥小推车常年在卖", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "素", protein: ["面米", "其它"] },
+    { name: "小村庄牧师烤肉塔可", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", iconic: true, note: "墨西哥移民聚居的小村庄社区把牧师风味塔可做成招牌,腌红肉旋转烤配菠萝,街边随处能吃", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "墨西哥玉米叶粽 tamale", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "墨西哥移民带来的玉米面蒸粽,玉米叶裹辣猪肉馅,芝加哥街头推车清早就在卖", type: "主食", flavor: ["咸鲜", "辣"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "阿盖尔街越南牛肉粉", cuisine: "芝加哥", country: "美国", province: "伊利诺伊州", city: "芝加哥", note: "越南难民在上城阿盖尔街扎根后带来的汤粉,清汤牛骨配米粉,是芝加哥小越南的日常一碗", type: "面", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
     { name: "温哥华煎焗压寿司", cuisine: "温哥华", country: "加拿大", city: "温哥华", iconic: true, note: "日裔厨师在温哥华首创的Aburi炙烤压寿司,喷枪烤过的三文鱼压成方块,已是本地日料招牌", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "面米"] },
     { name: "加州卷寿司", cuisine: "温哥华", country: "加拿大", city: "温哥华", iconic: true, note: "日裔师傅东条英员在温哥华首创的反卷寿司,蟹肉牛油果卷,后来红遍北美,老家在此", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["蟹", "面米"] },
     { name: "日式炸鸡热狗 Japadog", cuisine: "温哥华", country: "加拿大", city: "温哥华", iconic: true, note: "日裔2005年在温哥华街头首创的日式热狗,照烧酱海苔萝卜泥浇在肠上,是本地街食名片", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
@@ -3360,33 +3360,33 @@ var DISHES = {
     { name: "葡式香辣烤鸡 piri-piri", cuisine: "多伦多", country: "加拿大", city: "多伦多", iconic: true, note: "葡萄牙移民带进多伦多的招牌,香辣酱腌半只炭烤鸡配薯条,西区葡人社区几十年的家常味", type: "烧烤", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡"] },
     { name: "埃塞俄比亚英吉拉配炖菜", cuisine: "多伦多", country: "加拿大", city: "多伦多", note: "东非移民带进多伦多的酸味发酵薄饼,撕开蘸各色豆肉炖菜手抓着吃,是社区共餐的日常", type: "饼馍", flavor: ["酸", "辣"], spice: 1, diet: "荤", protein: ["牛", "豆制品", "面米"] },
     { name: "客家中式炒杂碎面", cuisine: "多伦多", country: "加拿大", city: "多伦多", note: "从印度回流的客家华人把印式中餐带进多伦多,辣酱炒面配辣子鸡是本地独有的融合日常", type: "面", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["鸡", "面米"] },
-    { name: "越裔小龙虾(Viet-Cajun crawfish)", cuisine: "休斯顿", country: "美国", city: "休斯顿", iconic: true, note: "越南移民把卡真水煮小龙虾改成蒜香黄油混鱼露香料,休斯顿独有的融合海鲜。", type: "海鲜", flavor: ["辣", "咸鲜"], spice: 2, diet: "海鲜", protein: ["虾"] },
-    { name: "牛肉粉(Phở)", cuisine: "休斯顿", country: "美国", city: "休斯顿", iconic: true, note: "休斯顿越南裔社区庞大,一碗牛肉河粉是本地日常,有店还卖牛胸肉版(brisket phở)。", type: "面", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "德州墨西哥法士达(Fajitas)", cuisine: "休斯顿", country: "美国", city: "休斯顿", iconic: true, note: "铁板炒牛肉配洋葱青椒卷面粉饼,Tex-Mex风味,据说在南德州发扬光大。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "鸡"] },
-    { name: "德州烟熏牛胸(Brisket / BBQ)", cuisine: "休斯顿", country: "美国", city: "休斯顿", iconic: true, note: "牛胸肉低温烟熏十几小时切厚片,德州烧烤的灵魂,论斤称着卖。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "墨式芝士蘸酱(Queso / Tex-Mex)", cuisine: "休斯顿", country: "美国", city: "休斯顿", note: "融化奶酪加辣椒做蘸酱配玉米片,Tex-Mex餐厅开胃标配,得州人的心头好。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "素", protein: ["其它"] },
-    { name: "越式法棍三明治(Bánh mì)", cuisine: "休斯顿", country: "美国", city: "休斯顿", note: "法棍夹越式烤肉、腌萝卜和香菜,休斯顿越南城的平价快餐。", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "伏都甜甜圈(Voodoo Doughnut)", cuisine: "波特兰", country: "美国", city: "波特兰", iconic: true, note: "造型古怪、口味大胆的手工甜甜圈,粉盒子成波特兰的城市符号,常排长队。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "餐车美食(Food cart pods)", cuisine: "波特兰", country: "美国", city: "波特兰", iconic: true, note: "成片聚集的餐车卖从泰国菜到墨西哥菜的各国小吃,波特兰的招牌饮食风景。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡", "猪"] },
-    { name: "农场直供餐(Farm-to-table)", cuisine: "波特兰", country: "美国", city: "波特兰", iconic: true, note: "用威拉米特河谷当季食材现做,波特兰把本地有机、季节性推成了餐饮风气。", type: "沙拉", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
-    { name: "精酿啤酒配餐(Craft beer & pub food)", cuisine: "波特兰", country: "美国", city: "波特兰", note: "波特兰精酿啤酒厂密度极高,配汉堡薯条的酒馆餐是本地社交日常。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
-    { name: "太平洋西北三文鱼(Grilled salmon)", cuisine: "波特兰", country: "美国", city: "波特兰", note: "哥伦比亚河的三文鱼烤或熏,西北部原住民古法传下的当地鱼味。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
-    { name: "膨松塔可(Puffy taco)", cuisine: "圣安东尼奥", country: "美国", city: "圣安东尼奥", iconic: true, note: "玉米面团现炸得鼓起蓬松再填肉馅,是圣安东尼奥自创的塔可样式。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
-    { name: "早餐塔可(Breakfast taco)", cuisine: "圣安东尼奥", country: "美国", city: "圣安东尼奥", iconic: true, note: "面粉饼卷炒蛋、土豆、培根或墨式香肠,圣安东尼奥人的日常早点。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["蛋", "猪"] },
-    { name: "德州辣肉酱(Chili con carne)", cuisine: "圣安东尼奥", country: "美国", city: "圣安东尼奥", iconic: true, note: "辣椒炖牛肉的\"德州红\",据说圣安东尼奥的\"辣椒女郎\"街摊把它推向全美。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["牛"] },
-    { name: "塔玛利(Tamales)", cuisine: "圣安东尼奥", country: "美国", city: "圣安东尼奥", note: "玉米面裹肉馅用玉米叶包好蒸熟,圣安东尼奥墨西哥裔家庭圣诞的传统。", type: "主食", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
-    { name: "墨式炖肉卷(Barbacoa)", cuisine: "圣安东尼奥", country: "美国", city: "圣安东尼奥", note: "牛头肉慢焖到软烂,周末早上卷进玉米饼配莎莎酱,南德州的传统吃法。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
-    { name: "南方炸鸡(Fried chicken)", cuisine: "亚特兰大", country: "美国", city: "亚特兰大", iconic: true, note: "面糊裹鸡块炸到金黄酥脆,亚特兰大老牌灵魂餐馆的招牌,常配华夫饼。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
-    { name: "灵魂料理拼盘(Soul food)", cuisine: "亚特兰大", country: "美国", city: "亚特兰大", iconic: true, note: "炸鸡、羽衣甘蓝、通心粉奶酪、玉米面包一盘上桌,南方黑人饮食传统的代表。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪"] },
-    { name: "桃子酥(Peach cobbler)", cuisine: "亚特兰大", country: "美国", city: "亚特兰大", iconic: true, note: "乔治亚桃子加糖烤成的甜派,\"桃州\"最有代表性的甜点,常配香草冰淇淋。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "炖蔬菜羽衣甘蓝(Collard greens)", cuisine: "亚特兰大", country: "美国", city: "亚特兰大", note: "羽衣甘蓝加烟熏猪肉慢炖到软,南方餐桌上少不了的一道配菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
-    { name: "什锦炖菜(Brunswick stew)", cuisine: "亚特兰大", country: "美国", city: "亚特兰大", note: "猪鸡肉配玉米、番茄和豆子熬成的浓炖菜,乔治亚烧烤店常配的经典。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "鸡"] },
-    { name: "夏威夷生鱼盖饭(Poke bowl)", cuisine: "檀香山", country: "美国", city: "檀香山", iconic: true, note: "生金枪鱼块用酱油麻油腌好铺在米饭上,夏威夷本土的鱼料理,now风靡全球。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "面米"] },
-    { name: "盒饭快餐(Plate lunch)", cuisine: "檀香山", country: "美国", city: "檀香山", iconic: true, note: "两勺米饭、通心粉沙拉加一份主菜,源自日裔种植园工人的午餐,夏威夷全民日常。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪", "面米"] },
-    { name: "午餐肉饭团(Spam musubi)", cuisine: "檀香山", country: "美国", city: "檀香山", iconic: true, note: "煎过的午餐肉压在米饭上用海苔卷起,夏威夷便利店的国民饭团,日式饭团本地化。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
-    { name: "疯狂莫科盖饭(Loco moco)", cuisine: "檀香山", country: "美国", city: "檀香山", iconic: true, note: "白米饭上放汉堡肉饼、煎蛋再浇肉汁,起源于夏威夷希洛,当地的平价饱腹餐。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "蛋", "面米"] },
-    { name: "葡式炸甜圈(Malasada)", cuisine: "檀香山", country: "美国", city: "檀香山", note: "没有孔的葡萄牙式炸甜面团裹糖,葡裔移民带来,已成夏威夷的招牌甜点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "烤猪配芋泥(Kalua pig & poi)", cuisine: "檀香山", country: "美国", city: "檀香山", note: "整猪埋进地坑(imu)烟焖到软烂,配芋头泥(poi),夏威夷原住民luau宴的传统。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] }
+    { name: "越裔小龙虾(Viet-Cajun crawfish)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", iconic: true, note: "越南移民把卡真水煮小龙虾改成蒜香黄油混鱼露香料,休斯顿独有的融合海鲜。", type: "海鲜", flavor: ["辣", "咸鲜"], spice: 2, diet: "海鲜", protein: ["虾"] },
+    { name: "牛肉粉(Phở)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", iconic: true, note: "休斯顿越南裔社区庞大,一碗牛肉河粉是本地日常,有店还卖牛胸肉版(brisket phở)。", type: "面", flavor: ["咸鲜", "清淡"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "德州墨西哥法士达(Fajitas)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", iconic: true, note: "铁板炒牛肉配洋葱青椒卷面粉饼,Tex-Mex风味,据说在南德州发扬光大。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "鸡"] },
+    { name: "德州烟熏牛胸(Brisket / BBQ)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", iconic: true, note: "牛胸肉低温烟熏十几小时切厚片,德州烧烤的灵魂,论斤称着卖。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "墨式芝士蘸酱(Queso / Tex-Mex)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", note: "融化奶酪加辣椒做蘸酱配玉米片,Tex-Mex餐厅开胃标配,得州人的心头好。", type: "小吃", flavor: ["咸鲜", "辣"], spice: 1, diet: "素", protein: ["其它"] },
+    { name: "越式法棍三明治(Bánh mì)", cuisine: "休斯顿", country: "美国", province: "得州", city: "休斯顿", note: "法棍夹越式烤肉、腌萝卜和香菜,休斯顿越南城的平价快餐。", type: "三明治", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "伏都甜甜圈(Voodoo Doughnut)", cuisine: "波特兰", country: "美国", province: "俄勒冈州", city: "波特兰", iconic: true, note: "造型古怪、口味大胆的手工甜甜圈,粉盒子成波特兰的城市符号,常排长队。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "餐车美食(Food cart pods)", cuisine: "波特兰", country: "美国", province: "俄勒冈州", city: "波特兰", iconic: true, note: "成片聚集的餐车卖从泰国菜到墨西哥菜的各国小吃,波特兰的招牌饮食风景。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["鸡", "猪"] },
+    { name: "农场直供餐(Farm-to-table)", cuisine: "波特兰", country: "美国", province: "俄勒冈州", city: "波特兰", iconic: true, note: "用威拉米特河谷当季食材现做,波特兰把本地有机、季节性推成了餐饮风气。", type: "沙拉", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["其它"] },
+    { name: "精酿啤酒配餐(Craft beer & pub food)", cuisine: "波特兰", country: "美国", province: "俄勒冈州", city: "波特兰", note: "波特兰精酿啤酒厂密度极高,配汉堡薯条的酒馆餐是本地社交日常。", type: "三明治", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛"] },
+    { name: "太平洋西北三文鱼(Grilled salmon)", cuisine: "波特兰", country: "美国", province: "俄勒冈州", city: "波特兰", note: "哥伦比亚河的三文鱼烤或熏,西北部原住民古法传下的当地鱼味。", type: "海鲜", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼"] },
+    { name: "膨松塔可(Puffy taco)", cuisine: "圣安东尼奥", country: "美国", province: "得州", city: "圣安东尼奥", iconic: true, note: "玉米面团现炸得鼓起蓬松再填肉馅,是圣安东尼奥自创的塔可样式。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛", "猪"] },
+    { name: "早餐塔可(Breakfast taco)", cuisine: "圣安东尼奥", country: "美国", province: "得州", city: "圣安东尼奥", iconic: true, note: "面粉饼卷炒蛋、土豆、培根或墨式香肠,圣安东尼奥人的日常早点。", type: "小吃", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["蛋", "猪"] },
+    { name: "德州辣肉酱(Chili con carne)", cuisine: "圣安东尼奥", country: "美国", province: "得州", city: "圣安东尼奥", iconic: true, note: "辣椒炖牛肉的\"德州红\",据说圣安东尼奥的\"辣椒女郎\"街摊把它推向全美。", type: "炖菜", flavor: ["辣", "咸鲜"], spice: 2, diet: "荤", protein: ["牛"] },
+    { name: "塔玛利(Tamales)", cuisine: "圣安东尼奥", country: "美国", province: "得州", city: "圣安东尼奥", note: "玉米面裹肉馅用玉米叶包好蒸熟,圣安东尼奥墨西哥裔家庭圣诞的传统。", type: "主食", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["猪", "面米"] },
+    { name: "墨式炖肉卷(Barbacoa)", cuisine: "圣安东尼奥", country: "美国", province: "得州", city: "圣安东尼奥", note: "牛头肉慢焖到软烂,周末早上卷进玉米饼配莎莎酱,南德州的传统吃法。", type: "烧烤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["牛"] },
+    { name: "南方炸鸡(Fried chicken)", cuisine: "亚特兰大", country: "美国", province: "佐治亚州", city: "亚特兰大", iconic: true, note: "面糊裹鸡块炸到金黄酥脆,亚特兰大老牌灵魂餐馆的招牌,常配华夫饼。", type: "其它", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡"] },
+    { name: "灵魂料理拼盘(Soul food)", cuisine: "亚特兰大", country: "美国", province: "佐治亚州", city: "亚特兰大", iconic: true, note: "炸鸡、羽衣甘蓝、通心粉奶酪、玉米面包一盘上桌,南方黑人饮食传统的代表。", type: "主食", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪"] },
+    { name: "桃子酥(Peach cobbler)", cuisine: "亚特兰大", country: "美国", province: "佐治亚州", city: "亚特兰大", iconic: true, note: "乔治亚桃子加糖烤成的甜派,\"桃州\"最有代表性的甜点,常配香草冰淇淋。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "炖蔬菜羽衣甘蓝(Collard greens)", cuisine: "亚特兰大", country: "美国", province: "佐治亚州", city: "亚特兰大", note: "羽衣甘蓝加烟熏猪肉慢炖到软,南方餐桌上少不了的一道配菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] },
+    { name: "什锦炖菜(Brunswick stew)", cuisine: "亚特兰大", country: "美国", province: "佐治亚州", city: "亚特兰大", note: "猪鸡肉配玉米、番茄和豆子熬成的浓炖菜,乔治亚烧烤店常配的经典。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "鸡"] },
+    { name: "夏威夷生鱼盖饭(Poke bowl)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", iconic: true, note: "生金枪鱼块用酱油麻油腌好铺在米饭上,夏威夷本土的鱼料理,now风靡全球。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["鱼", "面米"] },
+    { name: "盒饭快餐(Plate lunch)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", iconic: true, note: "两勺米饭、通心粉沙拉加一份主菜,源自日裔种植园工人的午餐,夏威夷全民日常。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["鸡", "猪", "面米"] },
+    { name: "午餐肉饭团(Spam musubi)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", iconic: true, note: "煎过的午餐肉压在米饭上用海苔卷起,夏威夷便利店的国民饭团,日式饭团本地化。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
+    { name: "疯狂莫科盖饭(Loco moco)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", iconic: true, note: "白米饭上放汉堡肉饼、煎蛋再浇肉汁,起源于夏威夷希洛,当地的平价饱腹餐。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "蛋", "面米"] },
+    { name: "葡式炸甜圈(Malasada)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", note: "没有孔的葡萄牙式炸甜面团裹糖,葡裔移民带来,已成夏威夷的招牌甜点。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "烤猪配芋泥(Kalua pig & poi)", cuisine: "檀香山", country: "美国", province: "夏威夷", city: "檀香山", note: "整猪埋进地坑(imu)烟焖到软烂,配芋头泥(poi),夏威夷原住民luau宴的传统。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪"] }
   ],
   europe: [
     { name: "那不勒斯披萨", cuisine: "那不勒斯", country: "意大利", city: "那不勒斯", native: "Pizza napoletana", iconic: true, note: "公认披萨发源地招牌做法，柴火窑高温快烤，边缘鼓起微焦。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
@@ -4515,1085 +4515,1550 @@ function pickFunLine() {
 // Location hierarchy for the selector: region tab key -> country -> [cities].
 var LOCATIONS = {
   "cn": {
-    "中国": [
-      "万宁",
-      "三亚",
-      "三明",
-      "三门峡",
-      "上海",
-      "上饶",
-      "临夏",
-      "临沂",
-      "临高",
-      "丹东",
-      "丽水",
-      "丽江",
-      "乐山",
-      "九江",
-      "乾县",
-      "仙桃",
-      "伊春",
-      "佳木斯",
-      "保定",
-      "信阳",
-      "儋州",
-      "六盘水",
-      "兰州",
-      "兴义",
-      "内江",
-      "内蒙古",
-      "凯里",
-      "包头",
-      "北京",
-      "北海",
-      "十堰",
-      "南京",
-      "南充",
-      "南宁",
-      "南昌",
-      "南阳",
-      "厦门",
-      "台东",
-      "台中",
-      "台北",
-      "台南",
-      "合肥",
-      "吉安",
-      "吉林",
-      "吴忠",
-      "周口",
-      "呼伦贝尔",
-      "呼和浩特",
-      "咸宁",
-      "哈尔滨",
-      "唐山",
-      "商丘",
-      "喀什",
-      "嘉义",
-      "嘉兴",
-      "四平",
-      "固原",
-      "垫江",
-      "基隆",
-      "大同",
-      "大庆",
-      "大理",
-      "大连",
-      "天水",
-      "天津",
-      "天门",
-      "太原",
-      "威海",
-      "娄底",
-      "孝感",
-      "宁夏",
-      "宁波",
-      "安阳",
-      "安顺",
-      "宜兰",
-      "宜宾",
-      "宜昌",
-      "宜春",
-      "宜良",
-      "宣威",
-      "宿州",
-      "屏东",
-      "岐山",
-      "岳阳",
-      "常德",
-      "平凉",
-      "平顶山",
-      "广元",
-      "广州",
-      "延吉",
-      "延边",
-      "建水",
-      "开封",
-      "张家口",
-      "张家界",
-      "张掖",
-      "彭州",
-      "彰化",
-      "德宏",
-      "德州",
-      "忻州",
-      "怀化",
-      "恩施",
-      "惠州",
-      "成都",
-      "扬州",
-      "承德",
-      "抚顺",
-      "拉萨",
-      "敦煌",
-      "文昌",
-      "新乡",
-      "新北",
-      "新疆",
-      "新竹",
-      "无锡",
-      "昆山",
-      "昆明",
-      "晋中",
-      "晋城",
-      "景德镇",
-      "曲靖",
-      "本溪",
-      "杨凌",
-      "杭州",
-      "林芝",
-      "柳州",
-      "株洲",
-      "桂林",
-      "梅州",
-      "梧州",
-      "榆林",
-      "武威",
-      "武汉",
-      "武隆",
-      "毕节",
-      "永州",
-      "汉中",
-      "汕头",
-      "江门",
-      "沈阳",
-      "沙湾",
-      "沧州",
-      "河池",
-      "泉州",
-      "泰安",
-      "洛阳",
-      "济南",
-      "济宁",
-      "海口",
-      "涪陵",
-      "淄博",
-      "淮南",
-      "淮安",
-      "清远",
-      "温州",
-      "渭南",
-      "湖州",
-      "湘潭",
-      "湘西",
-      "湛江",
-      "漯河",
-      "潍坊",
-      "潜江",
-      "潮州",
-      "潮汕",
-      "澳门",
-      "濮阳",
-      "烟台",
-      "焦作",
-      "牡丹江",
-      "玉林",
-      "琼海",
-      "甘肃",
-      "益阳",
-      "眉山",
-      "石家庄",
-      "石林",
-      "福州",
-      "秦皇岛",
-      "绍兴",
-      "绵阳",
-      "腾冲",
-      "自贡",
-      "芜湖",
-      "花莲",
-      "苏州",
-      "茂名",
-      "荆州",
-      "荆门",
-      "菏泽",
-      "萍乡",
-      "蒙自",
-      "衡水",
-      "衡阳",
-      "襄阳",
-      "西双版纳",
-      "西宁",
-      "西安",
-      "许昌",
-      "贵阳",
-      "赣州",
-      "赤峰",
-      "辽宁",
-      "达州",
-      "运城",
-      "遵义",
-      "邢台",
-      "邯郸",
-      "邵阳",
-      "郑州",
-      "郴州",
-      "都匀",
-      "重庆",
-      "金华",
-      "钦州",
-      "银川",
-      "锡林郭勒",
-      "锦州",
-      "镇江",
-      "镇远",
-      "长春",
-      "长沙",
-      "长治",
-      "阆中",
-      "阜阳",
-      "陇南",
-      "陇西",
-      "陕北",
-      "陕西",
-      "陵水",
-      "随州",
-      "青岛",
-      "青海",
-      "靖江",
-      "鞍山",
-      "顺德",
-      "香港",
-      "驻马店",
-      "高雄",
-      "鸡西",
-      "鹤壁",
-      "黄冈",
-      "黄山",
-      "黄石",
-      "黑龙江",
-      "黔东南",
-      "齐齐哈尔",
-      "龙岩"
-    ]
+    "中国": {
+      "": [
+        "台东",
+        "台中",
+        "台北",
+        "台南",
+        "嘉义",
+        "基隆",
+        "宜兰",
+        "屏东",
+        "彰化",
+        "新北",
+        "新竹",
+        "澳门",
+        "花莲",
+        "香港",
+        "高雄"
+      ],
+      "上海": [],
+      "云南": [
+        "丽江",
+        "大理",
+        "宜良",
+        "宣威",
+        "建水",
+        "德宏",
+        "昆明",
+        "曲靖",
+        "石林",
+        "腾冲",
+        "蒙自",
+        "西双版纳"
+      ],
+      "内蒙古": [
+        "包头",
+        "呼伦贝尔",
+        "呼和浩特",
+        "赤峰",
+        "锡林郭勒"
+      ],
+      "北京": [],
+      "吉林": [
+        "四平",
+        "延吉",
+        "延边",
+        "长春"
+      ],
+      "四川": [
+        "乐山",
+        "内江",
+        "南充",
+        "宜宾",
+        "广元",
+        "彭州",
+        "成都",
+        "眉山",
+        "绵阳",
+        "自贡",
+        "达州",
+        "阆中"
+      ],
+      "天津": [],
+      "宁夏": [
+        "吴忠",
+        "固原",
+        "银川"
+      ],
+      "安徽": [
+        "合肥",
+        "宿州",
+        "淮南",
+        "芜湖",
+        "阜阳",
+        "黄山"
+      ],
+      "山东": [
+        "临沂",
+        "威海",
+        "德州",
+        "泰安",
+        "济南",
+        "济宁",
+        "淄博",
+        "潍坊",
+        "烟台",
+        "菏泽",
+        "青岛"
+      ],
+      "山西": [
+        "大同",
+        "太原",
+        "忻州",
+        "晋中",
+        "晋城",
+        "运城",
+        "长治"
+      ],
+      "广东": [
+        "广州",
+        "惠州",
+        "梅州",
+        "汕头",
+        "江门",
+        "清远",
+        "湛江",
+        "潮州",
+        "潮汕",
+        "茂名",
+        "顺德"
+      ],
+      "广西": [
+        "北海",
+        "南宁",
+        "柳州",
+        "桂林",
+        "梧州",
+        "河池",
+        "玉林",
+        "钦州"
+      ],
+      "新疆": [
+        "喀什",
+        "沙湾"
+      ],
+      "江苏": [
+        "南京",
+        "扬州",
+        "无锡",
+        "昆山",
+        "淮安",
+        "苏州",
+        "镇江",
+        "靖江"
+      ],
+      "江西": [
+        "上饶",
+        "九江",
+        "南昌",
+        "吉安",
+        "宜春",
+        "景德镇",
+        "萍乡",
+        "赣州"
+      ],
+      "河北": [
+        "保定",
+        "唐山",
+        "张家口",
+        "承德",
+        "沧州",
+        "石家庄",
+        "秦皇岛",
+        "衡水",
+        "邢台",
+        "邯郸"
+      ],
+      "河南": [
+        "三门峡",
+        "信阳",
+        "南阳",
+        "周口",
+        "商丘",
+        "安阳",
+        "平顶山",
+        "开封",
+        "新乡",
+        "洛阳",
+        "漯河",
+        "濮阳",
+        "焦作",
+        "许昌",
+        "郑州",
+        "驻马店",
+        "鹤壁"
+      ],
+      "浙江": [
+        "丽水",
+        "嘉兴",
+        "宁波",
+        "杭州",
+        "温州",
+        "湖州",
+        "绍兴",
+        "金华"
+      ],
+      "海南": [
+        "万宁",
+        "三亚",
+        "临高",
+        "儋州",
+        "文昌",
+        "海口",
+        "琼海",
+        "陵水"
+      ],
+      "湖北": [
+        "仙桃",
+        "十堰",
+        "咸宁",
+        "天门",
+        "孝感",
+        "宜昌",
+        "恩施",
+        "武汉",
+        "潜江",
+        "荆州",
+        "荆门",
+        "襄阳",
+        "随州",
+        "黄冈",
+        "黄石"
+      ],
+      "湖南": [
+        "娄底",
+        "岳阳",
+        "常德",
+        "张家界",
+        "怀化",
+        "株洲",
+        "永州",
+        "湘潭",
+        "湘西",
+        "益阳",
+        "衡阳",
+        "邵阳",
+        "郴州",
+        "长沙"
+      ],
+      "澳门": [],
+      "甘肃": [
+        "临夏",
+        "兰州",
+        "天水",
+        "平凉",
+        "张掖",
+        "敦煌",
+        "武威",
+        "陇南",
+        "陇西"
+      ],
+      "福建": [
+        "三明",
+        "厦门",
+        "泉州",
+        "福州",
+        "龙岩"
+      ],
+      "西藏": [
+        "拉萨",
+        "林芝"
+      ],
+      "贵州": [
+        "六盘水",
+        "兴义",
+        "凯里",
+        "安顺",
+        "毕节",
+        "贵阳",
+        "遵义",
+        "都匀",
+        "镇远",
+        "黔东南"
+      ],
+      "辽宁": [
+        "丹东",
+        "大连",
+        "抚顺",
+        "本溪",
+        "沈阳",
+        "锦州",
+        "鞍山"
+      ],
+      "重庆": [
+        "垫江",
+        "武隆",
+        "涪陵"
+      ],
+      "陕西": [
+        "乾县",
+        "岐山",
+        "杨凌",
+        "榆林",
+        "汉中",
+        "渭南",
+        "西安",
+        "陕北"
+      ],
+      "青海": [
+        "西宁"
+      ],
+      "香港": [],
+      "黑龙江": [
+        "伊春",
+        "佳木斯",
+        "哈尔滨",
+        "大庆",
+        "牡丹江",
+        "鸡西",
+        "齐齐哈尔"
+      ]
+    }
   },
   "asia": {
-    "不丹": [
-      "廷布"
-    ],
-    "东帝汶": [
-      "帝力"
-    ],
-    "乌兹别克斯坦": [
-      "塔什干",
-      "撒马尔罕"
-    ],
-    "印度": [
-      "加尔各答",
-      "勒克瑙",
-      "喀拉拉",
-      "孟买",
-      "德里",
-      "斋普尔",
-      "新德里",
-      "果阿",
-      "浦那",
-      "海得拉巴",
-      "班加罗尔",
-      "艾哈迈达巴德",
-      "金奈",
-      "阿姆利则"
-    ],
-    "印度尼西亚": [
-      "万隆",
-      "巨港",
-      "巴厘岛",
-      "日惹",
-      "望加锡",
-      "棉兰",
-      "泗水",
-      "雅加达"
-    ],
-    "吉尔吉斯斯坦": [
-      "比什凯克"
-    ],
-    "哈萨克斯坦": [
-      "阿拉木图",
-      "阿斯塔纳"
-    ],
-    "土库曼斯坦": [
-      "阿什哈巴德"
-    ],
-    "塔吉克斯坦": [
-      "杜尚别"
-    ],
-    "孟加拉": [
-      "达卡"
-    ],
-    "尼泊尔": [
-      "加德满都"
-    ],
-    "巴基斯坦": [
-      "卡拉奇",
-      "拉合尔",
-      "白沙瓦"
-    ],
-    "文莱": [
-      "斯里巴加湾市"
-    ],
-    "斯里兰卡": [
-      "康提",
-      "科伦坡"
-    ],
-    "新加坡": [],
-    "日本": [
-      "东京",
-      "京都",
-      "仙台",
-      "冲绳",
-      "别府",
-      "名古屋",
-      "大阪",
-      "天草",
-      "广岛",
-      "指宿",
-      "札幌",
-      "横滨",
-      "熊本",
-      "由布院",
-      "神户",
-      "福冈",
-      "金泽",
-      "长崎",
-      "长野",
-      "阿苏",
-      "静冈",
-      "香川",
-      "鹿儿岛"
-    ],
-    "朝鲜": [
-      "咸兴",
-      "平壤"
-    ],
-    "柬埔寨": [
-      "金边"
-    ],
-    "泰国": [
-      "大城",
-      "普吉",
-      "曼谷",
-      "清莱",
-      "清迈"
-    ],
-    "缅甸": [
-      "掸邦"
-    ],
-    "老挝": [
-      "琅勃拉邦"
-    ],
-    "菲律宾": [
-      "宿务",
-      "怡朗",
-      "比科尔",
-      "达沃",
-      "邦板牙",
-      "马尼拉"
-    ],
-    "蒙古": [
-      "乌兰巴托"
-    ],
-    "越南": [
-      "会安",
-      "岘港",
-      "河内",
-      "胡志明市",
-      "芽庄",
-      "顺化"
-    ],
-    "阿富汗": [
-      "喀布尔"
-    ],
-    "韩国": [
-      "仁川",
-      "光州",
-      "全州",
-      "大邱",
-      "安东",
-      "春川",
-      "济州",
-      "釜山",
-      "首尔"
-    ],
-    "马尔代夫": [
-      "马累"
-    ],
-    "马来西亚": [
-      "古晋",
-      "吉隆坡",
-      "怡保",
-      "新山",
-      "槟城",
-      "沙巴",
-      "马六甲"
-    ]
+    "不丹": {
+      "": [
+        "廷布"
+      ]
+    },
+    "东帝汶": {
+      "": [
+        "帝力"
+      ]
+    },
+    "乌兹别克斯坦": {
+      "": [
+        "塔什干",
+        "撒马尔罕"
+      ]
+    },
+    "印度": {
+      "": [
+        "加尔各答",
+        "勒克瑙",
+        "喀拉拉",
+        "孟买",
+        "德里",
+        "斋普尔",
+        "新德里",
+        "果阿",
+        "浦那",
+        "海得拉巴",
+        "班加罗尔",
+        "艾哈迈达巴德",
+        "金奈",
+        "阿姆利则"
+      ]
+    },
+    "印度尼西亚": {
+      "": [
+        "万隆",
+        "巨港",
+        "巴厘岛",
+        "日惹",
+        "望加锡",
+        "棉兰",
+        "泗水",
+        "雅加达"
+      ]
+    },
+    "吉尔吉斯斯坦": {
+      "": [
+        "比什凯克"
+      ]
+    },
+    "哈萨克斯坦": {
+      "": [
+        "阿拉木图",
+        "阿斯塔纳"
+      ]
+    },
+    "土库曼斯坦": {
+      "": [
+        "阿什哈巴德"
+      ]
+    },
+    "塔吉克斯坦": {
+      "": [
+        "杜尚别"
+      ]
+    },
+    "孟加拉": {
+      "": [
+        "达卡"
+      ]
+    },
+    "尼泊尔": {
+      "": [
+        "加德满都"
+      ]
+    },
+    "巴基斯坦": {
+      "": [
+        "卡拉奇",
+        "拉合尔",
+        "白沙瓦"
+      ]
+    },
+    "文莱": {
+      "": [
+        "斯里巴加湾市"
+      ]
+    },
+    "斯里兰卡": {
+      "": [
+        "康提",
+        "科伦坡"
+      ]
+    },
+    "新加坡": {
+      "": []
+    },
+    "日本": {
+      "": [
+        "东京",
+        "京都",
+        "仙台",
+        "冲绳",
+        "别府",
+        "名古屋",
+        "大阪",
+        "天草",
+        "广岛",
+        "指宿",
+        "札幌",
+        "横滨",
+        "熊本",
+        "由布院",
+        "神户",
+        "福冈",
+        "金泽",
+        "长崎",
+        "长野",
+        "阿苏",
+        "静冈",
+        "香川",
+        "鹿儿岛"
+      ]
+    },
+    "朝鲜": {
+      "": [
+        "咸兴",
+        "平壤"
+      ]
+    },
+    "柬埔寨": {
+      "": [
+        "金边"
+      ]
+    },
+    "泰国": {
+      "": [
+        "大城",
+        "普吉",
+        "曼谷",
+        "清莱",
+        "清迈"
+      ]
+    },
+    "缅甸": {
+      "": [
+        "掸邦"
+      ]
+    },
+    "老挝": {
+      "": [
+        "琅勃拉邦"
+      ]
+    },
+    "菲律宾": {
+      "": [
+        "宿务",
+        "怡朗",
+        "比科尔",
+        "达沃",
+        "邦板牙",
+        "马尼拉"
+      ]
+    },
+    "蒙古": {
+      "": [
+        "乌兰巴托"
+      ]
+    },
+    "越南": {
+      "": [
+        "会安",
+        "岘港",
+        "河内",
+        "胡志明市",
+        "芽庄",
+        "顺化"
+      ]
+    },
+    "阿富汗": {
+      "": [
+        "喀布尔"
+      ]
+    },
+    "韩国": {
+      "": [
+        "仁川",
+        "光州",
+        "全州",
+        "大邱",
+        "安东",
+        "春川",
+        "济州",
+        "釜山",
+        "首尔"
+      ]
+    },
+    "马尔代夫": {
+      "": [
+        "马累"
+      ]
+    },
+    "马来西亚": {
+      "": [
+        "古晋",
+        "吉隆坡",
+        "怡保",
+        "新山",
+        "槟城",
+        "沙巴",
+        "马六甲"
+      ]
+    }
   },
   "me": {
-    "也门": [
-      "亚丁",
-      "萨那"
-    ],
-    "以色列": [
-      "特拉维夫",
-      "耶路撒冷"
-    ],
-    "伊拉克": [
-      "巴格达"
-    ],
-    "伊朗": [
-      "德黑兰"
-    ],
-    "卡塔尔": [
-      "多哈"
-    ],
-    "叙利亚": [
-      "大马士革",
-      "阿勒颇"
-    ],
-    "土耳其": [
-      "伊斯坦布尔"
-    ],
-    "巴勒斯坦": [
-      "加沙",
-      "纳布卢斯",
-      "耶路撒冷"
-    ],
-    "巴林": [
-      "麦纳麦"
-    ],
-    "沙特": [
-      "利雅得",
-      "吉达"
-    ],
-    "科威特": [
-      "科威特城"
-    ],
-    "约旦": [
-      "安曼"
-    ],
-    "阿曼": [
-      "马斯喀特"
-    ],
-    "阿联酋": [
-      "迪拜",
-      "阿布扎比"
-    ],
-    "黎凡特": [],
-    "黎巴嫩": [
-      "贝鲁特"
-    ]
+    "也门": {
+      "": [
+        "亚丁",
+        "萨那"
+      ]
+    },
+    "以色列": {
+      "": [
+        "特拉维夫",
+        "耶路撒冷"
+      ]
+    },
+    "伊拉克": {
+      "": [
+        "巴格达"
+      ]
+    },
+    "伊朗": {
+      "": [
+        "德黑兰"
+      ]
+    },
+    "卡塔尔": {
+      "": [
+        "多哈"
+      ]
+    },
+    "叙利亚": {
+      "": [
+        "大马士革",
+        "阿勒颇"
+      ]
+    },
+    "土耳其": {
+      "": [
+        "伊斯坦布尔"
+      ]
+    },
+    "巴勒斯坦": {
+      "": [
+        "加沙",
+        "纳布卢斯",
+        "耶路撒冷"
+      ]
+    },
+    "巴林": {
+      "": [
+        "麦纳麦"
+      ]
+    },
+    "沙特": {
+      "": [
+        "利雅得",
+        "吉达"
+      ]
+    },
+    "科威特": {
+      "": [
+        "科威特城"
+      ]
+    },
+    "约旦": {
+      "": [
+        "安曼"
+      ]
+    },
+    "阿曼": {
+      "": [
+        "马斯喀特"
+      ]
+    },
+    "阿联酋": {
+      "": [
+        "迪拜",
+        "阿布扎比"
+      ]
+    },
+    "黎凡特": {
+      "": []
+    },
+    "黎巴嫩": {
+      "": [
+        "贝鲁特"
+      ]
+    }
   },
   "africa": {
-    "中非": [],
-    "乌干达": [
-      "坎帕拉"
-    ],
-    "乍得": [
-      "恩贾梅纳"
-    ],
-    "佛得角": [
-      "普拉亚"
-    ],
-    "冈比亚": [
-      "班珠尔"
-    ],
-    "几内亚": [
-      "科纳克里"
-    ],
-    "几内亚比绍": [
-      "比绍"
-    ],
-    "刚果(布)": [],
-    "刚果(金)": [],
-    "刚果（布）": [
-      "布拉柴维尔"
-    ],
-    "刚果（金）": [
-      "金沙萨"
-    ],
-    "利比亚": [
-      "的黎波里"
-    ],
-    "利比里亚": [
-      "蒙罗维亚"
-    ],
-    "加纳": [
-      "阿克拉"
-    ],
-    "加蓬": [
-      "利伯维尔"
-    ],
-    "南苏丹": [
-      "朱巴"
-    ],
-    "南非": [
-      "开普敦",
-      "德班",
-      "约翰内斯堡"
-    ],
-    "博茨瓦纳": [
-      "哈博罗内"
-    ],
-    "卢旺达": [
-      "基加利"
-    ],
-    "厄立特里亚": [
-      "阿斯马拉"
-    ],
-    "吉布提": [],
-    "喀麦隆": [
-      "杜阿拉",
-      "雅温得"
-    ],
-    "圣多美和普林西比": [
-      "圣多美"
-    ],
-    "坦桑尼亚": [
-      "桑给巴尔",
-      "达累斯萨拉姆"
-    ],
-    "埃及": [
-      "开罗"
-    ],
-    "埃塞俄比亚": [
-      "亚的斯亚贝巴"
-    ],
-    "塞内加尔": [
-      "达喀尔"
-    ],
-    "塞拉利昂": [
-      "弗里敦"
-    ],
-    "塞舌尔": [],
-    "多哥": [
-      "洛美"
-    ],
-    "安哥拉": [
-      "罗安达"
-    ],
-    "尼日利亚": [
-      "拉各斯",
-      "阿布贾"
-    ],
-    "尼日尔": [
-      "尼亚美"
-    ],
-    "布基纳法索": [
-      "瓦加杜古"
-    ],
-    "布隆迪": [
-      "布琼布拉"
-    ],
-    "摩洛哥": [
-      "卡萨布兰卡",
-      "马拉喀什"
-    ],
-    "斯威士兰": [
-      "埃斯瓦蒂尼"
-    ],
-    "斯威士兰(埃斯瓦蒂尼)": [],
-    "毛里塔尼亚": [
-      "努瓦克肖特"
-    ],
-    "毛里求斯": [
-      "路易港"
-    ],
-    "津巴布韦": [
-      "哈拉雷"
-    ],
-    "科摩罗": [],
-    "科特迪瓦": [
-      "阿比让"
-    ],
-    "突尼斯": [],
-    "索马里": [
-      "摩加迪沙"
-    ],
-    "纳米比亚": [
-      "温得和克"
-    ],
-    "肯尼亚": [
-      "内罗毕"
-    ],
-    "苏丹": [
-      "喀土穆"
-    ],
-    "莫桑比克": [
-      "马普托"
-    ],
-    "莱索托": [
-      "马塞卢"
-    ],
-    "贝宁": [
-      "科托努"
-    ],
-    "赞比亚": [
-      "卢萨卡"
-    ],
-    "赤道几内亚": [
-      "马拉博"
-    ],
-    "阿尔及利亚": [
-      "阿尔及尔"
-    ],
-    "马拉维": [
-      "利隆圭"
-    ],
-    "马达加斯加": [
-      "塔那那利佛"
-    ],
-    "马里": [
-      "巴马科"
-    ]
+    "中非": {
+      "": []
+    },
+    "乌干达": {
+      "": [
+        "坎帕拉"
+      ]
+    },
+    "乍得": {
+      "": [
+        "恩贾梅纳"
+      ]
+    },
+    "佛得角": {
+      "": [
+        "普拉亚"
+      ]
+    },
+    "冈比亚": {
+      "": [
+        "班珠尔"
+      ]
+    },
+    "几内亚": {
+      "": [
+        "科纳克里"
+      ]
+    },
+    "几内亚比绍": {
+      "": [
+        "比绍"
+      ]
+    },
+    "刚果(布)": {
+      "": []
+    },
+    "刚果(金)": {
+      "": []
+    },
+    "刚果（布）": {
+      "": [
+        "布拉柴维尔"
+      ]
+    },
+    "刚果（金）": {
+      "": [
+        "金沙萨"
+      ]
+    },
+    "利比亚": {
+      "": [
+        "的黎波里"
+      ]
+    },
+    "利比里亚": {
+      "": [
+        "蒙罗维亚"
+      ]
+    },
+    "加纳": {
+      "": [
+        "阿克拉"
+      ]
+    },
+    "加蓬": {
+      "": [
+        "利伯维尔"
+      ]
+    },
+    "南苏丹": {
+      "": [
+        "朱巴"
+      ]
+    },
+    "南非": {
+      "": [
+        "开普敦",
+        "德班",
+        "约翰内斯堡"
+      ]
+    },
+    "博茨瓦纳": {
+      "": [
+        "哈博罗内"
+      ]
+    },
+    "卢旺达": {
+      "": [
+        "基加利"
+      ]
+    },
+    "厄立特里亚": {
+      "": [
+        "阿斯马拉"
+      ]
+    },
+    "吉布提": {
+      "": []
+    },
+    "喀麦隆": {
+      "": [
+        "杜阿拉",
+        "雅温得"
+      ]
+    },
+    "圣多美和普林西比": {
+      "": [
+        "圣多美"
+      ]
+    },
+    "坦桑尼亚": {
+      "": [
+        "桑给巴尔",
+        "达累斯萨拉姆"
+      ]
+    },
+    "埃及": {
+      "": [
+        "开罗"
+      ]
+    },
+    "埃塞俄比亚": {
+      "": [
+        "亚的斯亚贝巴"
+      ]
+    },
+    "塞内加尔": {
+      "": [
+        "达喀尔"
+      ]
+    },
+    "塞拉利昂": {
+      "": [
+        "弗里敦"
+      ]
+    },
+    "塞舌尔": {
+      "": []
+    },
+    "多哥": {
+      "": [
+        "洛美"
+      ]
+    },
+    "安哥拉": {
+      "": [
+        "罗安达"
+      ]
+    },
+    "尼日利亚": {
+      "": [
+        "拉各斯",
+        "阿布贾"
+      ]
+    },
+    "尼日尔": {
+      "": [
+        "尼亚美"
+      ]
+    },
+    "布基纳法索": {
+      "": [
+        "瓦加杜古"
+      ]
+    },
+    "布隆迪": {
+      "": [
+        "布琼布拉"
+      ]
+    },
+    "摩洛哥": {
+      "": [
+        "卡萨布兰卡",
+        "马拉喀什"
+      ]
+    },
+    "斯威士兰": {
+      "": [
+        "埃斯瓦蒂尼"
+      ]
+    },
+    "斯威士兰(埃斯瓦蒂尼)": {
+      "": []
+    },
+    "毛里塔尼亚": {
+      "": [
+        "努瓦克肖特"
+      ]
+    },
+    "毛里求斯": {
+      "": [
+        "路易港"
+      ]
+    },
+    "津巴布韦": {
+      "": [
+        "哈拉雷"
+      ]
+    },
+    "科摩罗": {
+      "": []
+    },
+    "科特迪瓦": {
+      "": [
+        "阿比让"
+      ]
+    },
+    "突尼斯": {
+      "": []
+    },
+    "索马里": {
+      "": [
+        "摩加迪沙"
+      ]
+    },
+    "纳米比亚": {
+      "": [
+        "温得和克"
+      ]
+    },
+    "肯尼亚": {
+      "": [
+        "内罗毕"
+      ]
+    },
+    "苏丹": {
+      "": [
+        "喀土穆"
+      ]
+    },
+    "莫桑比克": {
+      "": [
+        "马普托"
+      ]
+    },
+    "莱索托": {
+      "": [
+        "马塞卢"
+      ]
+    },
+    "贝宁": {
+      "": [
+        "科托努"
+      ]
+    },
+    "赞比亚": {
+      "": [
+        "卢萨卡"
+      ]
+    },
+    "赤道几内亚": {
+      "": [
+        "马拉博"
+      ]
+    },
+    "阿尔及利亚": {
+      "": [
+        "阿尔及尔"
+      ]
+    },
+    "马拉维": {
+      "": [
+        "利隆圭"
+      ]
+    },
+    "马达加斯加": {
+      "": [
+        "塔那那利佛"
+      ]
+    },
+    "马里": {
+      "": [
+        "巴马科"
+      ]
+    }
   },
   "latam": {
-    "乌拉圭": [
-      "蒙得维的亚"
-    ],
-    "伯利兹": [
-      "贝尔莫潘"
-    ],
-    "危地马拉": [
-      "危地马拉城"
-    ],
-    "厄瓜多尔": [
-      "基多",
-      "瓜亚基尔"
-    ],
-    "古巴": [
-      "哈瓦那"
-    ],
-    "哥伦比亚": [
-      "卡塔赫纳",
-      "波哥大",
-      "麦德林"
-    ],
-    "哥斯达黎加": [
-      "圣何塞"
-    ],
-    "圭亚那": [
-      "乔治敦"
-    ],
-    "墨西哥": [
-      "墨西哥城",
-      "提华纳",
-      "普埃布拉",
-      "梅里达",
-      "瓜达拉哈拉",
-      "瓦哈卡",
-      "蒙特雷"
-    ],
-    "多米尼加": [
-      "圣多明各"
-    ],
-    "委内瑞拉": [
-      "加拉加斯"
-    ],
-    "尼加拉瓜": [
-      "马那瓜"
-    ],
-    "巴哈马": [
-      "拿骚"
-    ],
-    "巴巴多斯": [
-      "布里奇顿"
-    ],
-    "巴拉圭": [
-      "亚松森"
-    ],
-    "巴拿马": [
-      "巴拿马城"
-    ],
-    "巴西": [
-      "圣保罗",
-      "巴西利亚",
-      "库里蒂巴",
-      "累西腓",
-      "萨尔瓦多",
-      "贝洛奥里藏特",
-      "里约热内卢"
-    ],
-    "智利": [
-      "圣地亚哥",
-      "瓦尔帕莱索"
-    ],
-    "波多黎各": [
-      "圣胡安"
-    ],
-    "洪都拉斯": [
-      "特古西加尔巴"
-    ],
-    "海地": [
-      "太子港"
-    ],
-    "牙买加": [
-      "金斯敦"
-    ],
-    "特立尼达和多巴哥": [
-      "西班牙港"
-    ],
-    "玻利维亚": [
-      "拉巴斯",
-      "苏克雷"
-    ],
-    "秘鲁": [
-      "利马",
-      "库斯科",
-      "阿雷基帕"
-    ],
-    "苏里南": [
-      "帕拉马里博"
-    ],
-    "萨尔瓦多": [
-      "圣萨尔瓦多"
-    ],
-    "阿根廷": [
-      "布宜诺斯艾利斯",
-      "科尔多瓦",
-      "罗萨里奥",
-      "门多萨"
-    ]
+    "乌拉圭": {
+      "": [
+        "蒙得维的亚"
+      ]
+    },
+    "伯利兹": {
+      "": [
+        "贝尔莫潘"
+      ]
+    },
+    "危地马拉": {
+      "": [
+        "危地马拉城"
+      ]
+    },
+    "厄瓜多尔": {
+      "": [
+        "基多",
+        "瓜亚基尔"
+      ]
+    },
+    "古巴": {
+      "": [
+        "哈瓦那"
+      ]
+    },
+    "哥伦比亚": {
+      "": [
+        "卡塔赫纳",
+        "波哥大",
+        "麦德林"
+      ]
+    },
+    "哥斯达黎加": {
+      "": [
+        "圣何塞"
+      ]
+    },
+    "圭亚那": {
+      "": [
+        "乔治敦"
+      ]
+    },
+    "墨西哥": {
+      "": [
+        "墨西哥城",
+        "提华纳",
+        "普埃布拉",
+        "梅里达",
+        "瓜达拉哈拉",
+        "瓦哈卡",
+        "蒙特雷"
+      ]
+    },
+    "多米尼加": {
+      "": [
+        "圣多明各"
+      ]
+    },
+    "委内瑞拉": {
+      "": [
+        "加拉加斯"
+      ]
+    },
+    "尼加拉瓜": {
+      "": [
+        "马那瓜"
+      ]
+    },
+    "巴哈马": {
+      "": [
+        "拿骚"
+      ]
+    },
+    "巴巴多斯": {
+      "": [
+        "布里奇顿"
+      ]
+    },
+    "巴拉圭": {
+      "": [
+        "亚松森"
+      ]
+    },
+    "巴拿马": {
+      "": [
+        "巴拿马城"
+      ]
+    },
+    "巴西": {
+      "": [
+        "圣保罗",
+        "巴西利亚",
+        "库里蒂巴",
+        "累西腓",
+        "萨尔瓦多",
+        "贝洛奥里藏特",
+        "里约热内卢"
+      ]
+    },
+    "智利": {
+      "": [
+        "圣地亚哥",
+        "瓦尔帕莱索"
+      ]
+    },
+    "波多黎各": {
+      "": [
+        "圣胡安"
+      ]
+    },
+    "洪都拉斯": {
+      "": [
+        "特古西加尔巴"
+      ]
+    },
+    "海地": {
+      "": [
+        "太子港"
+      ]
+    },
+    "牙买加": {
+      "": [
+        "金斯敦"
+      ]
+    },
+    "特立尼达和多巴哥": {
+      "": [
+        "西班牙港"
+      ]
+    },
+    "玻利维亚": {
+      "": [
+        "拉巴斯",
+        "苏克雷"
+      ]
+    },
+    "秘鲁": {
+      "": [
+        "利马",
+        "库斯科",
+        "阿雷基帕"
+      ]
+    },
+    "苏里南": {
+      "": [
+        "帕拉马里博"
+      ]
+    },
+    "萨尔瓦多": {
+      "": [
+        "圣萨尔瓦多"
+      ]
+    },
+    "阿根廷": {
+      "": [
+        "布宜诺斯艾利斯",
+        "科尔多瓦",
+        "罗萨里奥",
+        "门多萨"
+      ]
+    }
   },
   "na": {
-    "加拿大": [
-      "不列颠哥伦比亚",
-      "加拿大草原/原住民",
-      "卡尔加里",
-      "哈利法克斯",
-      "埃德蒙顿",
-      "多伦多",
-      "安大略",
-      "曼尼托巴/萨斯喀彻温",
-      "渥太华",
-      "温哥华",
-      "温尼伯",
-      "纽芬兰",
-      "萨斯喀彻温",
-      "蒙特利尔",
-      "魁北克"
-    ],
-    "美国": [
-      "五大湖区奥吉布瓦",
-      "亚特兰大",
-      "休斯顿",
-      "佛罗里达",
-      "佛蒙特",
-      "俄勒冈州",
-      "加州",
-      "北卡罗来纳",
-      "华盛顿州奥林匹克半岛",
-      "南卡罗来纳",
-      "圣地亚哥",
-      "圣安东尼奥",
-      "堪萨斯城",
-      "奥斯汀",
-      "威斯康星",
-      "孟菲斯",
-      "密尔沃基",
-      "密歇根上半岛",
-      "底特律",
-      "得州",
-      "新墨西哥",
-      "新奥尔良",
-      "旧金山",
-      "旧金山/纽约",
-      "明尼苏达",
-      "普吉特湾",
-      "檀香山",
-      "水牛城",
-      "波士顿",
-      "波特兰",
-      "洛杉矶",
-      "爱荷华",
-      "纳什维尔",
-      "纽约",
-      "纽约/新泽西",
-      "纽约/芝加哥",
-      "纽约布鲁克林",
-      "缅因",
-      "缅因州刘易斯顿",
-      "罗德岛",
-      "美东北易洛魁",
-      "美国东北",
-      "美国南部",
-      "美国西南部原住民",
-      "芝加哥",
-      "西雅图",
-      "费城",
-      "路易斯安那",
-      "辛辛那提",
-      "迈阿密",
-      "马里兰"
-    ]
+    "加拿大": {
+      "": [
+        "不列颠哥伦比亚",
+        "加拿大草原/原住民",
+        "卡尔加里",
+        "哈利法克斯",
+        "埃德蒙顿",
+        "多伦多",
+        "安大略",
+        "曼尼托巴/萨斯喀彻温",
+        "渥太华",
+        "温哥华",
+        "温尼伯",
+        "纽芬兰",
+        "萨斯喀彻温",
+        "蒙特利尔",
+        "魁北克"
+      ]
+    },
+    "美国": {
+      "": [
+        "旧金山/纽约",
+        "纽约/新泽西",
+        "纽约/芝加哥"
+      ],
+      "五大湖区奥吉布瓦": [],
+      "伊利诺伊州": [
+        "芝加哥"
+      ],
+      "佐治亚州": [
+        "亚特兰大"
+      ],
+      "佛罗里达": [
+        "迈阿密"
+      ],
+      "佛蒙特": [],
+      "俄亥俄州": [
+        "辛辛那提"
+      ],
+      "俄勒冈州": [
+        "波特兰"
+      ],
+      "加州": [
+        "圣地亚哥",
+        "旧金山",
+        "洛杉矶"
+      ],
+      "北卡罗来纳": [],
+      "华盛顿州": [
+        "西雅图"
+      ],
+      "华盛顿州奥林匹克半岛": [],
+      "南卡罗来纳": [],
+      "夏威夷": [
+        "檀香山"
+      ],
+      "威斯康星": [
+        "密尔沃基"
+      ],
+      "宾夕法尼亚州": [
+        "费城"
+      ],
+      "密歇根上半岛": [],
+      "密歇根州": [
+        "底特律"
+      ],
+      "密苏里州": [
+        "堪萨斯城"
+      ],
+      "得州": [
+        "休斯顿",
+        "圣安东尼奥",
+        "奥斯汀"
+      ],
+      "新墨西哥": [],
+      "明尼苏达": [],
+      "普吉特湾": [],
+      "爱荷华": [],
+      "田纳西州": [
+        "孟菲斯",
+        "纳什维尔"
+      ],
+      "纽约州": [
+        "水牛城",
+        "纽约",
+        "纽约布鲁克林"
+      ],
+      "缅因": [
+        "缅因州刘易斯顿"
+      ],
+      "罗德岛": [],
+      "美东北易洛魁": [],
+      "美国东北": [],
+      "美国南部": [],
+      "美国西南部原住民": [],
+      "路易斯安那": [
+        "新奥尔良"
+      ],
+      "马萨诸塞州": [
+        "波士顿"
+      ],
+      "马里兰": []
+    }
   },
   "europe": {
-    "丹麦": [
-      "哥本哈根"
-    ],
-    "乌克兰": [
-      "利沃夫",
-      "基辅",
-      "敖德萨"
-    ],
-    "俄罗斯": [
-      "喀山",
-      "圣彼得堡",
-      "莫斯科"
-    ],
-    "保加利亚": [
-      "索菲亚"
-    ],
-    "克罗地亚": [
-      "斯普利特",
-      "萨格勒布"
-    ],
-    "冰岛": [
-      "雷克雅未克"
-    ],
-    "列支敦士登": [],
-    "匈牙利": [
-      "布达佩斯"
-    ],
-    "北马其顿": [
-      "斯科普里"
-    ],
-    "卢森堡": [
-      "卢森堡市"
-    ],
-    "圣马力诺": [],
-    "塞尔维亚": [
-      "贝尔格莱德"
-    ],
-    "塞浦路斯": [
-      "尼科西亚"
-    ],
-    "奥地利": [
-      "维也纳"
-    ],
-    "安道尔": [],
-    "希腊": [
-      "雅典"
-    ],
-    "德国": [
-      "巴伐利亚",
-      "德累斯顿",
-      "慕尼黑",
-      "斯图加特",
-      "施瓦本",
-      "柏林",
-      "柯尼斯堡",
-      "汉堡",
-      "法兰克福",
-      "科隆",
-      "纽伦堡",
-      "莱茵兰",
-      "黑森林"
-    ],
-    "意大利": [
-      "佛罗伦萨",
-      "利古里亚",
-      "博洛尼亚",
-      "卡塔尼亚",
-      "威尼斯",
-      "巴勒莫",
-      "巴里",
-      "帕尔马",
-      "意大利北部",
-      "托斯卡纳",
-      "拉齐奥",
-      "普利亚",
-      "热那亚",
-      "皮埃蒙特",
-      "米兰",
-      "罗马",
-      "艾米利亚-罗马涅",
-      "西西里",
-      "那不勒斯",
-      "都灵"
-    ],
-    "拉脱维亚": [
-      "里加"
-    ],
-    "挪威": [
-      "奥斯陆"
-    ],
-    "捷克": [
-      "布拉格"
-    ],
-    "摩尔多瓦": [
-      "基希讷乌"
-    ],
-    "摩纳哥": [],
-    "斯洛伐克": [
-      "布拉迪斯拉发"
-    ],
-    "斯洛文尼亚": [
-      "卢布尔雅那"
-    ],
-    "比利时": [
-      "佛兰德斯",
-      "列日",
-      "布鲁塞尔",
-      "根特"
-    ],
-    "法国": [
-      "勃艮第",
-      "图卢兹",
-      "奥弗涅",
-      "尼斯",
-      "巴黎",
-      "布列塔尼",
-      "斯特拉斯堡",
-      "普罗旺斯",
-      "法国北部",
-      "法国西南部",
-      "波尔多",
-      "洛林",
-      "萨瓦",
-      "里昂",
-      "阿尔萨斯",
-      "马赛"
-    ],
-    "波兰": [
-      "克拉科夫",
-      "华沙",
-      "格但斯克"
-    ],
-    "波黑": [
-      "萨拉热窝"
-    ],
-    "爱尔兰": [
-      "都柏林"
-    ],
-    "爱沙尼亚": [
-      "塔林"
-    ],
-    "瑞典": [
-      "斯德哥尔摩"
-    ],
-    "瑞士": [
-      "巴塞尔",
-      "日内瓦",
-      "格劳宾登",
-      "瓦莱州",
-      "苏黎世"
-    ],
-    "白俄罗斯": [
-      "明斯克"
-    ],
-    "科索沃": [
-      "普里什蒂纳"
-    ],
-    "立陶宛": [
-      "维尔纽斯"
-    ],
-    "罗马尼亚": [
-      "布加勒斯特"
-    ],
-    "芬兰": [
-      "拉普兰"
-    ],
-    "英国": [
-      "伦敦",
-      "伯明翰",
-      "利物浦",
-      "威尔士",
-      "康沃尔",
-      "曼彻斯特",
-      "格拉斯哥",
-      "爱丁堡",
-      "约克",
-      "约克郡",
-      "苏格兰"
-    ],
-    "荷兰": [
-      "豪达",
-      "阿姆斯特丹"
-    ],
-    "葡萄牙": [
-      "波尔图",
-      "葡萄牙北部",
-      "里斯本"
-    ],
-    "西班牙": [
-      "加利西亚",
-      "加泰罗尼亚",
-      "圣塞巴斯蒂安",
-      "圣塞瓦斯蒂安",
-      "塞哥维亚",
-      "塞维利亚",
-      "安达卢西亚",
-      "巴塞罗那",
-      "拉曼恰",
-      "毕尔巴鄂",
-      "瓦伦西亚",
-      "科尔多瓦",
-      "阿斯图里亚斯",
-      "马德里"
-    ],
-    "阿尔巴尼亚": [
-      "地拉那"
-    ],
-    "马耳他": [
-      "瓦莱塔"
-    ],
-    "黑山": [
-      "波德戈里察"
-    ]
+    "丹麦": {
+      "": [
+        "哥本哈根"
+      ]
+    },
+    "乌克兰": {
+      "": [
+        "利沃夫",
+        "基辅",
+        "敖德萨"
+      ]
+    },
+    "俄罗斯": {
+      "": [
+        "喀山",
+        "圣彼得堡",
+        "莫斯科"
+      ]
+    },
+    "保加利亚": {
+      "": [
+        "索菲亚"
+      ]
+    },
+    "克罗地亚": {
+      "": [
+        "斯普利特",
+        "萨格勒布"
+      ]
+    },
+    "冰岛": {
+      "": [
+        "雷克雅未克"
+      ]
+    },
+    "列支敦士登": {
+      "": []
+    },
+    "匈牙利": {
+      "": [
+        "布达佩斯"
+      ]
+    },
+    "北马其顿": {
+      "": [
+        "斯科普里"
+      ]
+    },
+    "卢森堡": {
+      "": [
+        "卢森堡市"
+      ]
+    },
+    "圣马力诺": {
+      "": []
+    },
+    "塞尔维亚": {
+      "": [
+        "贝尔格莱德"
+      ]
+    },
+    "塞浦路斯": {
+      "": [
+        "尼科西亚"
+      ]
+    },
+    "奥地利": {
+      "": [
+        "维也纳"
+      ]
+    },
+    "安道尔": {
+      "": []
+    },
+    "希腊": {
+      "": [
+        "雅典"
+      ]
+    },
+    "德国": {
+      "": [
+        "巴伐利亚",
+        "德累斯顿",
+        "慕尼黑",
+        "斯图加特",
+        "施瓦本",
+        "柏林",
+        "柯尼斯堡",
+        "汉堡",
+        "法兰克福",
+        "科隆",
+        "纽伦堡",
+        "莱茵兰",
+        "黑森林"
+      ]
+    },
+    "意大利": {
+      "": [
+        "佛罗伦萨",
+        "利古里亚",
+        "博洛尼亚",
+        "卡塔尼亚",
+        "威尼斯",
+        "巴勒莫",
+        "巴里",
+        "帕尔马",
+        "意大利北部",
+        "托斯卡纳",
+        "拉齐奥",
+        "普利亚",
+        "热那亚",
+        "皮埃蒙特",
+        "米兰",
+        "罗马",
+        "艾米利亚-罗马涅",
+        "西西里",
+        "那不勒斯",
+        "都灵"
+      ]
+    },
+    "拉脱维亚": {
+      "": [
+        "里加"
+      ]
+    },
+    "挪威": {
+      "": [
+        "奥斯陆"
+      ]
+    },
+    "捷克": {
+      "": [
+        "布拉格"
+      ]
+    },
+    "摩尔多瓦": {
+      "": [
+        "基希讷乌"
+      ]
+    },
+    "摩纳哥": {
+      "": []
+    },
+    "斯洛伐克": {
+      "": [
+        "布拉迪斯拉发"
+      ]
+    },
+    "斯洛文尼亚": {
+      "": [
+        "卢布尔雅那"
+      ]
+    },
+    "比利时": {
+      "": [
+        "佛兰德斯",
+        "列日",
+        "布鲁塞尔",
+        "根特"
+      ]
+    },
+    "法国": {
+      "": [
+        "勃艮第",
+        "图卢兹",
+        "奥弗涅",
+        "尼斯",
+        "巴黎",
+        "布列塔尼",
+        "斯特拉斯堡",
+        "普罗旺斯",
+        "法国北部",
+        "法国西南部",
+        "波尔多",
+        "洛林",
+        "萨瓦",
+        "里昂",
+        "阿尔萨斯",
+        "马赛"
+      ]
+    },
+    "波兰": {
+      "": [
+        "克拉科夫",
+        "华沙",
+        "格但斯克"
+      ]
+    },
+    "波黑": {
+      "": [
+        "萨拉热窝"
+      ]
+    },
+    "爱尔兰": {
+      "": [
+        "都柏林"
+      ]
+    },
+    "爱沙尼亚": {
+      "": [
+        "塔林"
+      ]
+    },
+    "瑞典": {
+      "": [
+        "斯德哥尔摩"
+      ]
+    },
+    "瑞士": {
+      "": [
+        "巴塞尔",
+        "日内瓦",
+        "格劳宾登",
+        "瓦莱州",
+        "苏黎世"
+      ]
+    },
+    "白俄罗斯": {
+      "": [
+        "明斯克"
+      ]
+    },
+    "科索沃": {
+      "": [
+        "普里什蒂纳"
+      ]
+    },
+    "立陶宛": {
+      "": [
+        "维尔纽斯"
+      ]
+    },
+    "罗马尼亚": {
+      "": [
+        "布加勒斯特"
+      ]
+    },
+    "芬兰": {
+      "": [
+        "拉普兰"
+      ]
+    },
+    "英国": {
+      "": [
+        "伦敦",
+        "伯明翰",
+        "利物浦",
+        "威尔士",
+        "康沃尔",
+        "曼彻斯特",
+        "格拉斯哥",
+        "爱丁堡",
+        "约克",
+        "约克郡",
+        "苏格兰"
+      ]
+    },
+    "荷兰": {
+      "": [
+        "豪达",
+        "阿姆斯特丹"
+      ]
+    },
+    "葡萄牙": {
+      "": [
+        "波尔图",
+        "葡萄牙北部",
+        "里斯本"
+      ]
+    },
+    "西班牙": {
+      "": [
+        "加利西亚",
+        "加泰罗尼亚",
+        "圣塞巴斯蒂安",
+        "圣塞瓦斯蒂安",
+        "塞哥维亚",
+        "塞维利亚",
+        "安达卢西亚",
+        "巴塞罗那",
+        "拉曼恰",
+        "毕尔巴鄂",
+        "瓦伦西亚",
+        "科尔多瓦",
+        "阿斯图里亚斯",
+        "马德里"
+      ]
+    },
+    "阿尔巴尼亚": {
+      "": [
+        "地拉那"
+      ]
+    },
+    "马耳他": {
+      "": [
+        "瓦莱塔"
+      ]
+    },
+    "黑山": {
+      "": [
+        "波德戈里察"
+      ]
+    }
   },
   "oceania": {
-    "图瓦卢": [
-      "富纳富提"
-    ],
-    "基里巴斯": [
-      "塔拉瓦"
-    ],
-    "夏威夷": [],
-    "太平洋岛国": [],
-    "密克罗尼西亚": [
-      "帕利基尔"
-    ],
-    "巴布亚新几内亚": [
-      "莫尔兹比港"
-    ],
-    "帕劳": [
-      "恩吉鲁穆德"
-    ],
-    "库克群岛": [
-      "阿瓦鲁阿"
-    ],
-    "所罗门群岛": [
-      "霍尼亚拉"
-    ],
-    "斐济": [
-      "苏瓦"
-    ],
-    "新西兰": [
-      "奥克兰",
-      "惠灵顿",
-      "皇后镇"
-    ],
-    "汤加": [
-      "努库阿洛法"
-    ],
-    "澳大利亚": [
-      "墨尔本",
-      "布里斯班",
-      "悉尼",
-      "珀斯",
-      "阿德莱德"
-    ],
-    "瑙鲁": [
-      "亚伦"
-    ],
-    "瓦努阿图": [
-      "维拉港"
-    ],
-    "萨摩亚": [
-      "阿皮亚"
-    ],
-    "马绍尔群岛": [
-      "马朱罗"
-    ]
+    "图瓦卢": {
+      "": [
+        "富纳富提"
+      ]
+    },
+    "基里巴斯": {
+      "": [
+        "塔拉瓦"
+      ]
+    },
+    "夏威夷": {
+      "": []
+    },
+    "太平洋岛国": {
+      "": []
+    },
+    "密克罗尼西亚": {
+      "": [
+        "帕利基尔"
+      ]
+    },
+    "巴布亚新几内亚": {
+      "": [
+        "莫尔兹比港"
+      ]
+    },
+    "帕劳": {
+      "": [
+        "恩吉鲁穆德"
+      ]
+    },
+    "库克群岛": {
+      "": [
+        "阿瓦鲁阿"
+      ]
+    },
+    "所罗门群岛": {
+      "": [
+        "霍尼亚拉"
+      ]
+    },
+    "斐济": {
+      "": [
+        "苏瓦"
+      ]
+    },
+    "新西兰": {
+      "": [
+        "奥克兰",
+        "惠灵顿",
+        "皇后镇"
+      ]
+    },
+    "汤加": {
+      "": [
+        "努库阿洛法"
+      ]
+    },
+    "澳大利亚": {
+      "": [
+        "墨尔本",
+        "布里斯班",
+        "悉尼",
+        "珀斯",
+        "阿德莱德"
+      ]
+    },
+    "瑙鲁": {
+      "": [
+        "亚伦"
+      ]
+    },
+    "瓦努阿图": {
+      "": [
+        "维拉港"
+      ]
+    },
+    "萨摩亚": {
+      "": [
+        "阿皮亚"
+      ]
+    },
+    "马绍尔群岛": {
+      "": [
+        "马朱罗"
+      ]
+    }
   }
 };
 
