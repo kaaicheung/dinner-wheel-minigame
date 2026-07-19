@@ -5440,11 +5440,11 @@ var DISHES = {
     { name: "炸面团 (Priganice)", cuisine: "波德戈里察", country: "黑山", city: "波德戈里察", iconic: true, note: "炸得金黄的小面团，蘸蜂蜜、奶酪或果酱，是黑山早餐和待客的传统小食。", rest: "老字号餐馆", type: "小吃", flavor: ["甜", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
     { name: "炭焖大餐 (Ispod sača)", cuisine: "波德戈里察", country: "黑山", city: "波德戈里察", iconic: true, note: "肉和土豆盖铁钟罩埋炭火慢焖，是黑山宴客最隆重的传统焖菜。", rest: "老字号小馆", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "牛"] },
     { name: "鱼汤 (Riblja čorba)", cuisine: "波德戈里察", country: "黑山", city: "波德戈里察", note: "斯库台湖的鲤鱼熬成的红椒鱼汤，是黑山湖区渔民的传统家常汤。", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "海鲜", protein: ["鱼"] },
-    { name: "炭烤层饼 (Flija)", cuisine: "普里什蒂纳", country: "科索沃", city: "普里什蒂纳", iconic: true, note: "一层层稀面糊在铁盘上反复烤成的多层薄饼，配酸奶和奶酪，是科索沃阿族的招牌大菜。", rest: "老字号小馆", type: "饼馍", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "酥皮馅饼 (Pite/Byrek)", cuisine: "普里什蒂纳", country: "科索沃", city: "普里什蒂纳", iconic: true, note: "薄酥皮裹奶酪、菠菜或肉烤成的大馅饼，是科索沃人日常的早餐和小吃。", rest: "老字号糕饼店", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["蛋"] },
-    { name: "烤肉小肠 (Qebapa)", cuisine: "普里什蒂纳", country: "科索沃", city: "普里什蒂纳", iconic: true, note: "碎肉搓成的小烤肠配洋葱和软饼，是普里什蒂纳街头最日常的烤肉快餐。", rest: "街角烤肉摊", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
-    { name: "白豆汤 (Pasul/Fasule)", cuisine: "普里什蒂纳", country: "科索沃", city: "普里什蒂纳", note: "白豆加红椒粉和熏肉熬的浓汤，是科索沃家家户户最日常的填肚家常菜。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "牛"] },
-    { name: "酿甜椒 (Speca të mbushur)", cuisine: "普里什蒂纳", country: "科索沃", city: "普里什蒂纳", note: "甜椒填碎肉和米慢炖，配酸奶油，是科索沃受奥斯曼和巴尔干影响的家常菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "炭烤层饼 (Flija)", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", iconic: true, note: "一层层稀面糊在铁盘上反复烤成的多层薄饼，配酸奶和奶酪，是科索沃阿族的招牌大菜。", rest: "老字号小馆", type: "饼馍", flavor: ["清淡", "咸鲜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "酥皮馅饼 (Pite/Byrek)", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", iconic: true, note: "薄酥皮裹奶酪、菠菜或肉烤成的大馅饼，是科索沃人日常的早餐和小吃。", rest: "老字号糕饼店", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "素", protein: ["蛋"] },
+    { name: "烤肉小肠 (Qebapa)", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", iconic: true, note: "碎肉搓成的小烤肠配洋葱和软饼，是普里什蒂纳街头最日常的烤肉快餐。", rest: "街角烤肉摊", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
+    { name: "白豆汤 (Pasul/Fasule)", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", note: "白豆加红椒粉和熏肉熬的浓汤，是科索沃家家户户最日常的填肚家常菜。", type: "汤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["豆制品", "牛"] },
+    { name: "酿甜椒 (Speca të mbushur)", cuisine: "普里什蒂纳", country: "塞尔维亚", city: "普里什蒂纳", note: "甜椒填碎肉和米慢炖，配酸奶油，是科索沃受奥斯曼和巴尔干影响的家常菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
     { name: "土豆肉团 (Cepelinai)", cuisine: "维尔纽斯", country: "立陶宛", city: "维尔纽斯", iconic: true, note: "土豆泥包碎肉捏成飞艇形的大团子，浇培根酸奶油汁，是立陶宛公认的国菜。", rest: "老字号餐馆", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["猪", "面米"] },
     { name: "粉红冷汤 (Šaltibarščiai)", cuisine: "维尔纽斯", country: "立陶宛", city: "维尔纽斯", iconic: true, note: "红甜菜加酸奶打成的鲜粉色冷汤，配热土豆吃，是立陶宛夏天最上镜的消暑汤。", rest: "老字号餐馆", type: "汤", flavor: ["酸", "清淡"], spice: 0, diet: "素", protein: ["其它"] },
     { name: "羊角肉饺 (Kibinai)", cuisine: "维尔纽斯", country: "立陶宛", city: "维尔纽斯", iconic: true, note: "半月形的酥皮饼包羊肉洋葱馅，是立陶宛卡拉伊姆少数族裔带来的招牌烤饺。", rest: "老字号餐馆", type: "饺子包子", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "牛"] },
@@ -5701,14 +5701,14 @@ var DISHES = {
     { name: "海鲜烩饭（Rižot）", cuisine: "布德瓦", country: "黑山", city: "布德瓦", note: "混合海鲜烩米饭，布德瓦海边餐馆常年供应的地中海主食。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "鱼"] },
     { name: "章鱼沙拉", cuisine: "布德瓦", country: "黑山", city: "布德瓦", note: "水煮章鱼切块拌橄榄油柠檬洋葱，亚得里亚海岸凉爽开胃冷盘。", type: "凉菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "海鲜", protein: ["其它"] },
     { name: "甜奶酪派（Priganice）", cuisine: "布德瓦", country: "黑山", city: "布德瓦", note: "炸小面团配蜂蜜和奶酪，黑山沿海城镇的早餐或甜食。", type: "小吃", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "佩奇烤肉肠（Qebapa）", cuisine: "佩奇", country: "科索沃", city: "佩奇", iconic: true, note: "佩奇被称为科索沃烤肉肠之城，碎肉肠炭烤配面饼洋葱是当地招牌。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
-    { name: "层饼派（Flija）", cuisine: "佩奇", country: "科索沃", city: "佩奇", note: "面糊一层层刷烤叠成的圆饼淋酸奶，科索沃与阿尔巴尼亚山区待客名点。", type: "饼馍", flavor: ["咸鲜", "清淡"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "白豆汤（Pasul）", cuisine: "佩奇", country: "科索沃", city: "佩奇", note: "白豆配红椒粉和烟熏肉熬的浓汤，科索沃家常暖食。", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["豆制品", "牛"] },
-    { name: "酸奶泡饭（Tavë）", cuisine: "佩奇", country: "科索沃", city: "佩奇", note: "羊肉配米放陶盘焗成的炖饭，科索沃西部宴客菜。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
-    { name: "普里兹伦烤肉派（Burek）", cuisine: "普里兹伦", country: "科索沃", city: "普里兹伦", iconic: true, note: "普里兹伦老城以酥皮肉派闻名，盘绕烤成配酸奶当早餐，游客必尝。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
-    { name: "甜奶糕（Tavë e ëmbël / Sheqerpare 风）", cuisine: "普里兹伦", country: "科索沃", city: "普里兹伦", note: "糖浆浸的酥饼甜点，受奥斯曼影响，普里兹伦茶馆常见。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
-    { name: "填馅甜椒（Speca të mbushur）", cuisine: "普里兹伦", country: "科索沃", city: "普里兹伦", note: "甜椒填米和肉焖煮淋番茄，普里兹伦家常菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "牛"] },
-    { name: "羊杂汤（Paçe）", cuisine: "普里兹伦", country: "科索沃", city: "普里兹伦", note: "羊头羊蹄熬的浓白汤配蒜和醋，普里兹伦老城的早市暖汤。", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊"] },
+    { name: "佩奇烤肉肠（Qebapa）", cuisine: "佩奇", country: "塞尔维亚", city: "佩奇", iconic: true, note: "佩奇被称为科索沃烤肉肠之城，碎肉肠炭烤配面饼洋葱是当地招牌。", type: "烧烤", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "羊"] },
+    { name: "层饼派（Flija）", cuisine: "佩奇", country: "塞尔维亚", city: "佩奇", note: "面糊一层层刷烤叠成的圆饼淋酸奶，科索沃与阿尔巴尼亚山区待客名点。", type: "饼馍", flavor: ["咸鲜", "清淡"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "白豆汤（Pasul）", cuisine: "佩奇", country: "塞尔维亚", city: "佩奇", note: "白豆配红椒粉和烟熏肉熬的浓汤，科索沃家常暖食。", type: "汤", flavor: ["咸鲜"], spice: 1, diet: "荤", protein: ["豆制品", "牛"] },
+    { name: "酸奶泡饭（Tavë）", cuisine: "佩奇", country: "塞尔维亚", city: "佩奇", note: "羊肉配米放陶盘焗成的炖饭，科索沃西部宴客菜。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["羊", "面米"] },
+    { name: "普里兹伦烤肉派（Burek）", cuisine: "普里兹伦", country: "塞尔维亚", city: "普里兹伦", iconic: true, note: "普里兹伦老城以酥皮肉派闻名，盘绕烤成配酸奶当早餐，游客必尝。", type: "饼馍", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["牛", "面米"] },
+    { name: "甜奶糕（Tavë e ëmbël / Sheqerpare 风）", cuisine: "普里兹伦", country: "塞尔维亚", city: "普里兹伦", note: "糖浆浸的酥饼甜点，受奥斯曼影响，普里兹伦茶馆常见。", type: "甜点", flavor: ["甜"], spice: 0, diet: "素", protein: ["面米"] },
+    { name: "填馅甜椒（Speca të mbushur）", cuisine: "普里兹伦", country: "塞尔维亚", city: "普里兹伦", note: "甜椒填米和肉焖煮淋番茄，普里兹伦家常菜。", type: "炖菜", flavor: ["咸鲜"], spice: 0, diet: "荤", protein: ["面米", "牛"] },
+    { name: "羊杂汤（Paçe）", cuisine: "普里兹伦", country: "塞尔维亚", city: "普里兹伦", note: "羊头羊蹄熬的浓白汤配蒜和醋，普里兹伦老城的早市暖汤。", type: "汤", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊"] },
     { name: "都拉斯烤海鱼", cuisine: "都拉斯", country: "阿尔巴尼亚", city: "都拉斯", iconic: true, note: "当季亚得里亚海鱼炭烤淋橄榄油柠檬，都拉斯海港城市的招牌海鲜。", type: "海鲜", flavor: ["咸鲜", "清淡"], spice: 0, diet: "海鲜", protein: ["鱼"] },
     { name: "海鲜烩饭", cuisine: "都拉斯", country: "阿尔巴尼亚", city: "都拉斯", note: "混合海鲜烩米饭，都拉斯海滨餐馆的地中海式主食。", type: "米饭", flavor: ["咸鲜"], spice: 0, diet: "海鲜", protein: ["虾", "鱼"] },
     { name: "酸奶焗肉（Tavë kosi）", cuisine: "都拉斯", country: "阿尔巴尼亚", city: "都拉斯", note: "羊肉配蛋酸奶糊焗成的国民菜，阿尔巴尼亚全境宴客常见。", type: "炖菜", flavor: ["咸鲜", "酸"], spice: 0, diet: "荤", protein: ["羊", "蛋"] },
@@ -7962,7 +7962,10 @@ var LOCATIONS = {
     },
     "塞尔维亚": {
       "": [
+        "佩奇",
         "尼什",
+        "普里什蒂纳",
+        "普里兹伦",
         "诺维萨德",
         "贝尔格莱德"
       ]
@@ -8220,11 +8223,7 @@ var LOCATIONS = {
       ]
     },
     "科索沃": {
-      "": [
-        "佩奇",
-        "普里什蒂纳",
-        "普里兹伦"
-      ]
+      "": []
     },
     "立陶宛": {
       "": [
