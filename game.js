@@ -808,12 +808,28 @@ function wrapLines(text, maxWidth, maxLines) {
   return lines;
 }
 
-// Always-clear place label: a city carries its country ("俄罗斯 · 喀山"), a
-// country-only dish shows just the country. Falls back to the raw cuisine.
-function originLabel(country, city, cuisine) {
-  if (country && city && city !== country) return country + ' · ' + city;
-  if (country) return country;
-  return cuisine || '';
+// If the current selection is a single country, that country is "pinned" — the
+// origin label can drop it (you already know it). Region/multi-country/全部 → null.
+function pinnedCountry() {
+  if (!state.locSel.length) return null;
+  var c = null;
+  for (var i = 0; i < state.locSel.length; i++) {
+    var n = state.locSel[i];
+    if (n.kind === 'region' || !n.country) return null;   // a region spans countries
+    if (c === null) c = n.country; else if (c !== n.country) return null;
+  }
+  return c;
+}
+// Context-aware place label: full "国家 · 省 · 城市", minus the level the current
+// selection already pins (single country selected → "省 · 城市"). Never empty, so a
+// bare city (喀山 / 巴里) always shows its country when nothing is pinned.
+function originLabel(country, province, city, pinned) {
+  var parts = [];
+  if (country && country !== pinned) parts.push(country);
+  if (province && province !== city && province !== pinned) parts.push(province);
+  if (city && city !== country) parts.push(city);
+  if (!parts.length) parts.push(city || province || country || '');
+  return parts.join(' · ');
 }
 
 function drawResult() {
@@ -855,7 +871,7 @@ function drawResult() {
 
   // Subtitle — native name (if any) · place. Origin ALWAYS names the country so a
   // bare city (喀山 / 巴里) is never ambiguous: "国家 · 城市", or just the country.
-  var origin = originLabel(r.country, r.city, r.cuisine);
+  var origin = originLabel(r.country, r.province, r.city, pinnedCountry());
   var sub = r.native ? (r.native + ' · ' + origin) : origin;
   ctx.font = '500 14px ' + FONT;
   ctx.fillStyle = COL_CHILI;
@@ -970,6 +986,7 @@ function onLanded(winIndex) {
     name: item.name,
     cuisine: item.cuisine,
     country: item.country || '',
+    province: item.province || '',
     city: item.city || '',
     native: item.native || '',
     iconic: item.iconic === true,
