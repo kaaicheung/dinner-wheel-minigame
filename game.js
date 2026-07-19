@@ -808,6 +808,14 @@ function wrapLines(text, maxWidth, maxLines) {
   return lines;
 }
 
+// Always-clear place label: a city carries its country ("俄罗斯 · 喀山"), a
+// country-only dish shows just the country. Falls back to the raw cuisine.
+function originLabel(country, city, cuisine) {
+  if (country && city && city !== country) return country + ' · ' + city;
+  if (country) return country;
+  return cuisine || '';
+}
+
 function drawResult() {
   againRect = null;
   var maxW = W - PAD * 2;
@@ -845,8 +853,10 @@ function drawResult() {
   ctx.fillText(nameStr, W / 2, y);
   y += nameSize + 6;
 
-  // Subtitle — native name (if any) · place.
-  var sub = r.native ? (r.native + ' · ' + r.cuisine) : r.cuisine;
+  // Subtitle — native name (if any) · place. Origin ALWAYS names the country so a
+  // bare city (喀山 / 巴里) is never ambiguous: "国家 · 城市", or just the country.
+  var origin = originLabel(r.country, r.city, r.cuisine);
+  var sub = r.native ? (r.native + ' · ' + origin) : origin;
   ctx.font = '500 14px ' + FONT;
   ctx.fillStyle = COL_CHILI;
   ctx.fillText(sub, W / 2, y);
@@ -959,6 +969,8 @@ function onLanded(winIndex) {
   state.result = {
     name: item.name,
     cuisine: item.cuisine,
+    country: item.country || '',
+    city: item.city || '',
     native: item.native || '',
     iconic: item.iconic === true,
     note: item.note || '',
