@@ -1002,6 +1002,16 @@ function roundRect(x, y, w, h, r) {
   ctx.closePath();
 }
 
+// Pick which restaurant to surface for a dish. A dish can carry a list of real
+// named spots (rests[] — 米其林/必比登/公认名店); pick ONE at random every spin so
+// it's never hardcoded to one place. Falls back to the generic venue-type (rest).
+function pickRest(item) {
+  if (item.rests && item.rests.length) {
+    return item.rests[Math.floor(Math.random() * item.rests.length)];
+  }
+  return item.rest || '';
+}
+
 // ---- Spin (reused eased landing math from index.js) ------------------------
 function spin() {
   if (state.spinning) return;
@@ -1066,7 +1076,7 @@ function onLanded(winIndex) {
     native: item.native || '',
     iconic: item.iconic === true,
     note: item.note || '',
-    rest: item.rest || '',
+    rest: pickRest(item),
     emoji: emojis[Math.floor(Math.random() * emojis.length)],
     line: dishes.pickFunLine()
   };

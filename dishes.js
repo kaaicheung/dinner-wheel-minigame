@@ -9429,14 +9429,21 @@ function getPool(catKey) {
 
 // Fisher-Yates shuffle of a copy, then take up to WHEEL_SIZE. Pools at or below
 // WHEEL_SIZE are shuffled but fully shown.
+// Weighted sample of up to WHEEL_SIZE dishes. Iconic (标杆/当地必吃) dishes carry a
+// heavier weight so they land on the wheel more often, without crowding the rest out.
+// Efraimidis-Spirakis weighted sampling-without-replacement: key = -ln(U)/w, take the
+// smallest keys. Keys are per-item random, so wheel order stays shuffled.
+var ICONIC_WHEEL_WEIGHT = 3;
 function sampleWheel(pool) {
-  var a = pool.slice();
-  for (var i = a.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var t = a[i]; a[i] = a[j]; a[j] = t;
-  }
+  var a = pool.map(function (d) {
+    var w = (d && d.iconic === true) ? ICONIC_WHEEL_WEIGHT : 1;
+    var u = Math.random();
+    if (u <= 0) u = 1e-9;
+    return { d: d, k: -Math.log(u) / w };
+  });
+  a.sort(function (x, y) { return x.k - y.k; });
   if (a.length > WHEEL_SIZE) a = a.slice(0, WHEEL_SIZE);
-  return a;
+  return a.map(function (e) { return e.d; });
 }
 
 function pickFunLine() {
